@@ -13,7 +13,11 @@
       <h1>SUKIMA</h1>
     </div>
     
+
+    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+
 <!--学生ログイン時-->
+
 <% if user_signed_in? %>
     <div class="header_right_student"> 
       <ul>
