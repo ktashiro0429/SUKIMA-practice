@@ -13,49 +13,47 @@
     <div classs="header_left">
       <h1>SUKIMA</h1>
     </div>
-    <div class="header_right_guest">
-      <ul>
-        <li><a href="#">個人</a></li>
-        <li><a href="#">企業</a></li>
-      </ul>
-    </div>
+    
 <!-- 学生ログイン時
+<% if user_signed_in? %>
     <div class="header_right_student"> 
       <ul>
+<li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <li><a href="#">マイページ</a></li>
         <li><a href="#">チャット</a></li>
         <li><a href="#">投稿</a></li>
+<strong><%= link_to current_user.username, pages_show_path %></strong>
       </ul>
     </div>
 -->
 <!-- 企業ログイン時
+<% elsif admin_signed_in? %>
     <div class="header_right_company">
       <ul>
+<li><%= link_to 'プロフィール変更', edit_admin_registration_path %></li>
+<li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
         <li><a href="#">マイページ</a></li>
         <li><a href="#">チャット</a></li>
+<strong><%= link_to current_admin.username, pages_show_path %></strong>
+
+<% else %>
+<div class="header_right_guest">
+      <ul>
+        <li><a href="#">個人</a></li>
+        <li><a href="#">企業</a></li>
+<li><%= link_to 'サインアップ', new_user_registration_path %></li>
+<li><%= link_to 'ログイン', new_user_session_path %></li>
+            <% end %>
       </ul>
     </div>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 -->
   </div>
 </div>
   
 </header>
-=======
-  <header>
-        <nav>
-            <% if user_signed_in? %>
-                <strong><%= link_to current_user.username, pages_show_path %></strong>
-                <%= link_to 'プロフィール変更', edit_user_registration_path %>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-            <% else %>
-                <%= link_to 'サインアップ', new_user_registration_path %>
-                <%= link_to 'ログイン', new_user_session_path %>
-            <% end %>
-        </nav>
-    </header>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
->>>>>>> 63704405622ca69b141f385485953a4db72b7a93
 <%= yield %>
 
 
