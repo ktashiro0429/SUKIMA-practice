@@ -11,15 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170611025929) do
-
-  create_table "users", force: true do |t|
-=======
-ActiveRecord::Schema.define(version: 20170611041558) do
+ActiveRecord::Schema.define(version: 20170611082430) do
 
   create_table "admins", force: true do |t|
->>>>>>> 7912f63617f6831af99de52acd88664c7eaf1e2a
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -38,8 +32,6 @@ ActiveRecord::Schema.define(version: 20170611041558) do
     t.datetime "updated_at",                          null: false
   end
 
-<<<<<<< HEAD
-=======
   add_index "admins", ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
@@ -57,9 +49,12 @@ ActiveRecord::Schema.define(version: 20170611041558) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "image"
+    t.string   "name"
   end
 
->>>>>>> 7912f63617f6831af99de52acd88664c7eaf1e2a
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
