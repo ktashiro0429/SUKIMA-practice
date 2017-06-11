@@ -42,10 +42,9 @@
 <% else %>
 <div class="header_right_guest">
       <ul>
-        <li><a href="#">個人</a></li>
-        <li><a href="#">企業</a></li>
-<li><%= link_to 'サインアップ', new_user_registration_path %></li>
-<li><%= link_to 'ログイン', new_user_session_path %></li>
+        <li><%= link_to '個人ログイン', new_user_session_path %></li>
+        <li><%= link_to '法人ログイン', new_admin_session_path %></li>
+<li><%= link_to '個人会員登録', new_user_registration_path %></li>
             <% end %>
       </ul>
     </div>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :admins
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users
   root 'top#index', controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   passwords:     'users/passwords',
   registrations: 'users/registrations'
   }
-
 end
