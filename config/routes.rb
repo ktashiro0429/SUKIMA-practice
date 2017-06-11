@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  devise_for :users
-  get 'companies/index'
-  get 'companies/show'
-=======
-<<<<<<< HEAD
+
   root 'top#index'
-=======
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -18,8 +12,7 @@ Rails.application.routes.draw do
   registrations: 'users/registrations'
     
   }
->>>>>>> 63704405622ca69b141f385485953a4db72b7a93
->>>>>>> 7912f63617f6831af99de52acd88664c7eaf1e2a
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
