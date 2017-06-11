@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170611072755) do
+ActiveRecord::Schema.define(version: 20170611083211) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20170611072755) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.text     "about"
+    t.text     "web"
+    t.text     "address"
+    t.string   "industry"
+    t.text     "sns"
+    t.text     "image"
   end
 
   add_index "admins", ["confirmation_token"], name: "index_admins_on_confirmation_token", unique: true
