@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  root 'top#index'
+=======
+>>>>>>> yoshino
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -11,9 +16,13 @@ Rails.application.routes.draw do
   registrations: 'users/registrations'
     
   }
+<<<<<<< HEAD
 =======
   root 'top#index'
 >>>>>>> テンプレートを編集
+=======
+>>>>>>> 63704405622ca69b141f385485953a4db72b7a93
+>>>>>>> yoshino
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
