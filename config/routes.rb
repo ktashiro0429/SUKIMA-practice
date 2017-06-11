@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'top#index'
-  devise_for :admins, controllers: {
+  devise_for :admins
+  devise_for :users
+  root 'top#index', controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
   registrations: 'admins/registrations'
-  }
-  devise_for :users, controllers: {
+  }, controllers: {
   sessions:      'users/sessions',
   passwords:     'users/passwords',
   registrations: 'users/registrations'
