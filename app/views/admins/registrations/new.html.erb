@@ -1,8 +1,10 @@
 <div class="sign_up">
 <h2>Welcome to SUKIMA career.</h2>
 </div>
+<div class="form_container">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+
 <div class="sign_up_forms">
   <div class="field">
     <p class="form"><%= f.label :email %>:<br /></p>
@@ -28,4 +30,5 @@
 </div>
   <div class="cancel_log_in">
   <%= render "admins/shared/links" %>
+</div>
 </div>
