@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -10,6 +11,9 @@ Rails.application.routes.draw do
   registrations: 'users/registrations'
     
   }
+=======
+  root 'top#index'
+>>>>>>> テンプレートを編集
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
