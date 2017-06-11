@@ -7,17 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<<<<<<< HEAD
 <div class="header">
   <div class="container">
     <div classs="header_left">
       <h1>SUKIMA</h1>
     </div>
     
+
     <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
 
+<!--学生ログイン時-->
 
-<!-- 学生ログイン時
 <% if user_signed_in? %>
     <div class="header_right_student"> 
       <ul>
@@ -26,11 +26,10 @@
         <li><a href="#">マイページ</a></li>
         <li><a href="#">チャット</a></li>
         <li><a href="#">投稿</a></li>
-<strong><%= link_to current_user.username, pages_show_path %></strong>
+        <!--<strong>< link_to current_user.username, pages_show_path %></strong>-->
       </ul>
     </div>
--->
-<!-- 企業ログイン時
+<!--企業ログイン時-->
 <% elsif admin_signed_in? %>
     <div class="header_right_company">
       <ul>
@@ -38,7 +37,7 @@
 <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
         <li><a href="#">マイページ</a></li>
         <li><a href="#">チャット</a></li>
-<strong><%= link_to current_admin.username, pages_show_path %></strong>
+<!--<strong>link_to current_admin.username, pages_show_path %></strong>-->
 
 <% else %>
 <div class="header_right_guest">
@@ -52,7 +51,6 @@
     </div>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
--->
   </div>
 </div>
   
