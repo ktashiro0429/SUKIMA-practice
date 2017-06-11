@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD
 
 /*li{*/
 /*    float:right;*/
@@ -152,4 +153,60 @@ footer {
 footer p {
   line-height: 50px;
 }
+ 
+.container{
+    background-color:#3279c5;
+    opacity:0.6;
+    height:90px;
+    
+}
 
+/*sign upページのＣＳＳここから*/
+
+.sign_up{
+    text-align: center;
+    padding-top:50px;
+    width:100%;
+}
+
+.field{
+    margin:auto;
+    padding-right:30px;
+}
+
+.form{
+    text-align:left;
+}
+
+.sign_up_forms{
+    /**/
+    background:rgba(204,204,204,0.3);
+    border:solid 2px DarkSlateGrey;
+    border-radius: 10px;
+    margin-right:25%;
+    margin-left:25%;
+    padding-left:5%;
+    padding-right:5%;
+    text-align:right;
+    padding-bottom:10px;
+}
+
+.field input{
+    border-radius: 5px;
+    border:solid 1px Grey;
+}
+
+.actions input{
+    width:15%;
+    height:25px;
+    background-color: Orange;
+}
+
+.action input:hover{
+    border-radius: 5px;
+}
+.cancel_log_in{
+    padding-top:10px;
+    text-align: center;
+    
+}
