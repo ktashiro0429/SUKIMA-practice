@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<<<<<<< HEAD
 <div class="header">
   <div class="container">
     <div classs="header_left">
@@ -39,6 +40,22 @@
 </div>
   
 </header>
+=======
+  <header>
+        <nav>
+            <% if user_signed_in? %>
+                <strong><%= link_to current_user.username, pages_show_path %></strong>
+                <%= link_to 'プロフィール変更', edit_user_registration_path %>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            <% else %>
+                <%= link_to 'サインアップ', new_user_registration_path %>
+                <%= link_to 'ログイン', new_user_session_path %>
+            <% end %>
+        </nav>
+    </header>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+>>>>>>> 63704405622ca69b141f385485953a4db72b7a93
 <%= yield %>
 
 
