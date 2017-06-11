@@ -13,6 +13,41 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :about %><br />
+    <%= f.text_area :about %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :web %><br />
+    <%= f.text_field :web %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_area :address %>
+    </div>
+  <div class="field">
+    <%= f.label :industry %>
+    <% options = ["製造業","サービス業","小売業"] %>
+    <%= f.select :industry, options %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :sns %>
+    <%= f.text_field :sns %>
+  </div>
+  
+  <div class="image">
+    <%= f.label :image %>
+    <%= f.text_field :image %>
+  </div>
+
+  <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
