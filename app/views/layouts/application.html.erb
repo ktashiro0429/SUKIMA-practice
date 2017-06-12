@@ -31,7 +31,7 @@
       <ul>
         <li><%= link_to 'プロフィール変更', edit_admin_registration_path %></li>
         <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
-        <li><a><%= link_to 'マイページ', @admin %></a></li>
+        <li><a><%= link_to 'マイページ', current_admin %></a></li>
         <li><a href="#">チャット</a></li>
       </ul>
   </div>

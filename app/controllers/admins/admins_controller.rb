@@ -17,7 +17,4 @@ class AdminsController < ApplicationController
         end
     end
   
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :about, :web, :address, :industry, :sns, :image])
-  end
 end
