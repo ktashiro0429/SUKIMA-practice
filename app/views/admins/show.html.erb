@@ -2,7 +2,8 @@
 <h1>マイページ(<%= @admin.name %>)</h1>
 
 <% if @admin.image %>
-    <%= image_tag "/admin_image/#{@admin.image}" %>
+    <%= image_tag @admin.image %>
+      <h4>画像があります</h4>
   <% else %>
     <h4>画像がありません</h4>
   <% end %>
