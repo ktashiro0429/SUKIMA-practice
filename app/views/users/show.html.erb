@@ -1,0 +1,42 @@
+<% provide(:title, @users.name) %>
+<h1>マイページ(<%= @users.name %>)</h1>
+
+<table class="companies">
+<tr>
+<th>名前</th>
+<td><%= @users.name %></td>
+</tr>
+
+<tr>
+<th>性別</th>
+<td><%= @users.gender == 0 ? "男" : "女" %></td>
+</tr>
+
+<tr>
+<th>自己紹介</th>
+<td><%= @users.introduce %></td>
+</tr>
+
+<tr>
+<th>学歴</th>
+<td><%= @users.education %></td>
+</tr>
+
+<tr>
+<th>住所</th>
+<td><%= @users.address %></td>
+</tr>
+
+<tr>
+<th>学生時代頑張ったこと</th>
+<td><%= @users.atschool %></td>
+</tr>
+
+<tr>
+<th>スキル</th>
+<td><%= @users.skills%></td>
+</tr>
+
+</table>
+
+ <p><%= link_to 'プロフィール変更', edit_admin_registration_path %></p>
