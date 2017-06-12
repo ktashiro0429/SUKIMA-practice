@@ -1,6 +1,7 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put,multipart: true}) do |f| %>
   <%= devise_error_messages! %>
 
 <table class="companies">
@@ -43,11 +44,6 @@
   <tr>
     <th><%= f.label :sns %></th>
     <td><%= f.text_field :sns %></td>
-  </tr>
-  
-  <tr>
-    <th><%= f.label :image %></th>
-    <td><%= f.text_field :image %></td>
   </tr>
   
   <tr>
