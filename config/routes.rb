@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'admins/index'
+
+  get 'admins/show'
+
+  get 'users/index'
+
+  get 'users/show'
+
   devise_for :admins
   devise_for :users
   root 'top#index', controllers: {
@@ -11,4 +19,6 @@ Rails.application.routes.draw do
   passwords:     'users/passwords',
   registrations: 'users/registrations'
   }
+   resources :users, :only => [:index, :show]
+  resources :admins, :only => [:index, :show]
 end

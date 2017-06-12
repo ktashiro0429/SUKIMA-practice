@@ -111,6 +111,7 @@ a {
 .container {
   width: 100%;
   overflow: hidden;
+
 }
 
 /*main_image-------------------------------*/
@@ -209,4 +210,31 @@ footer p {
     padding-top:10px;
     text-align: center;
     
+}
+
+
+.companies{
+    margin : auto;
+    text-align: left;
+    border: 1px solid blue;
+}
+
+.companies tr, tr>td, tr>th{
+  border : 1px solid blue;
+  padding-top :10px;
+  padding-bottom : 10px;
+}
+
+.companies th {
+  width:200px;
+  padding-left:10px;
+}
+
+.companies td{
+  width : 300px;
+  padding-left: 10px;
+}
+
+.form{
+  width:250px;
 }

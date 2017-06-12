@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   def index
-    @admins = Admin.all
+     @admins = Admin.all
   end
  
   def show
@@ -16,8 +16,4 @@ class AdminsController < ApplicationController
             render "edit"
         end
     end
-  
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :about, :web, :address, :industry, :sns, :image])
-  end
 end
