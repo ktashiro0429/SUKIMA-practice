@@ -23,7 +23,7 @@
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <li><%= link_to 'マイページ', current_user %></a></li>
         <li><a href="#">チャット</a></li>
-        <li><a href="#">投稿</a></li>
+        <li><a><%= link_to '投稿', :new_entry %></a></li>
         <!--<strong>< link_to current_user.username, pages_show_path %></strong>-->
       </ul>
   </div>
