@@ -19,7 +19,7 @@
       <ul>
         <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-        <li><a href="#">マイページ</a></li>
+        <li><%= link_to 'マイページ', current_user %></a></li>
         <li><a href="#">チャット</a></li>
         <li><a href="#">投稿</a></li>
         <!--<strong>< link_to current_user.username, pages_show_path %></strong>-->

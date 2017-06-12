@@ -3,38 +3,81 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
+<table class="companies">
+  <tr>
+    <th><%= f.label :email %></th>
+    <td><%= f.email_field :email, autofocus: true %></td>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
+  </tr>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <tr>
+    <th><%= f.label :name %></th>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  
+  <tr>
+    <th><%= f.label :gender %></th>
+    <td><%= f.radio_button :gender, 0 %>
+        <%= f.label :gender_0, "男" %>
+        <%= f.radio_button :gender, 1 %>
+        <%= f.label :gender_1, "女" %></td>
+  </tr>
+  
+  <tr>
+    <th><%= f.label :address %></th>
+    <td><%= f.text_field :address %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :introduce %></th>
+    <td><%= f.text_area :introduce %></td>
+  </tr>
+  
+  <tr>
+    <th><%= f.label :education %></th>
+    <td><%= f.text_area :education %></td>
+  </tr>
+  
+  <tr>
+    <th><%= f.label :atschool %></th>
+    <td><%= f.text_area :atschool %></td>
+  </tr>
+  
+  <tr>
+    <th><%= f.label :skills %></th>
+    <td><%= f.text_area :skills %></td>
+  </tr>
+  
+  <tr>
+    <th><%= f.label :password %></th>
+    <td><%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
-  </div>
+    </td>
+  </tr>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    
+  <tr>
+    <th><%= f.label :password_confirmation %></th>
+    <td><%= f.password_field :password_confirmation, autocomplete: "off" %></td>
+  </tr>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+  <tr>
+    <th><%= f.label :current_password %> </th>
+    <td><%= f.password_field :current_password, autocomplete: "off" %></td>
+  </tr>
 
-  <div class="actions">
+  <tr>
+  <th>
+  <td><div class="actions">
     <%= f.submit "Update" %>
-  </div>
+  </div></td>
 <% end %>
+</tr>
+</table>
 
 <h3>Cancel my account</h3>
 
