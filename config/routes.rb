@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'entries/index'
+
+  get 'entries/show'
+
+  get 'entries/new'
+
+  get 'entries/edit'
+
   get 'admins/index'
 
   get 'admins/show'
@@ -21,4 +29,13 @@ Rails.application.routes.draw do
   }
    resources :users, :only => [:index, :show]
   resources :admins, :only => [:index, :show]
+  
+  resources :users do
+    collection {get "search"}
+  resources :entries, only:[:index]
+    end
+
+  resources :ariticles
+  resources :entries
+
 end
