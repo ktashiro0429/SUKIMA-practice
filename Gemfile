@@ -30,12 +30,10 @@ gem 'twitter-bootstrap-rails'
 
 gem 'arel', '6.0.0.beta2'
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 7912f63617f6831af99de52acd88664c7eaf1e2a
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

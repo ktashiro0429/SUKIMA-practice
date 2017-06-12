@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sukima</title>
+  <title>Sukima career</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
+
 <div class="header">
-  <div class="container">
-    <div classs="header_left">
-      <h1>SUKIMA</h1>
-    </div>
-    
-<!-- 学生ログイン時
-<% if user_signed_in? %>
-    <div class="header_right_student"> 
+  <div class="header_left">
+      <h1 class="logo"><a href="index">SUKIMA</a></h1>
+  </div>
+   
+
+<!--学生ログイン時-->
+    <% if user_signed_in? %>
+  <div class="header_right_guest header_right"> 
       <ul>
-<li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
-<li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <li><a href="#">マイページ</a></li>
         <li><a href="#">チャット</a></li>
         <li><a href="#">投稿</a></li>
-<strong><%= link_to current_user.username, pages_show_path %></strong>
+        <!--<strong>< link_to current_user.username, pages_show_path %></strong>-->
       </ul>
-    </div>
--->
-<!-- 企業ログイン時
-<% elsif admin_signed_in? %>
-    <div class="header_right_company">
+  </div>
+<!--企業ログイン時-->
+  <% elsif admin_signed_in? %>
+  <div class="header_right_guest header_right">
       <ul>
-<li><%= link_to 'プロフィール変更', edit_admin_registration_path %></li>
-<li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
+        <li><%= link_to 'プロフィール変更', edit_admin_registration_path %></li>
+        <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
         <li><a href="#">マイページ</a></li>
         <li><a href="#">チャット</a></li>
-<strong><%= link_to current_admin.username, pages_show_path %></strong>
-
-<% else %>
-<div class="header_right_guest">
-      <ul>
-        <li><a href="#">個人</a></li>
-        <li><a href="#">企業</a></li>
-<li><%= link_to 'サインアップ', new_user_registration_path %></li>
-<li><%= link_to 'ログイン', new_user_session_path %></li>
-            <% end %>
       </ul>
-    </div>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
--->
   </div>
+<!--<strong>link_to current_admin.username, pages_show_path %></strong>-->
+  <% else %>
+  <div class="header_right_guest header_right">
+      <ul>
+        <li><%= link_to '個人会員登録', new_user_registration_path %></li>
+        <li><%= link_to '個人ログイン', new_user_session_path %></li>
+        <li><%= link_to "Facebookログイン", user_facebook_omniauth_authorize_path %></li>
+        <li><%= link_to '法人ログイン', new_admin_session_path %></li>
+        
+      </ul>
+  </div>
+  <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+</div>
+<div class="container">
+ 
+  <%= yield %>
 </div>
   
 </header>
-<<<<<<< HEAD
-=======
->>>>>>> yoshino
+
+
   <header>
         <nav>
             <% if user_signed_in? %>
@@ -73,8 +74,7 @@
     </header>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<<<<<<< HEAD
-=======
+
 <div class="header">
   <div class="container">
     <div classs="header_left">
@@ -107,18 +107,15 @@
 </div>
   
 </header>
->>>>>>> テンプレートを編集
-=======
->>>>>>> 63704405622ca69b141f385485953a4db72b7a93
->>>>>>> yoshino
-=======
 
->>>>>>> 5ea4579cd431e9b1b642e00464d9c32baa270cd0
+
 <%= yield %>
 
+=======
+>>>>>>> ca67bb4c9ff4051a5e9077a44e551c71eecd4db2
 
 <footer>
-  <p></p>
+   <p>SUKIMA All right reserved.</p>
 </footer>
 </body>
 </html>
