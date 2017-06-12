@@ -9,8 +9,18 @@ ja:
         remember_me: "ログインを記憶"
         reset_password_token: 
         unlock_token: 
+      entry:
+        title: "タイトル"
+        body: "本文"
+        posted_at: "日時"
+        status: "状態"
+        status_draft: "下書き"
+        status_user_only: "会員限定"
+        status_public: "公開"
     models:
       user: "ユーザ"
+      article: "記事"
+      entry: "投稿"
   devise:
     confirmations:
       confirmed: "アカウントを登録しました。"

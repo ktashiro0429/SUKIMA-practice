@@ -44,11 +44,17 @@ class EntriesController < ApplicationController
     end
   end
   
+   def destroy
+    @entry = current_user.entries.find(params[:id])
+      @entry.destroy
+      redirect_to :entries, notice:"投稿を削除しました"
+    end
+  
   private
     def entry_params
       params.require(:entry).permit(:title, :body, :posted_at, :status)
     end
   
-  
-  
+ 
+
 end
