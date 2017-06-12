@@ -60,59 +60,9 @@
 </header>
 
 
-  <header>
-        <nav>
-            <% if user_signed_in? %>
-                <strong><%= link_to current_user.username, pages_show_path %></strong>
-                <%= link_to 'プロフィール変更', edit_user_registration_path %>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-            <% else %>
-                <%= link_to 'サインアップ', new_user_registration_path %>
-                <%= link_to 'ログイン', new_user_session_path %>
-            <% end %>
-        </nav>
-    </header>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<div class="header">
-  <div class="container">
-    <div classs="header_left">
-      <h1>SUKIMA</h1>
-    </div>
-    <div class="header_right_guest">
-      <ul>
-        <li><a href="#">個人</a></li>
-        <li><a href="#">企業</a></li>
-      </ul>
-    </div>
-<!-- 学生ログイン時
-    <div class="header_right_student"> 
-      <ul>
-        <li><a href="#">マイページ</a></li>
-        <li><a href="#">チャット</a></li>
-        <li><a href="#">投稿</a></li>
-      </ul>
-    </div>
--->
-<!-- 企業ログイン時
-    <div class="header_right_company">
-      <ul>
-        <li><a href="#">マイページ</a></li>
-        <li><a href="#">チャット</a></li>
-      </ul>
-    </div>
--->
-  </div>
-</div>
-  
-</header>
-
 
 <%= yield %>
 
-=======
->>>>>>> ca67bb4c9ff4051a5e9077a44e551c71eecd4db2
 
 <footer>
    <p>SUKIMA All right reserved.</p>
