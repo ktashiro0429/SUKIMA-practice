@@ -53,13 +53,10 @@
     <p class="alert"><%= alert %></p>
 </div>
 <div class="container">
- 
   <%= yield %>
 </div>
   
 </header>
-
-
   <header>
         <nav>
             <% if user_signed_in? %>
@@ -75,17 +72,17 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
-<div class="header">
-  <div class="container">
-    <div classs="header_left">
-      <h1>SUKIMA</h1>
-    </div>
-    <div class="header_right_guest">
-      <ul>
-        <li><a href="#">個人</a></li>
-        <li><a href="#">企業</a></li>
-      </ul>
-    </div>
+<!--<div class="header">-->
+<!--  <div class="container">-->
+<!--    <div classs="header_left">-->
+<!--      <h1>SUKIMA</h1>-->
+<!--    </div>-->
+<!--    <div class="header_right_guest">-->
+<!--      <ul>-->
+<!--        <li><a href="#">個人</a></li>-->
+<!--        <li><a href="#">企業</a></li>-->
+<!--      </ul>-->
+<!--    </div>-->
 <!-- 学生ログイン時
     <div class="header_right_student"> 
       <ul>
@@ -111,8 +108,6 @@
 
 <%= yield %>
 
-=======
->>>>>>> ca67bb4c9ff4051a5e9077a44e551c71eecd4db2
 
 <footer>
    <p>SUKIMA All right reserved.</p>
