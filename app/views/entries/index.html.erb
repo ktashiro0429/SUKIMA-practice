@@ -1,0 +1,17 @@
+<!--< current_user.name + "さんの投稿" %>-->
+
+
+<% if current_user %>
+<p><%= link_to "投稿の作成", :new_entry %></p
+<%end%>
+
+<% if @entries.present? %>
+<% @entries.each do |entry| %>
+    <h2><%= entry.title %></h2>
+    <p><%= truncate(entry.body, lengh: 80) %></p>
+    
+    <p><%= link_to "詳細", entry %></p>
+    <%end%>
+<% else %>
+<p>投稿がありません</p>
+<% end %>
