@@ -1,6 +1,11 @@
 <% provide(:title, @admin.name) %>
 <h1>マイページ(<%= @admin.name %>)</h1>
 
+<% if @admin.image %>
+    <%= image_tag "/admin_image/#{@admin.image}" %>
+  <% else %>
+    <h4>画像がありません</h4>
+  <% end %>
 <table class="companies">
 <tr>
 <th>会社名</th>

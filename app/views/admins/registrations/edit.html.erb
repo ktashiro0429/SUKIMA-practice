@@ -30,7 +30,10 @@
     <th><%= f.label :address %></th>
     <td><%= f.text_area :address %></td>
   </tr>  
-    
+  
+  <tr>
+    <th><%= f.label :image %></th>
+    <td><%= f.file_field :image %></td>
   <tr>
     <th><%= f.label :industry %></th>
     <% options = ["製造業","サービス業","小売業"] %>
