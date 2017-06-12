@@ -104,6 +104,11 @@ a {
   font-weight: bold;
 }
 
+.header_right li:hover {
+  background-color:deepskyblue;
+  opacity:0.9;
+}
+
 /*-----------------------------------------*/
 /*contents                                 */
 /*-----------------------------------------*/
@@ -203,16 +208,16 @@ footer p {
 
 .form{
     text-align:left;
-    padding-top:15px;
+    padding-top:20px;
 }
 
 .sign_up_forms{
     /**/
     background:rgba(204,204,204,0.3);
-    border:solid 2px DarkSlateGrey;
+    border:solid 1px DarkSlateGrey;
     border-radius: 10px;
-    margin-right:25%;
-    margin-left:25%;
+    margin-right:30%;
+    margin-left:30%;
     padding-left:5%;
     padding-right:5%;
     text-align:right;
@@ -270,6 +275,14 @@ footer p {
 
 .form{
   width:250px;
+}
+
+
+/* Log in ページ!!*/
+
+.log_in h2{
+  padding-top:50px;
+  width:100%;
 }
 
 
