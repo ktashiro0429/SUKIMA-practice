@@ -27,15 +27,19 @@ Rails.application.routes.draw do
   passwords:     'users/passwords',
   registrations: 'users/registrations'
   }
-   resources :users, :only => [:index, :show]
+
+  resources :groups, except: [:show, :destroy] do
+    resources :messages, only: [:index, :create]
+  end
+
+  resources :users, :only => [:index, :show]
   resources :admins, :only => [:index, :show]
   
   resources :users do
     collection {get "search"}
-  resources :entries, only:[:index]
-    end
+    resources :entries, only:[:index]
+  end
 
   resources :ariticles
   resources :entries
-
 end
