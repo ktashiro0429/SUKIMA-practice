@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170612124340) do
 
   create_table "admins", force: true do |t|
@@ -59,6 +60,20 @@ ActiveRecord::Schema.define(version: 20170612124340) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "entries", force: true do |t|
+    t.integer  "user_id",                      null: false
+    t.string   "title",                        null: false
+    t.datetime "posted_at",                    null: false
+    t.string   "tag"
+    t.string   "status",     default: "draft", null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.text     "body"
+  end
+
+  add_index "entries", ["user_id"], name: "index_entries_on_user_id"
+
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -76,6 +91,12 @@ ActiveRecord::Schema.define(version: 20170612124340) do
     t.string   "uid"
     t.string   "image"
     t.string   "name"
+    t.text     "introduce"
+    t.string   "education"
+    t.text     "atschool"
+    t.text     "skills"
+    t.integer  "gender",                 default: 0
+    t.text     "address"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

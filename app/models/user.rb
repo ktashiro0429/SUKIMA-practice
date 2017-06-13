@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  mount_uploader :image, ImageUploader
+
+  has_many :entries, dependent: :destroy
 
   #Association
   has_many :messages

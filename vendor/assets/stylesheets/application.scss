@@ -17,9 +17,11 @@
     background-color:#3279c5;
     opacity:0.6;
     height:90px;
-    
 }
 
+.header_left{
+    float:left;
+}
 li{
     float:right;
     list-style:none;
@@ -28,3 +30,12 @@ li{
     font-size:20px;
 }
 
+.sign_up{
+    color:red;
+    padding:100px 0px 100px 0px;
+    text-align: center
+}
+
+.field{
+    font-size: 10px;
+}

@@ -1,0 +1,43 @@
+<% provide(:title, @admin.name) %>
+<h1>マイページ(<%= @admin.name %>)</h1>
+
+<% if @admin.image %>
+    <%= image_tag @admin.image %>
+      <h4>画像があります</h4>
+  <% else %>
+    <h4>画像がありません</h4>
+  <% end %>
+<table class="companies">
+<tr>
+<th>会社名</th>
+<td><%= @admin.name %></td>
+</tr>
+
+<tr>
+<th>会社概要</th>
+<td><%= @admin.about %></td>
+</tr>
+
+<tr>
+<th>ホームページ</th>
+<td><%= @admin.web %></td>
+</tr>
+
+<tr>
+<th>住所</th>
+<td><%= @admin.address %></td>
+</tr>
+
+<tr>
+<th>業界</th>
+<td><%= @admin.industry %></td>
+</tr>
+
+<tr>
+<th>SNSアカウント</th>
+<td><%= @admin.sns %></td>
+</tr>
+
+</table>
+
+ <p><%= link_to 'プロフィール変更', edit_admin_registration_path %></p>
