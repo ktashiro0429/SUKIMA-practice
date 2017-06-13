@@ -6,4 +6,5 @@ class Admin < ActiveRecord::Base
 
   #Association
   has_many :messages
+  has_many :group
 end

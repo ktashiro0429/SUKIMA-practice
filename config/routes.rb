@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   passwords:     'users/passwords',
   registrations: 'users/registrations'
   }
-
+  resources :groups, except: [:show, :destroy] do
+    resources :messages, only: [:index, :create]
+  end
 end
