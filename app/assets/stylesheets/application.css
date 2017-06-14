@@ -475,7 +475,7 @@ footer p {
 .post {
      padding: 0.5em 1em;
     margin: 2em 0 2em 2em;
-    width:28%;
+    width:26%;
     height:350px;
     color: #00BCD4;
     background: #e4fcff;/*背景色*/
@@ -484,11 +484,11 @@ footer p {
 }
 
 
-
-.post_image {
-  background-color: lightgrey;
-  height: 100px;
+.post_image img{
+  width:270px;
+  height:105px;
 }
+  
 
 .user_image img{
   position: relative;

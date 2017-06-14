@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612124340) do
+ActiveRecord::Schema.define(version: 20170614153331) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170612124340) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.text     "body"
+    t.text     "image"
   end
 
   add_index "entries", ["user_id"], name: "index_entries_on_user_id"
