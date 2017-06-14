@@ -1,7 +1,10 @@
 <% provide(:title, @users.name) %>
 <h1>マイページ(<%= @users.name %>)</h1>
 
+<div class="image">
  <%= image_tag @users.image %>
+</div>
+ 
 <table class="companies">
 <tr>
 <th>名前</th>

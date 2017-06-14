@@ -1,0 +1,36 @@
+.image img{
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    z-index:-1;
+    /*-moz-border-image: border-radius: 150px;*/
+    /*-webkit-border-image: border-radius: 150px;*/
+}
+
+
+.companies{
+    margin : auto;
+    text-align: left;
+}
+
+.companies tr, tr>td, tr>th{
+  padding-top :10px;
+  padding-bottom : 10px;
+}
+
+.companies th {
+  width:200px;
+  padding-left:10px;
+}
+
+.companies td{
+  width : 300px;
+  padding-left: 10px;
+}
+
+.form{
+  width:250px;
+}
+

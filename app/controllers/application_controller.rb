@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
+
   protected
   
   def configure_permitted_parameters
@@ -11,4 +12,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :about, :web, :address, :industry, :sns, :image,  :introduce, :gender, :education, :atschool, :skills])
     devise_parameter_sanitizer.permit(:sign_in, keys: [:name, :about, :web, :address, :industry, :sns, :image,  :introduce, :gender, :education, :atschool, :skills])
   end
+
 end

@@ -217,7 +217,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  arel (= 6.0.0.beta2)
   byebug
   carrierwave
   coffee-rails (~> 4.0.0)
