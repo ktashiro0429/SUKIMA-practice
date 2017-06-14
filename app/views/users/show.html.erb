@@ -1,9 +1,11 @@
 <% provide(:title, @users.name) %>
-<h1>マイページ(<%= @users.name %>)</h1>
 
+
+<div class="profile">
 <div class="image">
  <%= image_tag @users.image %>
 </div>
+<h2><%= @users.name %></h2>
  
 <table class="companies">
 <tr>
@@ -45,3 +47,5 @@
 
  <p><%= link_to 'プロフィール変更', edit_admin_registration_path %></p>
  <p><%= link_to '投稿一覧', :entries %></p>
+</div>
+ 

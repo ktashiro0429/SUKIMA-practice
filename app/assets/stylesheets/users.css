@@ -1,13 +1,15 @@
 .image img{
     position: relative;
     overflow: hidden;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     z-index:-1;
+    text-align: left;
     /*-moz-border-image: border-radius: 150px;*/
     /*-webkit-border-image: border-radius: 150px;*/
 }
+
 
 
 .companies{

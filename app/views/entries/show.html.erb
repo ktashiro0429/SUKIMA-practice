@@ -1,12 +1,11 @@
 <h1><%= @entry.author.name %>さんの投稿</h1>
 <h2><%= @entry.title %></h2>
 
-<% if current_user == @entry.author %>
+    <% if current_user == @entry.author %>
 
-<p><%= link_to "編集", [:edit, @entry] %></p>
+        <p><%= link_to "編集", [:edit, @entry] %></p>
 
-<% end %>
+    <% end %>
 
-<%= simple_format(@entry.body) %>
-
+    <%= simple_format(@entry.body) %>
 <%= render "footer", entry: @enrty %>
