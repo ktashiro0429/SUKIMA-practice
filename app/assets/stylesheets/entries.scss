@@ -4,10 +4,21 @@
 .entry_edit{
     margin:auto;
     text-align:left;
+    
 }
 
 .entry_edit th{
 }
 
 .entry_edit td{
+}
+
+.entry_image{
+//  filter: blur(1px);
+ z-index:-1;
+ overflow: hidden;
+}
+
+.entry{
+    margin:auto;
 }
