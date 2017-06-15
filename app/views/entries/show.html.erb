@@ -6,7 +6,7 @@
     <%= image_tag @entry.author.image %>
 </div>
 
-
+<div class="entry_text">
 <h4><%= @entry.author.name %></h4>
 
 <h2><%= @entry.title %></h2>
@@ -17,9 +17,9 @@
         <p><%= link_to "編集", [:edit, @entry] %></p>
 
     <% end %>
-        
+</div>        
         <p><%= simple_format(@entry.body) %></p>
-    
+
 </table>
     <% if admin_signed_in? %>
         <p><input type="button" value="この人とチャットする"></p>

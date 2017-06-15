@@ -32,9 +32,9 @@
     <div class="post">
       <div class="post_image"><%= image_tag entry.image %></div>
       <div class="user_image"><%= image_tag entry.author.image %></div>
-      <div class="post_text">
+        <div class="post_text">
+      <p class="name"><%= link_to entry.author.name, entry.author %></p>
         <h3><%= entry.title %></h3>
-        <p class="name"><%= link_to entry.author.name, entry.author %></p>
         <p><%= link_to "詳細", entry %></p>
         <ul>
           <li><a href="">タグ</a></li>
