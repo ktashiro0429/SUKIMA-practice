@@ -1,4 +1,8 @@
-<h1><%= @entry.author.name %>さんの投稿</h1>
+<div class="image">
+    <%= image_tag @entry.author.image %>
+</div>
+<p><%= @entry.author.name %></p>
+
 <h2><%= @entry.title %></h2>
 
     <% if current_user == @entry.author %>
@@ -8,4 +12,8 @@
     <% end %>
 
     <%= simple_format(@entry.body) %>
+    
+    <% if admin_signed_in? %>
+        <p><input type="button" value="この人とチャットする"></p>
+    <% end %>
 <%= render "footer", entry: @enrty %>
