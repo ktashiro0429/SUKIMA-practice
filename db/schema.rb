@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20170612124340) do
 
   create_table "admins", force: true do |t|
@@ -44,6 +43,19 @@ ActiveRecord::Schema.define(version: 20170612124340) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "entries", force: true do |t|
+    t.integer  "user_id",                      null: false
+    t.string   "title",                        null: false
+    t.datetime "posted_at",                    null: false
+    t.string   "tag"
+    t.string   "status",     default: "draft", null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.text     "body"
+  end
+
+  add_index "entries", ["user_id"], name: "index_entries_on_user_id"
+
   create_table "groups", force: true do |t|
     t.integer  "user_id"
     t.integer  "admin_id"
@@ -59,20 +71,6 @@ ActiveRecord::Schema.define(version: 20170612124340) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "entries", force: true do |t|
-    t.integer  "user_id",                      null: false
-    t.string   "title",                        null: false
-    t.datetime "posted_at",                    null: false
-    t.string   "tag"
-    t.string   "status",     default: "draft", null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.text     "body"
-  end
-
-  add_index "entries", ["user_id"], name: "index_entries_on_user_id"
-
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

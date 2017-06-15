@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   }
 
   resources :groups, except: [:show, :destroy] do
-    resources :messages, only: [:index, :create]
+    resources :messages, except: [:show]
   end
 
   resources :users, :only => [:index, :show]

@@ -83,7 +83,17 @@
                       <p><%= group.user.name %><p>
                     <% else %>
                       <p><%= group.admin.name %><p>
-                    <% end %>                    <p><%= group.messages[0].message %></p>
+                    <% end %>
+                    <% if group.messages.exists? %>
+                      <% if group.messages.last.admin_id? %>
+                        <p><%= group.messages.last.admin.name %>
+                      <% else %>
+                        <p><%= group.messages.last.user.name %>
+                      <% end %>
+                      :<%= group.messages.last.message %></p>
+                    <% else %>
+                      <p>メッセージはありません。</p>
+                    <% end %>
                   </div>
                 </a>
               </li>
@@ -102,11 +112,19 @@
                   <% if message.user_id.blank? %>
                     <p><%= message.admin.name %></p>
                     <p><%= message.message %></p>
+                    <% if current_user.id == message.user_id || current_user.id == message.admin_id %>
+                      <%= link_to "編集", edit_group_message_path(message) %>
+                      <p>/</p>
+                      <%= link_to "削除" "/groups/#{message.group_id}/message/#{message.id}", method: :delete  %>
+                    <% end %>
                   <% else %>
                     <img src="<% message.user.image %>" alt="" >
-
                     <p><%= message.user.name %></p>
                     <p><%= message.message %></p>
+                    <% if current_user.id == message.user_id || current_user.id == message.admin_id %>
+                      <%= link_to "編集", edit_group_message_path(@group, message) %>/
+                      <%= link_to "削除", "/groups/#{message.group_id}/messages/#{message.id}", method: :delete  %>
+                    <% end %>
                   <% end %>
                 <% end %>
               <% end %>

@@ -61,9 +61,6 @@
     width: 360px;
     border: solid #008080;
   }
-
-insert into groups values(1, 4, 1, )
-
 </style>
 
 <div class="main">
@@ -93,7 +90,7 @@ insert into groups values(1, 4, 1, )
                       <% else %>
                         <p><%= group.messages.last.user.name %>
                       <% end %>
-                        :<%= group.messages.last.message %></p>
+                      :<%= group.messages.last.message %></p>
                     <% else %>
                       <p>メッセージはありません。</p>
                     <% end %>
@@ -105,6 +102,36 @@ insert into groups values(1, 4, 1, )
         </div>
       </div>
       <div class=user-messages-new-container ">
+        <ul class="user-messages-threads">
+          <li>
+            <div class="user-messages-thread-body">
+              <% if @group.messages.empty? %>
+                <p>履歴なし</p>
+              <% else %>
+                <% @group.messages.each do |message| %>
+                  <% if message.user_id.blank? %>
+                    <p><%= message.admin.name %></p>
+                    <p><%= message.message %></p>
+                  <% else %>
+                    <img src="<% message.user.image %>" alt="" >
+
+                    <p><%= message.user.name %></p>
+                    <p><%= message.message %></p>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+        <%= form_for [@group, @message], method: :patch do |f| %>
+          <div class="field">
+            <%= f.label :message %>
+            <%= f.text_field :message, value: @message.message %>
+          </div>
+          <div class="actions">
+            <%= f.submit "送信" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

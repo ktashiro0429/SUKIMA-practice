@@ -6,7 +6,7 @@ class Admin < ActiveRecord::Base
 
   #Association
   has_many :messages
-  has_many :group
-  
+  has_many :groups
+
   mount_uploader :image, ImageUploader
 end
