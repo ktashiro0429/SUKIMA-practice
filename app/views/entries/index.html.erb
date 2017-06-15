@@ -1,17 +1,118 @@
-<!--< current_user.name + "さんの投稿" %>-->
+<div id="main_image"></div>
+
+  <div class="tags">
+    <h5>category</h5>
+    <ul>
+      <li><a href="">エンジニア</a></li>
+      <li><a href="">営業</a></li>
+      <li><a href="">デザイン</a></li>
+      <li><a href="">サービス</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+    </ul>
+  </div>
+  
 
 
-<% if current_user %>
-<p><%= link_to "投稿の作成", :new_entry %></p
-<%end%>
-
-<% if @entries.present? %>
+<div class="posts">
 <% @entries.each do |entry| %>
-    <h2><%= entry.title %></h2>
-    <p><%= truncate(entry.body, lengh: 80) %></p>
-    
-    <p><%= link_to "詳細", entry %></p>
-    <%end%>
-<% else %>
-<p>投稿がありません</p>
+    <div class="post">
+      <div class="post_image"><%= image_tag entry.image %></div>
+      <div class="user_image"><%= image_tag entry.author.image %></div>
+      <div class="post_text">
+        <h3><%= entry.title %></h3>
+        <p class="name"><%= link_to entry.author.name, entry.author %></p>
+        <p><%= link_to "詳細", entry %></p>
+        <ul>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+        </ul>
+      </div>
+    </div>
 <% end %>
+
+  <!--  <div class="post">-->
+  <!--    <div class="post_image"></div>-->
+  <!--    <div class="user_image"></div>-->
+  <!--    <div class="post_text">-->
+  <!--      <h3>営業がしたい</h3>-->
+  <!--      <p class="name">松口健司</p>-->
+  <!--      <ul>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--      </ul>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <!--  <div class="post">-->
+  <!--    <div class="post_image"></div>-->
+  <!--    <div class="user_image"></div>-->
+  <!--    <div class="post_text">-->
+  <!--      <h3>営業がしたい</h3>-->
+  <!--      <p class="name">松口健司</p>-->
+  <!--      <ul>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--      </ul>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <!--  <div class="post">-->
+  <!--    <div class="post_image"></div>-->
+  <!--    <div class="user_image"></div>-->
+  <!--    <div class="post_text">-->
+  <!--      <h3>営業がしたい</h3>-->
+  <!--      <p class="name">松口健司</p>-->
+  <!--      <ul>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--      </ul>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <!--  <div class="post">-->
+  <!--    <div class="post_image"></div>-->
+  <!--    <div class="user_image"></div>-->
+  <!--    <div class="post_text">-->
+  <!--      <h3>営業がしたい</h3>-->
+  <!--      <p class="name">松口健司</p>-->
+  <!--      <ul>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--      </ul>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <!--  <div class="post">-->
+  <!--    <div class="post_image"></div>-->
+  <!--    <div class="user_image"></div>-->
+  <!--    <div class="post_text">-->
+  <!--      <h3>営業がしたい</h3>-->
+  <!--      <p class="name">松口健司</p>-->
+  <!--      <ul>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--        <li><a href="">タグ</a></li>-->
+  <!--      </ul>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</div>-->
+<!--< current_user.name + "さんの投稿" %>-->

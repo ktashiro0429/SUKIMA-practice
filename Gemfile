@@ -28,9 +28,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 
-gem 'arel', '6.0.0.beta2'
-
-
 gem 'devise'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'

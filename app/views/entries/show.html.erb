@@ -1,12 +1,27 @@
-<h1><%= @entry.author.name %>さんの投稿</h1>
+<div class="entry_image">
+    <%= image_tag @entry.image %>
+</div>
+
+<div class="image">
+    <%= image_tag @entry.author.image %>
+</div>
+
+
+<h4><%= @entry.author.name %></h4>
+
 <h2><%= @entry.title %></h2>
 
-<% if current_user == @entry.author %>
 
-<p><%= link_to "編集", [:edit, @entry] %></p>
+    <% if current_user == @entry.author %>
 
-<% end %>
+        <p><%= link_to "編集", [:edit, @entry] %></p>
 
-<%= simple_format(@entry.body) %>
-
+    <% end %>
+        
+        <p><%= simple_format(@entry.body) %></p>
+    
+</table>
+    <% if admin_signed_in? %>
+        <p><input type="button" value="この人とチャットする"></p>
+    <% end %>
 <%= render "footer", entry: @enrty %>

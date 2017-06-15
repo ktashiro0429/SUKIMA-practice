@@ -49,12 +49,12 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  def after_sign_up_path_for(edit_admin_registration_path)
-     super(edit_admin_registration_path)
-   end
+  #def after_sign_up_path_for(edit_admin_registration_path)
+   #  super(edit_admin_registration_path)
+  # end
 
   # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
+  #def after_inactive_sign_up_path_for(edit_admin_registration_path)
+  #   super(edit_admin_registration_path)
   # end
 end

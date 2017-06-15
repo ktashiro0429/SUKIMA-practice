@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(window).on('scroll', function() {
+    $('.header').toggleClass('fixed', $(this).scrollTop() > 50);
+});
