@@ -475,7 +475,7 @@ footer p {
 .post {
      padding: 0.5em 1em;
     margin: 2em 0 2em 2em;
-    width:26%;
+    width:32%;
     height:350px;
     color: #00BCD4;
     background: #e4fcff;/*背景色*/
@@ -497,6 +497,7 @@ footer p {
   height: 70px;
   margin: auto;
   border-radius: 40px;
+  border:5px solid white;
 }
 
 .post_text {
