@@ -22,6 +22,11 @@
 
 </table>
     <% if admin_signed_in? %>
-        <p><input type="button" value="この人とチャットする"></p>
+      <%= form_for @group do |f| %>
+        <div class="button">
+          <%= f.hidden_field :user_id, user_id: @group.id %>
+          <%= f.submit "チャットはこちらから" %>
+        </div>
+      <% end %>
     <% end %>
 <%= render "footer", entry: @enrty %>

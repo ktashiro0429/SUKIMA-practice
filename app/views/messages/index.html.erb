@@ -112,18 +112,21 @@
                   <% if message.user_id.blank? %>
                     <p><%= message.admin.name %></p>
                     <p><%= message.message %></p>
-                    <% if current_user.id == message.user_id || current_user.id == message.admin_id %>
-                      <%= link_to "編集", edit_group_message_path(message) %>
-                      <p>/</p>
-                      <%= link_to "削除" "/groups/#{message.group_id}/message/#{message.id}", method: :delete  %>
+                    <% unless current_admin.nil? %>
+                      <% if current_admin.id == message.admin_id %>
+                        <%= link_to "編集", edit_group_message_path(@group, message) %>/
+                        <%= link_to "削除", "/groups/#{message.group_id}/messages/#{message.id}", method: :delete  %>
+                      <% end %>
                     <% end %>
                   <% else %>
                     <img src="<% message.user.image %>" alt="" >
                     <p><%= message.user.name %></p>
                     <p><%= message.message %></p>
-                    <% if current_user.id == message.user_id || current_user.id == message.admin_id %>
-                      <%= link_to "編集", edit_group_message_path(@group, message) %>/
-                      <%= link_to "削除", "/groups/#{message.group_id}/messages/#{message.id}", method: :delete  %>
+                    <% unless current_user.nil? %>
+                      <% if current_user.id == message.user_id %>
+                        <%= link_to "編集", edit_group_message_path(@group, message) %>/
+                        <%= link_to "削除", "/groups/#{message.group_id}/messages/#{message.id}", method: :delete  %>
+                      <% end %>
                     <% end %>
                   <% end %>
                 <% end %>
@@ -144,3 +147,4 @@
     </div>
   </div>
 </div>
+
