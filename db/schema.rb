@@ -47,9 +47,9 @@ ActiveRecord::Schema.define(version: 20170614153331) do
     t.integer  "user_id",                        null: false
     t.string   "title",                          null: false
     t.datetime "posted_at",                      null: false
-    t.string   "industry",                       null: false
-    t.string   "job_category",                   null: false
-    t.string   "area",                           null: false
+    t.string   "industry"
+    t.string   "job_category"
+    t.string   "area"
     t.string   "status",       default: "draft", null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
