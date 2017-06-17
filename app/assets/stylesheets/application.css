@@ -14,10 +14,16 @@
 /*    font-size:20px;*/
 /*}*/
 
+.continer-fluid{
+    background: -webkit-linear-gradient(left, #F5F5DC 50%,  #fff 50%);
+    background: linear-gradient(to right, #F5F5DC50%,  #fff 50%);
+}
+
 body {
   margin: 0;
   padding: 0;
   text-align: center;
+  background-color: #F5F5DC;
 }
 
 *{
@@ -112,8 +118,8 @@ a {
 /*contents                                 */
 /*-----------------------------------------*/
 .container {
-  width: 100%;
   overflow: hidden;
+  background-color: #F5F5DC;
 
 }
 
@@ -180,8 +186,7 @@ footer p{
 }
 
 .post_image {
-  background-color: lightgrey;
-  height: 100px;
+  height: 110px;
 }
 
 .user_image {
@@ -475,7 +480,7 @@ footer p {
 .post {
      padding: 0.5em 1em;
     margin: 2em 0 2em 2em;
-    width:26%;
+    width:30%;
     height:350px;
     color: #00BCD4;
     background: #e4fcff;/*背景色*/
@@ -497,9 +502,11 @@ footer p {
   height: 70px;
   margin: auto;
   border-radius: 40px;
+  border:5px solid white;
 }
 
 .post_text {
+  background:white;
   height: 100px;
   margin-top: 35px;
   padding-top: 10px;
