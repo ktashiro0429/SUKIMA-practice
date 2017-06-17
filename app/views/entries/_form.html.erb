@@ -4,7 +4,18 @@
         <th width ="80"><%= form.label :title %></th>
         <td><%= form.text_field :title, :placeholder => "タイトルを入力してください。", size: 50 %></td>
     </tr>
-    
+    <tr>
+        <th width ="80"><%= form.label :industry %></th>
+        <td><%= form.select :industry, {メーカー: "maker", 商社: "trading_company"} %></td>
+    </tr>
+    <tr>
+        <th width ="80"><%= form.label :job_category %></th>
+        <td><%= form.select :job_category, {企画: "planning", 営業: "sales", エンジニア: "engineer"} %></td>
+    </tr>
+    <tr>
+        <th width ="80"><%= form.label :area %></th>
+        <td><%= form.select :area, {福岡: "fukuoka", 東京: "tokyo"}%></td>
+    </tr>
     <tr>
         <th><%= form.label :body %></th>
         <td><%= form.text_area :body, rows: 10, cols: 80, :placeholder =>

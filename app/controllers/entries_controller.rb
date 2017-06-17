@@ -49,10 +49,15 @@ class EntriesController < ApplicationController
       @entry.destroy
       redirect_to :entries, notice:"投稿を削除しました"
     end
-  
+
+  def search
+    @entries = Entry.where(job_category: params[:keyword])
+  end
+
   private
     def entry_params
-      params.require(:entry).permit(:title, :body, :posted_at, :status, :image)
+      binding.pry
+      params.require(:entry).permit(:title, :body, :posted_at, :status, :image, :industry, :job_category, :area)
     end
   
  

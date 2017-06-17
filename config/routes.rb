@@ -41,5 +41,7 @@ Rails.application.routes.draw do
   end
 
   resources :ariticles
-  resources :entries
+  resources :entries do 
+    collection {get "search"}
+  end
 end
