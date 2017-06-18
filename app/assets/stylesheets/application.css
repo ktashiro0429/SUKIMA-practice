@@ -189,6 +189,7 @@ footer p{
 
 .post_image {
   height: 110px;
+  border-radius: 20px;
 }
 
 .user_image {
@@ -209,7 +210,16 @@ footer p{
   margin-right: 5px;
 }
 
- 
+.message_user_image img{
+  text-align:left;
+  left:20%;
+  width: 70px;
+  height: 70px;
+  /*top:20px;*/
+  /*margin: -35px auto;*/
+  border-radius: 40px;
+  background-color: black;
+} 
  
 
 /*sign upページのＣＳＳここから*/

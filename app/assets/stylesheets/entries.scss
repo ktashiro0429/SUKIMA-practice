@@ -13,12 +13,14 @@
 }
 
 .entry_image img{
- top: 50px;
+ border-radius:20px;
+ top: 55px;
  width:35%;
  height:auto;
  position:relative;
- filter: blur(1px);
- z-index:2;
+//  filter: blur(1px);
+ overflow:hidden;
+ z-index:0;
 }
 
 .entry{

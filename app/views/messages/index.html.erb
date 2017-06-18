@@ -57,10 +57,19 @@
     list-style: none;
   }
   .group-box{
-    height: 88px;
+    height: 150px;
     width: 360px;
     border: solid #008080;
   }
+  .message_user_image img{
+  text-align:left;
+  width: 70px;
+  height: 70px;
+  /*top:20px;*/
+  /*margin: -35px auto;*/
+  border-radius: 40px;
+  background-color: black;
+} 
 </style>
 
 <div class="main">
@@ -78,7 +87,9 @@
               <li>
                 <a href="/groups/<%= group.id %>/messages" title="">
                   <div class="group-box">
-                    <p>アイコン挿入</p>
+                    <div class="message_user_image">
+                    <%= image_tag group.user.image %>
+                    </div>
                     <% if current_user.nil? %>
                       <p><%= group.user.name %><p>
                     <% else %>
