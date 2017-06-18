@@ -1,3 +1,4 @@
+<div class="show">
 <div class="entry_image">
     <%= image_tag @entry.image %>
 </div>
@@ -14,13 +15,12 @@
 
     <% if current_user == @entry.author %>
 
-        <p><%= link_to "編集", [:edit, @entry] %></p>
+        <!--<p>%= link_to "編集", [:edit, @entry] %></p>-->
 
     <% end %>
 </div>        
         <p><%= simple_format(@entry.body) %></p>
 
-</table>
     <% if admin_signed_in? %>
       <%= form_for @group do |f| %>
         <div class="button">
@@ -30,3 +30,4 @@
       <% end %>
     <% end %>
 <%= render "footer", entry: @enrty %>
+</div>

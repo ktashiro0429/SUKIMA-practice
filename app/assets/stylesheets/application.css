@@ -350,9 +350,10 @@ a {
   height:70px;
   width:100%;
   background-color:skyblue;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .fixed {
+    z-index: 100;
     position:fixed;
     height:71px;
     width:100%;
@@ -364,12 +365,14 @@ a {
   float: left;
   position:fixed;
   background-color:skyblue;
+  z-index: 100;
 }
 
 .header_left a {
   border: 3px solid white;
   color: white;
   padding: 5px;
+  z-index: 100;
 }
 
 .header_left a:hover {
