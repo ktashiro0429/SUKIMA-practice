@@ -15,8 +15,10 @@
 /*}*/
 
 .continer-fluid{
-    background: -webkit-linear-gradient(left, #F5F5DC 50%,  #fff 50%);
-    background: linear-gradient(to right, #F5F5DC50%,  #fff 50%);
+    background: -webkit-linear-gradient(left, #F5F5DC 100%,  #fff 50%);
+    /*background: linear-gradient(to right, #F5F5DC50%, #fff 50%);*/
+    background: -webkit-linear-gradient(right, #F5F5DC 100%,  #fff 50%);
+    /*background: linear-gradient(to left, #F5F5DC50%,  #fff 50%);*/
 }
 
 body {
@@ -483,7 +485,7 @@ footer p {
     width:30%;
     height:350px;
     color: #00BCD4;
-    background: #e4fcff;/*背景色*/
+    background: #F5DEB3; /*#e4fcff;背景色*/
     border-top: solid 6px #1dc1d6;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
 }
@@ -506,10 +508,11 @@ footer p {
 }
 
 .post_text {
-  background:white;
-  height: 100px;
-  margin-top: 35px;
-  padding-top: 10px;
+  border-radius: 10px;
+  background:#FDF5E6;
+  height: 180px;
+  /*margin-top: 35px;*/
+  /*padding-top: 10px;*/
   color:black
 }
 
