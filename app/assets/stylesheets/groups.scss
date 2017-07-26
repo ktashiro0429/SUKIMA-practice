@@ -1,3 +1,54 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// カラーコード一覧
+// #85CBBF(ちょっと濃い緑) #D3F2E9(一番薄い緑) #064444(濃緑) #58858E(紺色)
+
+
+// common
+
+// スマホ
+@media screen and (max-width: 640px) {
+  .contents-box {
+    overflow: hidden;
+    min-height: 83.5vh;
+
+  }
+
+
+  .title {
+    background: #D3F2E9;
+    height: 85%;
+    width: 85%;
+    margin: 10px 0;
+  }
+
+  .groups-box {
+    background: #D3F2E9;
+  }
+
+  .group-box {
+    height: 100px;
+    background: #fff;
+    margin-bottom: 10px;
+    line-height: 10px;
+  }
+
+  .icon {
+    height: 60px;
+    width: 60px;
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .summary {
+    text-align: left;
+    padding-top: 25px;
+    overflow: hidden;
+  }
+
+}
+// PC

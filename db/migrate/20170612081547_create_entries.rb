@@ -4,7 +4,9 @@ class CreateEntries < ActiveRecord::Migration
       t.references :user, null:false
       t.string :title, null:false
       t.datetime :posted_at, null:false
-      t.string :tag
+      t.string :industry
+      t.string :job_category
+      t.string :area
       t.string :status, null: false, default:"draft"
       t.timestamps null: false
     end

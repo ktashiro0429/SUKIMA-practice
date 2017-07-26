@@ -1,0 +1,46 @@
+<div id="main_image"></div>
+
+  <div class="tags">
+    <h5>category</h5>
+    <ul>
+      <li><%= link_to "企画", search_entries_path(keyword: "planning")%></li>
+      <li><a href="">営業</a></li>
+      <li><a href="">デザイン</a></li>
+      <li><a href="">サービス</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+      <li><a href="">てすと</a></li>
+    </ul>
+  </div>
+  
+
+
+<div class="posts">
+<% @entries.each do |entry| %>
+    <div class="post">
+      <div class="post_image"><%= image_tag entry.image %></div>
+      <div class="user_image"><%= image_tag entry.author.image %></div>
+      <div class="post_text">
+        <h3><%= entry.title %></h3>
+        <p class="name"><%= link_to entry.author.name, entry.author %></p>
+        <p><%= link_to "詳細", entry %></p>
+        <ul>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+        </ul>
+      </div>
+    </div>
+<% end %>

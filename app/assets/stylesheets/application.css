@@ -15,17 +15,15 @@
 /*}*/
 
 .continer-fluid{
-    background: -webkit-linear-gradient(left, #F5F5DC 100%,  #fff 50%);
-    /*background: linear-gradient(to right, #F5F5DC50%, #fff 50%);*/
-    background: -webkit-linear-gradient(right, #F5F5DC 100%,  #fff 50%);
-    /*background: linear-gradient(to left, #F5F5DC50%,  #fff 50%);*/
+    background: -webkit-linear-gradient(left, #D3F2E9 50%,  #fff 50%);
+    background: linear-gradient(to right, #D3F2E9 50%,  #fff 50%);
 }
 
 body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: #F5F5DC;
+  background-color: #D3F2E9;
 }
 
 *{
@@ -121,7 +119,7 @@ a {
 /*-----------------------------------------*/
 .container {
   overflow: hidden;
-  background-color: #F5F5DC;
+  background-color: #D3F2E9;
 
 }
 
@@ -189,7 +187,6 @@ footer p{
 
 .post_image {
   height: 110px;
-  border-radius: 20px;
 }
 
 .user_image {
@@ -210,16 +207,7 @@ footer p{
   margin-right: 5px;
 }
 
-.message_user_image img{
-  text-align:left;
-  left:20%;
-  width: 70px;
-  height: 70px;
-  /*top:20px;*/
-  /*margin: -35px auto;*/
-  border-radius: 40px;
-  background-color: black;
-} 
+ 
  
 
 /*sign upページのＣＳＳここから*/
@@ -360,10 +348,9 @@ a {
   height:70px;
   width:100%;
   background-color:skyblue;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 .fixed {
-    z-index: 100;
     position:fixed;
     height:71px;
     width:100%;
@@ -375,14 +362,12 @@ a {
   float: left;
   position:fixed;
   background-color:skyblue;
-  z-index: 100;
 }
 
 .header_left a {
   border: 3px solid white;
   color: white;
   padding: 5px;
-  z-index: 100;
 }
 
 .header_left a:hover {
@@ -498,7 +483,7 @@ footer p {
     width:30%;
     height:350px;
     color: #00BCD4;
-    background: #F5DEB3; /*#e4fcff;背景色*/
+    background: #e4fcff;/*背景色*/
     border-top: solid 6px #1dc1d6;
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
 }
@@ -521,11 +506,10 @@ footer p {
 }
 
 .post_text {
-  border-radius: 10px;
-  background:#FDF5E6;
-  height: 180px;
-  /*margin-top: 35px;*/
-  /*padding-top: 10px;*/
+  background:white;
+  height: 100px;
+  margin-top: 35px;
+  padding-top: 10px;
   color:black
 }
 

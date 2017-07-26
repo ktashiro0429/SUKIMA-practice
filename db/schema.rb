@@ -44,13 +44,15 @@ ActiveRecord::Schema.define(version: 20170614153331) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "entries", force: true do |t|
-    t.integer  "user_id",                      null: false
-    t.string   "title",                        null: false
-    t.datetime "posted_at",                    null: false
-    t.string   "tag"
-    t.string   "status",     default: "draft", null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.integer  "user_id",                        null: false
+    t.string   "title",                          null: false
+    t.datetime "posted_at",                      null: false
+    t.string   "industry"
+    t.string   "job_category"
+    t.string   "area"
+    t.string   "status",       default: "draft", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.text     "body"
     t.text     "image"
   end
