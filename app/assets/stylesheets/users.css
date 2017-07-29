@@ -44,7 +44,6 @@
 .entry_edit{
     margin:auto;
     text-align:left;
-    
 }
 
 .entry_edit th{
@@ -66,3 +65,478 @@
     margin:auto;
 }
 
+
+/* users/registration/index.html.erbのSCSS */
+
+@media screen and (max-width: 640px) {
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    font-family:'Hiragino Kaku Gothic ProN W3', sans-serif;
+  }
+
+  /*.header{
+    display:fixed;
+    border-bottom:1px solid #777;
+  }
+
+  .countainer{
+    width:1170px;
+    text-align:center;
+  }
+
+  .header_left{
+    float:left;
+  }
+
+  .header_right li{
+    float:right;
+    padding-left:20px;
+  }*/
+
+  .new_post{
+    background-color: #D3F2E9;
+    color:#064444;
+  }
+
+  .new_post h2{
+    opacity:0.6;
+    font-size:40px;
+  }
+
+  .row{
+    padding:0px 13%;
+  }
+
+  .post_head{
+    padding-top:15px;
+    padding-bottom:15px;
+    text-align:center;
+    font-size:35px;
+  }
+
+  .post_head h2{
+    display:inline-block;
+    vertical-align: bottom;
+    border-bottom: solid 3px #064444;
+  }
+
+
+  .post_kind{
+    font-size:5px;
+  }
+
+  .post_title{
+    font-size:25px;
+    padding-bottom:60px;
+  }
+
+  .post_form{
+    border: hidden;
+    height:50px;
+    width:100%;
+  }
+
+  .post_body{
+    font-size:25px;
+    margin-bottom: 50px;
+  }
+
+  .post_body h3{
+    text-align:left;
+  }
+
+  .post_body textarea{
+    width:100%;
+    border:hidden;
+    height:500px;
+    font-size:25px;
+    padding-top:5px;
+    padding-left:7px;
+    box-shadow:3px 3px 2px rgba(122,122,122,0.7);
+  }
+
+  .post_kind h3{
+    font-size:30px;
+  }
+
+  .post_kind a{
+    text-align:center;
+    display:inline-block;
+    color:#064444;
+    margin:10px 10px;
+    height:70px;
+    width:160px;
+    font-size:20px;
+    padding-top:15px;
+    background-color:white;
+    text-align:center;
+    border-radius: 20px;
+    box-shadow:6px 6px 4px rgba(122,122,122,0.7);
+  }
+
+  .post_in{
+    text-align:center;
+    padding-bottom:5px;
+    padding-top:40px;
+    font-size:25px;
+  }
+
+  textarea::-webkit-input-placeholder {
+    color: #ccc;
+    font-size:25px;
+  }
+
+  input .normal-input:not(.radio01-input ){
+    font-size:25px;
+    line-height:50px;
+    padding-left:7px;
+    box-shadow:3px 3px 2px rgba(122,122,122,0.7);
+  }
+
+  input::-webkit-input-placeholder{
+    color:#ccc;
+  }
+
+  .input_btn{
+    margin:0 auto;
+    background-color:#58858E;
+    color:white;
+    text-align:center;
+    width:180px;
+    /*padding-top:8px;*/
+    /*padding-bottom:8px;*/
+    border-radius:50px;
+    font-size:20px;
+    /*line-height:36px;*/
+  }
+
+  .input_btn{
+    display:inline-block;
+    line-height: 36px;
+    padding: 8px;
+  }
+
+  img.post_img{
+    display:inline-block;
+    vertical-align: middle;
+    width:40px;
+    height:40px;
+  }
+
+  .body_ya{
+    background-color: #D3F2E9;
+    color:#064444;
+    height:auto;
+  }
+
+  img.head_img{
+    display:inline-block;
+    vertical-align: middle;
+  }
+
+  .company_post h2{
+    opacity:0.8;
+    display:inline-block;
+    font-size:30px;
+    padding-bottom:0;
+    vertical-align: bottom;
+    border-bottom:3px solid rgba(89,133,141,0.9);
+    padding-left:4px;
+  }
+
+  .company_upload {
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    width: 80%;
+  }
+  .company_upload_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .company_upload_form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 18px;
+    filter: alpha(opacity = 0); /* for IE6, IE7 */
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .company_form{
+    border: hidden;
+  }
+
+  input.company_form{
+    background-color: white;
+  }
+
+  .company_profile{
+    margin-bottom:18px;
+    opacity:0.6;
+  }
+
+  .company_profile h3{
+    display:inline-block;
+  }
+
+  .company_profile input{
+    display:inline-block;
+    width:70%;
+  }
+
+  .company_content{
+    position:relative;
+    height:275px;
+  }
+  .company_content h3{
+    opacity:0.6;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  .company_content textarea{
+    position:absolute;
+    top:0;
+    left:100px;
+    width:70%;
+    border:hidden;
+    height:250px;
+    font-size:20px;
+    padding-top:5px;
+    padding-left:7px;
+    box-shadow:3px 3px 3px rgba(122,122,122,0.7);
+  }
+
+  .recruter_upload {
+    position: relative;
+    overflow: hidden;
+    height: 30px;
+    width: 30px;
+  }
+  .recruter_upload_image {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .recruter_upload_form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 18px;
+    filter: alpha(opacity = 0); /* for IE6, IE7 */
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .recruter{
+    position:relative;
+    height:150px;
+    opacity:0.6;
+  }
+
+  .recruter h3{
+    display:inline-block;
+  }
+
+  .recruter_upload{
+    position:absolute;
+    top:0;
+    left:100px;
+    width:130px;
+    height:130px;
+    border:1px solid block;
+  }
+
+  .recruter_profile{
+    position:absolute;
+    top:0;
+    left:300px;
+  }
+
+  .recruter_info h4{
+    display:inline-block;
+  }
+
+  .recruter_info input{
+    display:inline-block;
+    width:45%;
+    border:hidden;
+    height:20px;
+  }
+
+  .recruter_form{
+    /*font-size:5px;*/
+  }
+
+  .company_access{
+      position:relative;
+      height:220px;
+      opacity:0.6;
+  }
+
+  .company_access h3{
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+  .company_access textarea{
+    position:absolute;
+    top:0;
+    left:100px;
+    width:70%;
+    border:hidden;
+    height:170px;
+    font-size:20px;
+    padding-top:5px;
+    padding-left:7px;
+    box-shadow:3px 3px 3px rgba(122,122,122,0.7);
+  }
+
+  .ggmap {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  }
+
+  .ggmap iframe,
+  .ggmap object,
+  .ggmap embed {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  width: 80%;
+  height:80%;
+  }
+
+  img.post_img{
+    display:inline-block;
+    vertical-align: middle;
+    width:40px;
+    height:40px;
+  }
+
+  .student_post{
+    background-color: #D3F2E9;
+    color:#064444;
+    height:auto;
+  }
+
+  .student_image {
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    width: 80%;
+    margin: 0 auto 15px;
+  }
+  .student_upload_image {
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+  }
+  .student_upload_form{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 18px;
+    filter: alpha(opacity = 0); /* for IE6, IE7 */
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .form_label {
+    width: 15%;
+  }
+
+  .student_profile{
+    margin-bottom:18px;
+    opacity:0.6;
+    text-align: center;
+  }
+
+  .student_profile h3{
+    display:inline-block;
+  }
+
+  .student_profile input::not(.radio01-input){
+    display:inline-block;
+    width:40%;
+  }
+
+  .radio{
+    display: inline-block;
+    width:45%;
+  }
+
+  .radio01-input{
+    display: none;
+  }
+  .radio01-parts{
+    padding-left: 20px;
+    position:relative;
+    margin-right: 10px;
+  }
+  .radio01-parts::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #999;
+    background-color: white;
+
+  }
+  .radio01-input:checked + .radio01-parts{
+    color: #009a9a;
+  }
+  .radio01-input:checked + .radio01-parts::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 11px;
+    height: 11px;
+    background: #009a9a;
+  }
+
+  .triangle{
+    border:20px solid transparent;
+    border-bottom-color:#fff;
+    border-top-width:0;
+    width:0;
+    margin-left: 45%;
+  }
+
+  .student_introduce{
+    border: hidden;
+  }
+
+  textarea.student_introduce{
+    height:100px;
+    width:70%;
+    box-shadow:3px 3px 3px rgba(122,122,122,0.7);
+  }
+
+}
