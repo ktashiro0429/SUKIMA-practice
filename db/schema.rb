@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20170614153331) do
   create_table "groups", force: true do |t|
     t.integer  "user_id"
     t.integer  "admin_id"
+    t.integer  "entry_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

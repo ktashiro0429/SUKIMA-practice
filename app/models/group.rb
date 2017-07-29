@@ -3,4 +3,5 @@ class Group < ActiveRecord::Base
   has_many :messages
   belongs_to :user
   belongs_to :admin
+  belongs_to :entry
 end

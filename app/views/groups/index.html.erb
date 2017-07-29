@@ -1,25 +1,24 @@
 <div class="contents-box">
   <img src="/assets/chat.png" alt="" class="title">
   <div class="groups-box">
-
-    <div class="group-box">
-        <img src="/assets/maicrosoft.png" alt="" class="icon">
-      <div class="summary">
-        <p id="person">Microsoft</p>
-        <p id="title">💼：営業がしたいです。</p>
-        <p id="last_message">相手：お世話になっております。</p>
+    <% @groups.each do |group| %>
+      <div class="group-box">
+        <% if current_user.nil? %>
+          <%= image_tag group.user.image, class: "icon" %>
+        <% else %>
+          <%= image_tag group.admin.image, class: "icon" %>
+        <% end %>
+        <div class="summary">
+          <% if current_user.nil? %>
+            <p id="person"><%= group.user.name %></p>
+          <% else %>
+            <p id="person"><%= group.admin.name %></p>
+          <% end %>
+            <p id="title">💼 : <%= group.entry.title %></p>
+            <p id="last_message"><%= group.messages.last.message %></p>
+        </div>
       </div>
-    </div>
-
-    <div class="group-box">
-        <img src="/assets/cubic.png" alt="" class="icon">
-      <div class="summary">
-        <p id="person">cubic</p>
-        <p id="title">💼：エンジニアがしたいです。</p>
-        <p id="last_message">相手：お世話になっております。</p>
-      </div>
-    </div>
-
-  </div>
+    <% end %>
   </div>
 </div>
+
