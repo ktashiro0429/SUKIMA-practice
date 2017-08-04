@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/MustafaZain/less-rails
+  revision: 946213803a5b274260dad17526eb201230e4a761
+  specs:
+    less-rails (2.8.1)
+      actionpack (>= 4.0)
+      less (~> 2.6.0)
+      sprockets (> 2, < 4)
+      tilt
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -82,11 +92,6 @@ GEM
     jwt (1.5.6)
     less (2.6.0)
       commonjs (~> 0.2.7)
-    less-rails (2.8.0)
-      actionpack (>= 4.0)
-      less (~> 2.6.0)
-      sprockets (> 2, < 4)
-      tilt
     libv8 (3.16.14.19)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -223,7 +228,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.0.beta2)
-  less-rails
+  less-rails!
   mislav-will_paginate
   omniauth-facebook
   omniauth-twitter

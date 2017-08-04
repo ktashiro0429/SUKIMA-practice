@@ -5,6 +5,8 @@ class MessagesController < GroupsController
   def index
     @message = Message.new
     set_group_identification
+    @group = Group.find(params[:group_id])
+    @messages = @group.messages.order('created_at DESC')
   end
 
   def create

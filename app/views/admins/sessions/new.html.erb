@@ -3,22 +3,27 @@
     <h2>ログイン</h2>
   </div>
   <div class="blank"></div>
+  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="student_profile">
+      <%= f.label :email, "メールアドレス", class: "login_label" %>
+      <%= f.email_field :email, autofocus: true, placeholder: "example@mail.com", class: "sign_form" %>
+    </div>
 
-  <div class="student_profile">
-    <label class="login_label">メールアドレス</label>
-    <input type="email" name="company_email" class="sign_form" placeholder="example@mail.com">
-  </div>
+    <div class="student_profile">
+      <%= f.label :password, "パスワード", class: "login_label" %>
+      <%= f.password_field :password, class: "sign_form", placeholder: "000000" %>
+    </div>
 
-  <div class="student_profile">
-    <label class="login_label">パスワード</label>
-    <input type="password" name="company_password" class="sign_form" placeholder="abcdef123">
-  </div>
-
-  <div class="post_in">
-    <a href="#">
-      <div class="input_btn">
-        ログイン
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, "パスワードを記憶する" %>
       </div>
-    </a>
-  </div>
+    <% end -%>
+
+    <div class="post_in">
+      <%= f.submit "ログイン", class: "input_btn" %>
+    </div>
+  <% end %>
 </div>
