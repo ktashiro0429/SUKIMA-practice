@@ -14,3 +14,31 @@
 #         require path
 #     end
 # end
+num = 0
+5.times do |no|
+  Message.create(message: "ほげほげ",
+                 user_id: "1",
+                 group_id: "1",
+                 created_at: "2017-07-28 13:44:#{num+1}",
+                 updated_at: "2017-07-28 13:44:#{num+1}"
+                )
+end
+
+5.times do |no|
+  Message.create(message: "hogehogehoge",
+                 admin_id: "3",
+                 group_id: "1",
+                 created_at: "2017-07-28 13:45:#{num+1}",
+                 updated_at: "2017-07-28 13:45:#{num+1}"
+                )
+end
+
+  5.times do |no|
+  Message.create(message: "ほげほげ",
+                 user_id: "1",
+                 group_id: "1",
+                 created_at: "2017-07-28 13:46:#{num+1}",
+                 updated_at: "2017-07-28 13:46:#{num+1}"
+                )
+end
+

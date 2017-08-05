@@ -1,20 +1,50 @@
 <div class="contents-box">
   <div id="chat-frame">
-    <p class="chat-talk">
-        <span class="talk-icon">
-            <img src="/assets/kenken.jpg" alt="tartgeticon" width="50" height="50"/>
-        </span>
-        <span class="talk-content">[トーク内容を記載]</span>
-    </p>
-    <p class="chat-talk mytalk">
-        <span class="talk-icon">
-            <img src="/assets/kenji.jpg" alt="myicon" width="50" height="50"/>
-        </span>
-        <span class="talk-content">[トーク内容を記載]</span>
-    </p>
+  <!-- ここから相手、自分の区別でそれぞれデータ挿入 -->
+    <% if current_user.nil? %><!-- ログインしてるユーザーがadminの時の判定 -->
+      <% @messages.each do |message| %>
+        <% if message.admin_id.nil? %><!-- メッセージを左右どちらに表示するかの判定 -->
+          <!-- 相手 -->
+          <p class="chat-talk">
+              <span class="talk-icon">
+                <%= image_tag message.user.image, width: "50", height: "50" %>
+              </span>
+              <span class="talk-content"><%= message.message %></span>
+          </p>
+        <% else %>
+          <!-- 自分 -->
+          <p class="chat-talk mytalk">
+              <span class="talk-icon">
+                <%= image_tag message.admin.image, width: "50", height: "50" %>
+              </span>
+              <span class="talk-content"><%= message.message %></span>
+          </p>
+        <% end %>
+      <% end %>
+    <% else %><!-- ログインしてるユーザーがuserの時の判定 -->
+      <% @messages.each do |message| %>
+        <!-- 相手 -->
+        <% if message.user_id.nil? %><!-- メッセージを左右どちらに表示するかの判定 -->
+          <p class="chat-talk">
+              <span class="talk-icon">
+                <%= image_tag message.admin.image, width: "50", height: "50" %>
+              </span>
+              <span class="talk-content"><%= message.message %></span>
+          </p>
+        <% else %>
+          <!-- 自分 -->
+          <p class="chat-talk mytalk">
+              <span class="talk-icon">
+                <%= image_tag message.user.image, width: "50", height: "50" %>
+              </span>
+              <span class="talk-content"><%= message.message %></span>
+          </p>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
-  <form action="index_submit" method="get" accept-charset="utf-8">
-    <input name="" class="messe_input"></textarea>
-    <button class="btn btn-success messe_sent">送信</button>
-  </form>
+  <%= form_for [@group, @message] do |f| %>
+    <%= f.text_field :message, class: "messe_input" %>
+    <%= button_tag type: "submit", class: "btn btn-success messe_sent" do %>送信<% end %>
+  <% end %>
 </div>
