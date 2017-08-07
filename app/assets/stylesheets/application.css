@@ -49,70 +49,33 @@ li {
 a {
   text-decoration: none;
 }
-
 /*-----------------------------------------*/
 /*header                                   */
 /*-----------------------------------------*/
 .header {
-  position:relative;
-  height:70px;
   width:100%;
-  background-color:skyblue;
+  background-size: cover;
   overflow: hidden;
 }
-.fixed {
-    position:fixed;
-    height:71px;
-    width:100%;
-  background-color:skyblue;
-}
 
-.header_left {
-  width: 30%;
-  float: left;
-  position:fixed;
-  background-color:skyblue;
-}
-
-.header_left a {
-  border: 3px solid white;
-  color: white;
-  padding: 5px;
-}
-
-.header_left a:hover {
-  /*background-color: aliceblue;*/
-  /*border: 3px solid aliceblue;*/
-  /*color: skyblue;*/
-  border-radius: 30px;
-  padding: 7px;
-}
-
-
-
-.header_left h1 {
-  line-height: 30px;
-}
-
-.header_right {
-  width: 50%;
-  margin-right: 5%;
+.header_menu {
+  width: 80%;
   display: inline-block;
   float: right;
-  position:fixed;
-  background-color:skyblue;
 }
 
-.header_right li {
-  line-height: 70px;
-  padding:0 10px;
+.header_menu div {
+  display: inline-block;
+  float: left;
+  width: 20%;
+  padding-top: 5%;
+  /*padding-bottom: 3%;*/
 }
 
-.header_right li a {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
+.header_menu img {
+  width: 60%;
 }
+
 
 /*-----------------------------------------*/
 /*contents                                 */
@@ -155,60 +118,19 @@ a {
   color: lightsalmon;
 }
 
-
 /*-----------------------------------------*/
 /*footer                                   */
 /*-----------------------------------------*/
-footer{
+footer {
   width: 100%;
   height: 50px;
-  background-color: skyblue;
+  background-color: #333;
   color: white;
 }
 
-footer p{
+footer p {
   line-height: 50px;
 }
- 
-.posts {
-  overflow: hidden;
-  width: 75%;
-  margin-left: 5%;
-  display: inline-block;
-  float: left;
-}
-
-.post {
-  overflow: hidden;
-  width: 28%;
-  display: inline-block;
-  float: left;
-}
-
-.post_image {
-  height: 110px;
-}
-
-.user_image {
-  width: 70px;
-  height: 70px;
-  margin: -35px auto;
-  border-radius: 40px;
-  background-color: black;
-}
-
-.post_text {
-  height: 100px;
-  margin-top: 35px;
-  padding-top: 10px;
-}
-
-.post_text li {
-  margin-right: 5px;
-}
-
- 
- 
 
 /*sign upページのＣＳＳここから*/
 
@@ -340,69 +262,6 @@ a {
   text-decoration: none;
 }
 
-/*-----------------------------------------*/
-/*header                                   */
-/*-----------------------------------------*/
-.header {
-  position:relative;
-  height:70px;
-  width:100%;
-  background-color:skyblue;
-  overflow: hidden;
-}
-.fixed {
-    position:fixed;
-    height:71px;
-    width:100%;
-  background-color:skyblue;
-}
-
-.header_left {
-  width: 30%;
-  float: left;
-  position:fixed;
-  background-color:skyblue;
-}
-
-.header_left a {
-  border: 3px solid white;
-  color: white;
-  padding: 5px;
-}
-
-.header_left a:hover {
-  /*background-color: aliceblue;*/
-  /*border: 3px solid aliceblue;*/
-  /*color: skyblue;*/
-  border-radius: 30px;
-  padding: 7px;
-}
-
-
-
-.header_left h1 {
-  line-height: 30px;
-}
-
-.header_right {
-  width: 50%;
-  margin-right: 5%;
-  display: inline-block;
-  float: right;
-  position:fixed;
-  background-color:skyblue;
-}
-
-.header_right li {
-  line-height: 70px;
-  padding:0 10px;
-}
-
-.header_right li a {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-}
 
 /*-----------------------------------------*/
 /*contents                                 */
@@ -445,28 +304,6 @@ a {
   color: lightsalmon;
 }
 
-
-/*-----------------------------------------*/
-/*footer                                   */
-/*-----------------------------------------*/
-footer {
-  width: 100%;
-  height: 50px;
-  background-color: skyblue;
-  color: white;
-}
-
-footer p {
-  line-height: 50px;
-}
- 
-.posts {
-  overflow: hidden;
-  width: 75%;
-  margin-left: 5%;
-  display: inline-block;
-  float: left;
-}
 
 /*.post {*/
 /*  overflow: hidden;*/

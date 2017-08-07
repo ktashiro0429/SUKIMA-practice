@@ -126,7 +126,8 @@
   .post_head h2{
     display:inline-block;
     vertical-align: bottom;
-    border-bottom: solid 3px #064444;
+    font-weight: bolder;
+    color: #58858E;
   }
 
 
