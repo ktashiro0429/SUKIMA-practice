@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   #Association
   has_many :messages
   has_many :groups
+  has_many :entries
 
   #Validation
   validates :id, presence: true, on: :update

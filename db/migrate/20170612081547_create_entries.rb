@@ -3,9 +3,10 @@ class CreateEntries < ActiveRecord::Migration
     create_table :entries do |t|
       t.references :user, null:false
       t.string :title, null:false
-      t.datetime :posted_at, null:false
-      t.string :tag
-      t.string :status, null: false, default:"draft"
+      t.string :industry
+      t.string :job_category
+      t.string :area
+      # t.string :status, null: false, default:"draft"
       t.timestamps null: false
     end
     add_index :entries, :user_id

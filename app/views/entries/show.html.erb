@@ -1,25 +1,24 @@
-<div class="show">
 <div class="entry_image">
     <%= image_tag @entry.image %>
 </div>
 
 <div class="image">
-    <%= image_tag @entry.author.image %>
+    <%= image_tag @entry.user.image %>
 </div>
 
 <div class="entry_text">
-<h4><%= link_to @entry.author.name, @entry.author %></h4>
+<h4><%= @entry.user.name %></h4>
 
 <h2><%= @entry.title %></h2>
 
 
-    <% if current_user == @entry.author %>
+    <% if current_user.id == @entry.user_id %>
 
-        <!--<p>%= link_to "編集", [:edit, @entry] %></p>-->
+        <p><%= link_to "編集", [:edit, @entry] %></p>
 
     <% end %>
-</div>        
-        <p><%= simple_format(@entry.body) %></p>
+</div>
+    <p><%= simple_format(@entry.body) %></p>
 
     <% if admin_signed_in? %>
       <%= form_for @group do |f| %>
@@ -29,5 +28,4 @@
         </div>
       <% end %>
     <% end %>
-<%= render "footer", entry: @enrty %>
-</div>
+

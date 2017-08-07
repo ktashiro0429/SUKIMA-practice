@@ -5,6 +5,7 @@ class MessagesController < GroupsController
   def index
     @message = Message.new
     set_group_identification
+    @messages = @group.messages.order('created_at ASC').includes([:user, :admin])
   end
 
   def create
@@ -51,10 +52,10 @@ class MessagesController < GroupsController
 
   def set_group_identification
     @group = Group.find(params[:group_id])
-    if current_user.nil?
-      @groups = Group.where(admin_id: current_admin.id)
-    else
-      @groups = Group.where(user_id: current_user.id)
-    end
+    # if current_user.nil?
+    #   @groups = Group.where(admin_id: current_admin.id)
+    # else
+    #   @groups = Group.where(user_id: current_user.id)
+    # end
   end
 end

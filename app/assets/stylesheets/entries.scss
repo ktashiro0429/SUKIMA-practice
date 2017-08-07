@@ -4,25 +4,77 @@
 .entry_edit{
     margin:auto;
     text-align:left;
-    
-}
-.show{
-    background-color:white;
-    border-radius:20px;
-    Z-index:1;
 }
 
-.entry_image img{
- border-radius:20px;
- top: 55px;
- width:35%;
- height:auto;
- position:relative;
-//  filter: blur(1px);
- overflow:hidden;
- z-index:0;
+.entry_edit th{
+}
+
+.entry_edit td{
+}
+
+.entry_image{
+ width:500px;
+ position:absolute;
+ top:100px;
+ left:28%;
+ filter: blur(1px);
+ z-index:-2;
 }
 
 .entry{
     margin:auto;
+}
+
+/*-----------------------------------------*/
+/*new.html.erb                             */
+/*-----------------------------------------*/
+
+@media screen and (max-width: 640px) {
+  .post_theme {
+      -webkit-font-smoothing: antialiased;
+      font-family:'Hiragino Kaku Gothic ProN W3', sans-serif;
+      font-size: 30px;
+      color: #58858E;
+      font-weight: bolder;
+  }
+
+  .entry_label {
+    color: #58858E;
+    font-size: 16px;
+    width: 30%;
+  }
+
+  .title-block {
+    margin: 10px 0;
+  }
+
+  .body-block {
+    margin: 10px 0;
+  }
+
+  .title_input {
+    padding: 10px;
+  }
+
+
+  .body_input {
+    padding: 5px;
+  }
+
+  .submit_image {
+    font-size: 16px;
+  }
+
+  .job_category {
+    margin: 10px 0;
+  }
+
+  .job_category label {
+    width: 30%;
+  }
+
+  .job_category label img {
+    width: 100%;
+    height: 20%;
+  }
 }

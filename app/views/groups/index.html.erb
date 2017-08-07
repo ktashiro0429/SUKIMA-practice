@@ -1,111 +1,26 @@
-<style>
-  * {
-      margin: 0;
-      padding: 0;
-  }
-  .main{
-    height: 100%;
-    width: 100%;
-    background-color: white;
-  }
-  .main_inner{
-    height: 100%;
-    width: 980px;
-    background-color: white;
-    margin: 0 auto;
-    margin-bottom: 10px;
-  }
-  .user-messages_head{
-    height: 90px;
-    width: 100%;
-    background-color: #f0ffff;
-    margin-bottom: 5px;
-  }
-  .user-messages-wrapper{
-    height: 100%;
-    width: 100%;
-    background-color: white;
-
-  }
-  .user-messages-index-wrapper{
-    width: 40%;
-    height: 100%;
-    float: left;
-    background-color: #f0ffff;
-  }
-  .user-messages-new-container{
-    width: 60%;
-    height: 100%;
-    float: right;
-    background-color: #f0f8ff;
-  }
-  .clearfix:after {
-    display: block;
-    clear: both;
-    content: "";
-  }
-  .user-messages-thread-avatar{
-    left: 30px;
-    top: 20px;
-    width: 40px;
-    height: 40px;
-    -webkit-border-radius: 20px;
-            border-radius: 20px;
-    overflow: hidden;
-  }
-  li {
-    list-style: none;
-  }
-  .group-box{
-    height: 88px;
-    width: 360px;
-    border: solid #008080;
-  }
-
-insert into groups values(1, 4, 1, )
-
-</style>
-
-<div class="main">
-  <div class="main_inner clearfix">
-    <div class="user-messages_head">
-      <div id="">
-        <p>ユーザーのアイコンを左寄せで表示</p> 
-      </div>
-    </div>
-    <div class="user-messages-wrapper">
-      <div class="user-messages-index-wrapper">
-        <div class="user-messages-single-inner">
-          <ul class="groups">
-            <% @groups.each do |group| %>
-              <li>
-                <a href="/groups/<%= group.id %>/messages" title="">
-                  <div class="group-box">
-                    <p>アイコン挿入</p>
-                    <% if current_user.nil? %>
-                      <p><%= group.user.name %><p>
-                    <% else %>
-                      <p><%= group.admin.name %><p>
-                    <% end %>
-                    <% if group.messages.exists? %>
-                      <% if group.messages.last.admin_id? %>
-                        <p><%= group.messages.last.admin.name %>
-                      <% else %>
-                        <p><%= group.messages.last.user.name %>
-                      <% end %>
-                        :<%= group.messages.last.message %></p>
-                    <% else %>
-                      <p>メッセージはありません。</p>
-                    <% end %>
-                  </div>
-                </a>
-              </li>
+<div class="contents-box">
+  <img src="/assets/chattitle.png" alt="" class="title">
+  <div class="groups-box">
+    <% @groups.each do |group| %>
+      <%= link_to group_messages_path(group) do %>
+        <div class="group-box">
+          <% if current_user.nil? %>
+            <%= image_tag group.user.image, class: "icon" %>
+          <% else %>
+            <%= image_tag group.admin.image, class: "icon" %>
+          <% end %>
+          <div class="summary">
+            <% if current_user.nil? %>
+              <p id="person"><%= group.user.name %></p>
+            <% else %>
+              <p id="person"><%= group.admin.name %></p>
             <% end %>
-          </ul>
+              <p id="title"><%= group.entry.title %></p>
+              <p id="last_message"><%= group.messages.last.message %></p>
+          </div>
         </div>
-      </div>
-      <div class=user-messages-new-container ">
-      </div>
-    </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
+
