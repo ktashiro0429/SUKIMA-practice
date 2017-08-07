@@ -9,6 +9,7 @@ class EntriesController < ApplicationController
       @entries = Entry.all
     end
     @entries = @entries.order("created_at DESC")
+    @group = Group.new
     # @entries = @entries.readable_for(current_user).order(posted_at: :desc)#.paginate(page: params[:page], per_page: 5)
   end
 

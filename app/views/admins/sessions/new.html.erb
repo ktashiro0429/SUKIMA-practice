@@ -1,6 +1,6 @@
 <div class="login_body">
   <div class="post_head">
-    <h2>ログイン</h2>
+    <h2>企業ログイン</h2>
   </div>
   <div class="blank"></div>
   <%= devise_error_messages! %>
@@ -23,7 +23,7 @@
     <% end -%>
 
     <div class="post_in">
-      <%= f.submit "ログイン", class: "input_btn" %>
+      <%= image_submit_tag("/assets/login_bottun.jpg", width: "50%", height: "10%" ) %>
     </div>
   <% end %>
 </div>
