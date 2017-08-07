@@ -18,8 +18,7 @@
 
     <% end %>
 </div>
-        <p><%= simple_format(@entry.body) %></p>
-
+    <p><%= simple_format(@entry.body) %></p>
 
     <% if admin_signed_in? %>
       <%= form_for @group do |f| %>
