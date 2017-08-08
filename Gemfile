@@ -19,6 +19,7 @@ gem 'pry-rails'
 gem 'carrierwave'
 gem 'mislav-will_paginate'
 gem 'rails-i18n'
+gem 'arel', '6.0.0.beta2'
 
 group :development, :test do
   gem 'byebug'

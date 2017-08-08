@@ -22,9 +22,7 @@
     <p class="form"><%= f.label :password_confirmation %>:<br /></p>
     <p><%= f.password_field :password_confirmation, autocomplete: "off" %></p>
   </div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+    <%= f.submit "Sign up",:class=>"btn btn-info btn-lg"  %>
 <% end %>
 </div>
   <div class="cancel_log_in">

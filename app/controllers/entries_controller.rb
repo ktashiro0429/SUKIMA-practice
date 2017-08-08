@@ -30,10 +30,8 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.new(entry_params)
     # @entry.author = current_user
-    binding.pry
     if @entry.save
-      binding.pry
-      redirect_to root, notice:"投稿を作成しました"
+      redirect_to root_path, notice:"投稿を作成しました"
     else
       render "new"
     end
