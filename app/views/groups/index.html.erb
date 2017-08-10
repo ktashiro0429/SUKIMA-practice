@@ -1,5 +1,9 @@
 <div class="contents-box">
-  <img src="/assets/chattitle.png" alt="" class="title">
+  <% if current_user.nil? %>
+    <img src="/assets/chattitle-admin.png" alt="" class="title">
+  <% else %>
+    <img src="/assets/chattitle-user.png" alt="" class="title">
+  <% end %>
   <div class="groups-box">
     <% @groups.each do |group| %>
       <%= link_to group_messages_path(group) do %>
