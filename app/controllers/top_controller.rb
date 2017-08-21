@@ -10,7 +10,7 @@ class TopController < ApplicationController
   end
     
     
-    @entry = Entry.readable_for(current_user).find(params[:id])
+    # @entry = Entry.readable_for(current_user).find(params[:id])
     
 end
 
