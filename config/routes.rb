@@ -10,11 +10,11 @@ Rails.application.routes.draw do
   registrations: 'users/registrations'
   }
   root 'entries#index'
-  resources :admins, only: [:index, :show]
+  resources :admins, only: [:index, :show, :edit, :update]
   resources :groups, except: [:show, :destroy] do
     resources :messages, except: [:show]
   end
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index, :show, :edit ,:update] do
     collection {get "search"}
     resources :entries, only: [:index]
   end

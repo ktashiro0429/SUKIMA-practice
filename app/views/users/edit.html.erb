@@ -2,29 +2,11 @@
   <div class="post_head">
     <img class="title" src="/assets/mypage_kotoba.png">
   </div>
-  <%= devise_error_messages! %>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="student_image">
+  <%= form_for @user do |f| %>
     <%= f.label :image do %>
       <%= f.file_field :image, style: "display: none;" %>
       <img src="/assets/blank_icon.jpg" class="student_upload_image">
     <% end %>
-    </div>
-
-    <div class="student_profile">
-      <%= f.label :メールアドレス, class: "form_label" %>
-      <%= f.email_field :email, class: "normal-input", autocomplete: "off", placeholder: "abcd@gmail.com" %>
-    </div>
-
-    <div class="student_profile">
-      <%= f.label :パスワード, class: "form_label" %>
-      <%= f.password_field :password, class: "normal-input", autocomplete: "off", placeholder: "000000" %>
-    </div>
-
-    <div class="student_profile">
-      <%= f.label :確認, class: "form_label" %>
-      <%= f.password_field :password_confirmation, class: "normal-input", autocomplete: "off", placeholder: "パスワード確認" %>
-    </div>
 
     <div class="student_profile">
       <%= f.label :名前, class: "form_label" %>
