@@ -13,12 +13,22 @@
 }
 
 .entry_image{
- width:500px;
- position:absolute;
- top:100px;
- left:28%;
- filter: blur(1px);
- z-index:-2;
+  border-radius: 10%;
+  margin: 20px 0 ;
+}
+
+.entry_text {
+  margin-bottom: 20px;
+  line-height: 2em;
+}
+
+.entry_text .entry_words{
+  font-size: 16px;
+  height: 100px;
+  width: 70%;
+  box-shadow: 3px 3px 3px rgba(122,122,122,0.7);
+  background-color: #fff;
+  margin: 0 auto;
 }
 
 .entry{
@@ -36,6 +46,7 @@
       font-size: 30px;
       color: #58858E;
       font-weight: bolder;
+      padding-top: 5%;
   }
 
   .entry_label {

@@ -1,128 +1,131 @@
-<div id="main_image"></div>
+  <div class="category_search sp">
+    <div class="category_btn">
+      <img src="./assets/cat_search_on.png" class="cat_search_on">
+      <img src="./assets/cat_search_off.png" class="cat_search_off hidden">
+    </div>
 
-  <div class="tags">
-    <h5>category</h5>
-    <ul>
-      <li><%= link_to "企画", search_entries_path(keyword: "planning")%></li>
-      <li><a href="">営業</a></li>
-      <li><a href="">デザイン</a></li>
-      <li><a href="">サービス</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-      <li><a href="">てすと</a></li>
-    </ul>
+    <div class="category_content" style="display: none;">
+      <a href=""><div class="category_part">企画</div></a>
+      <a href=""><div class="category_part">制作</div></a>
+      <a href=""><div class="category_part">事務</div></a>
+      <a href=""><div class="category_part">専門職</div></a>
+      <a href=""><div class="category_part">営業</div></a>
+      <a href=""><div class="category_part">医療</div></a>
+      <a href=""><div class="category_part">教育</div></a>
+      <a href=""><div class="category_part">エンジニア</div></a>
+      <a href=""><div class="category_btn"><img src="./assets/cat_search.png"></div></a>
+    </div>
   </div>
-  
+
+  <div class="category_search_pc pc">
+    <div class="category_tab">職種</div>
+    <div class="category_content_pc">
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="1">営業</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="2">事務</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="3">企画</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="4">サービス</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="5">制作</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="6">クリエイティブ</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="7">専門職</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="8">ITエンジニア</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="9">医療</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="10">教育</label>
+    </div>
+  </div>
 
 
-<div class="posts">
-  <% @entries.each do |entry| %>
+<!-- スマホバージョン -->
+<% @entries.each do |entry| %>
+  <div class="posts sp">
     <div class="post">
-
-      <div class="user_image"><%= image_tag entry.user.image %></div>
-        <div class="post_text">
-      <p class="name"><%= link_to entry.user.name, entry.user %></p>
-        <h3><%= entry.title %></h3>
-        <p><%= link_to "詳細", entry %></p>
-        <ul>
-          <li><a href="">タグ</a></li>
-          <li><a href="">タグ</a></li>
-          <li><a href="">タグ</a></li>
-        </ul>
+      <div class="post_main">
+        <div class="post_cat post_cat_dark">
+          <img src="./assets/cat_01.png">
+          <!-- 条件分岐をして、job_categoryの画像を割り当てる -->
+        </div>
+        <div class="user_image">
+        <!-- ゆーざーの写真 -->
+          <%= link_to image_tag(entry.user.image), user_path(entry.user) %>
+        </div>
+        <div class="post_main_text">
+          <h3><%= link_to entry.title, entry_path(entry), class: "entry_title" %></h3>
+          <%= link_to entry.user.name, user_path(entry.user), class: "name" %><br>
+        </div>
       </div>
     </div>
-    <% if admin_signed_in? %>
-      <%= form_for @group do |f| %>
-        <div class="button">
-          <%= f.hidden_field :user_id, :value => entry.user_id %>
-          <%= f.hidden_field :entry_id, :value => entry.id %>
-          <%= f.submit "チャットはこちらから" %>
+  </div>
+
+<!-- PCバージョン -->
+  <div class="posts pc">
+    <div class="post">
+      <div class="post_main">
+        <div class="post_cat post_cat_dark">
+          <% if entry.job_category == "クリエイティブ" %>
+            <img src="./assets/cat_creative.jpg">
+          <% elsif entry.job_category == "教育" %>
+            <img src="./assets/education.jpg">
+          <% elsif entry.job_category == "ITエンジニア" %>
+            <img src="./assets/enginieer.jpg">
+          <% elsif entry.job_category == "医療" %>
+            <img src="./assets/medical.jpg">
+          <% elsif entry.job_category == "事務" %>
+            <img src="./assets/officework.jpg">
+          <% elsif entry.job_category == "企画" %>
+            <img src="./assets/planning.jpg">
+          <% elsif entry.job_category == "制作" %>
+            <img src="./assets/production.jpg">
+          <% elsif entry.job_category == "営業" %>
+            <img src="./assets/sales.jpg">
+          <% elsif entry.job_category == "サービス" %>
+            <img src="./assets/service.jpg">
+          <% else %>
+            <img src="./assets/profession.jpg">
+          <% end %>
         </div>
-      <% end %>
-    <% end %>
-  <% end %>
-</div>
+        <div class="test_post_main_title">
+          <a href=""><h3><%= entry.title %></h3></a>
+        </div>
+        <div class="user_image">
+          <%= link_to image_tag(entry.user.image), user_path(entry.user) %>
+        </div>
+        <div class="post_main_text">
+          <p class="name"><%= entry.user.name %></p>
+          <img src="./assets/chat_btn_pc.jpg" class="post_main_chat">
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<!-- /追加分 -->
 
-  <!--  <div class="post">-->
-  <!--    <div class="post_image"></div>-->
-  <!--    <div class="user_image"></div>-->
-  <!--    <div class="post_text">-->
-  <!--      <h3>営業がしたい</h3>-->
-  <!--      <p class="name">松口健司</p>-->
-  <!--      <ul>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--      </ul>-->
-  <!--    </div>-->
-  <!--  </div>-->
 
-  <!--  <div class="post">-->
-  <!--    <div class="post_image"></div>-->
-  <!--    <div class="user_image"></div>-->
-  <!--    <div class="post_text">-->
-  <!--      <h3>営業がしたい</h3>-->
-  <!--      <p class="name">松口健司</p>-->
-  <!--      <ul>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--      </ul>-->
-  <!--    </div>-->
-  <!--  </div>-->
+<!-- ページネーション -->
+<%= paginate(@entries) %>
+<!--   <nav>
+    <ul class="pagination pagination-lg">
+      <li><a href="#">&raquo;</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">2</a></li>
+      <li class="active"><a href="#">1</a></li>
+      <li class="disabled"><a href="#">&laquo;</a></li>
+    </ul>
+  </nav>
+ -->
 
-  <!--  <div class="post">-->
-  <!--    <div class="post_image"></div>-->
-  <!--    <div class="user_image"></div>-->
-  <!--    <div class="post_text">-->
-  <!--      <h3>営業がしたい</h3>-->
-  <!--      <p class="name">松口健司</p>-->
-  <!--      <ul>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--      </ul>-->
-  <!--    </div>-->
-  <!--  </div>-->
 
-  <!--  <div class="post">-->
-  <!--    <div class="post_image"></div>-->
-  <!--    <div class="user_image"></div>-->
-  <!--    <div class="post_text">-->
-  <!--      <h3>営業がしたい</h3>-->
-  <!--      <p class="name">松口健司</p>-->
-  <!--      <ul>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--      </ul>-->
-  <!--    </div>-->
-  <!--  </div>-->
 
-  <!--  <div class="post">-->
-  <!--    <div class="post_image"></div>-->
-  <!--    <div class="user_image"></div>-->
-  <!--    <div class="post_text">-->
-  <!--      <h3>営業がしたい</h3>-->
-  <!--      <p class="name">松口健司</p>-->
-  <!--      <ul>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--        <li><a href="">タグ</a></li>-->
-  <!--      </ul>-->
-  <!--    </div>-->
-  <!--  </div>-->
-  <!--</div>-->
-<!--< current_user.name + "さんの投稿" %>-->
+<script type="text/javascript">
+  $('.category_btn').click(function () {
+    if ($(".cat_search_off").is(":hidden")) {
+      $(".cat_search_on").addClass('hidden');
+      $(".cat_search_off").removeClass('hidden');
+      $(".category_content").slideDown("slow");
+    } else {
+      $(".cat_search_on").removeClass('hidden');
+      $(".cat_search_off").addClass('hidden');
+      $(".category_content").slideUp("slow");
+    }
+  });
+</script>

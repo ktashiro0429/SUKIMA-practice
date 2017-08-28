@@ -8,6 +8,7 @@
     <div><%= f.label :body, class: "entry_label" %></div>
     <div><%= f.text_area :body, class: "body_input", rows: "10" %></div>
   </div>
+  <%= f.label :職種, class: "entry_label"%>
   <div class="job_category">
     <label><%= f.radio_button :job_category, "営業" %><img src="/assets/sales.jpg"></label>
     <label><%= f.radio_button :job_category, "企画" %><img src="/assets/planning.jpg"></label>

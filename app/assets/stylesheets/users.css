@@ -11,31 +11,33 @@
     /*-webkit-border-image: border-radius: 150px;*/
 }
 
-.entry_text{
-  color:white;
-  width:100%;
-}
 
 
 .companies{
-    margin : auto;
-    text-align: left;
+  margin : auto;
+  text-align: center;
+  color: #58858E;
+}
+
+.compaies label {
+  margin: 0 auto;
 }
 
 .companies tr, tr>td, tr>th{
   padding-top :10px;
-  padding-bottom : 10px;
+
 }
 
 .companies th {
   width:200px;
   padding-left:10px;
-  text-align:right;
+  text-align: right;
 }
 
 .companies td{
   width : 300px;
   padding-left: 10px;
+  text-align: left;
 }
 
 .form{
@@ -53,14 +55,6 @@
 .entry_edit td{
 }
 
-.entry_image{
- width:500px;
- position:absolute;
- top:100px;
- left:28%;
- filter: blur(1px);
- z-index:-2;
-}
 
 .entry{
     margin:auto;
@@ -444,15 +438,23 @@
   .student_image {
     position: relative;
     overflow: hidden;
-    height: 50px;
+    height: 70px;
     width: 80%;
     margin: 0 auto 15px;
   }
+
+  .student_image img{
+    height: 70px;
+    width: 70px;
+    border-radius: 10px;
+  }
+
   .student_upload_image {
     top: 0;
     left: 0;
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
+    border-radius: 10%;
   }
   .student_upload_form{
     position: absolute;
@@ -466,7 +468,7 @@
   }
 
   .form_label {
-    width: 15%;
+    width: 35%;
   }
 
   .student_profile{
@@ -541,21 +543,4 @@
     box-shadow:3px 3px 3px rgba(122,122,122,0.7);
   }
 
-  .renewbutton{
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    background: #668ad8;/*ボタン色*/
-    color: #FFF;
-    border-bottom: solid 4px #627295;
-    border-radius: 3px;
-  }
-  
-  .renewbutton:active{
-    -ms-transform: translateY(4px);
-    -webkit-transform: translateY(4px);
-    transform: translateY(4px);/*下に動く*/
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
-    border-bottom: none;
-  }
 }

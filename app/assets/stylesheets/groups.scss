@@ -43,12 +43,24 @@
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
+    border-radius: 10%;
+  }
+
+  #person{
+    font-size: 16px;
+  }
+  #title{
+    font-size: 18px;
+  }
+  #last_message{
+    font-size: 18px;
   }
 
   .summary {
     text-align: left;
     padding-top: 25px;
     overflow: hidden;
+    line-height: 1.3em;
   }
 
 }

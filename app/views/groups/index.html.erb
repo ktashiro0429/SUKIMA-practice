@@ -20,7 +20,11 @@
               <p id="person"><%= group.admin.name %></p>
             <% end %>
               <p id="title"><%= group.entry.title %></p>
+            <% if group.messages.last.nil? %>
+              <p id="last_message">[メッセージはありません。]</p>
+            <% else %>
               <p id="last_message"><%= group.messages.last.message %></p>
+            <% end %>
           </div>
         </div>
       <% end %>

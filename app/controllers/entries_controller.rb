@@ -4,11 +4,11 @@ class EntriesController < ApplicationController
   def index
     if params[:id]
       @user = User.find(params[:id])
-      @entries = @user.entries
+      @entries = @user.entries.page(params[:page]).per(3)
     else
-      @entries = Entry.all
+      @entries = Entry.all.page(params[:page]).per(3)
     end
-    @entries = @entries.order("created_at DESC")
+    @entries = @entries.order("created_at DESC").page(params[:page]).per(3)
     @group = Group.new
     # @entries = @entries.readable_for(current_user).order(posted_at: :desc)#.paginate(page: params[:page], per_page: 5)
   end

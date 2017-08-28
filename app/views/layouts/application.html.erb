@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Sukima career</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>SUKIMA career </title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <!-- Bootstrap -->
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="application.css">
+  </head>
 
-  <div class="header" style="background-image: url(/assets/header_sp.png); ">
+<body>
+  <div class="header">
     <div class="header_menu">
       <div><%= link_to image_tag("/assets/home.png"), root_path %></div>
       <% if current_user.nil? && current_admin.nil? %>
@@ -34,15 +38,14 @@
       <% end %>
     </div>
   </div>
-
-  <div class="continer-fluid">
-    <div class="container">
-      <%= yield %>
-    </div>
-  </div>
-
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
+<div class="container">
+  <%= yield %>
+</div>
   <footer>
-    <p>SUKIMA All right reserved.</p>
+    <p>Copyright (c) SUKIMA All Rights Reserved.</p>
   </footer>
 </body>
 </html>

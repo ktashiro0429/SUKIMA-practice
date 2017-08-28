@@ -9,14 +9,6 @@ ja:
         remember_me: "ログインを記憶"
         reset_password_token: 
         unlock_token: 
-        image: "プロフィール画像"
-        name: "お名前"
-        skills: "フリガナ"
-        gender: "性別"
-        education: "大学"
-        atschool: "学部"
-        address: "働きたい県"
-        introduce: "自己紹介"
       entry:
         title: "タイトル"
         body: "本文"
