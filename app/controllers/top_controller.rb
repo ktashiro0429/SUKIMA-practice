@@ -8,8 +8,6 @@ class TopController < ApplicationController
   end
     @entries = @entries.readable_for(current_user).order(posted_at: :desc)#.paginate(page: params[:page], per_page: 5)
   end
-    
-    @entry = @Entries.readable_for(current_user).find(params[:id])
-    
+    @entry = @ntries.readable_for(current_user).find(params[:id])
 end
 
