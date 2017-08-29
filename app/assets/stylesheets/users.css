@@ -481,7 +481,7 @@
     display:inline-block;
   }
 
-  .student_profile input::not(.radio01-input){
+  .student_profile /*input::not(.radio01-input)*/{
     display:inline-block;
     width:40%;
   }
