@@ -483,7 +483,7 @@
 
   .student_profile /*input::not(.radio01-input)*/{
     display:inline-block;
-    width:40%;
+    width:100%;
   }
 
   .radio{
