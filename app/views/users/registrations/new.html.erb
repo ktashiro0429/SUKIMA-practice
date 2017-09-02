@@ -3,7 +3,7 @@
     <img class="title" src="/assets/mypage_kotoba.png">
   </div>
   <%= devise_error_messages! %>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
     <div class="student_image">
     <%= f.label :image do %>
       <%= f.file_field :image, style: "display: none;" %>
