@@ -15,7 +15,4 @@
 /log/*.log
 /tmp
 
-public/uploads
-*.jpg
-*.png
-*.jpeg
+
