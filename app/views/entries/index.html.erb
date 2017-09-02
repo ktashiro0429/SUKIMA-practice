@@ -41,8 +41,29 @@
       <div class="post_main">
         <div class="post_cat post_cat_dark">
           <img src="./assets/cat_01.png">
-          <!-- 条件分岐をして、job_categoryの画像を割り当てる -->
-        </div>
+          <!-- 画像が作成されてないので後ほど反映 -->
+<!--           <% if entry.job_category == "営業" %>
+            <img src="./assets/">
+          <% elsif entry.job_category == "事務" %>
+            <img src="./assets/">
+          <% elsif entry.job_category == "企画" %>
+            <img src="./assets/">
+          <% elsif entry.job_category == "サービス" %>
+            <img src="./assets/">
+          <% elsif entry.job_category == "制作" %>
+            <img src="./assets/">
+          <% elsif entry.job_category == "クリエイティブ" %>
+            <img src="./assets/cat_01.png">
+          <% elsif entry.job_category == "専門職" %>
+            <img src="./assets/">
+          <% elsif entry.job_category == "ITエンジニア" %>
+            <img src="./assets/">
+          <% elsif entry.job_category == "医療" %>
+            <img src="./assets/">
+          <% else %>
+            <img src="./assets/">
+          <% end %>
+ -->        </div>
         <div class="user_image">
         <!-- ゆーざーの写真 -->
           <%= link_to image_tag(entry.user.image), user_path(entry.user) %>

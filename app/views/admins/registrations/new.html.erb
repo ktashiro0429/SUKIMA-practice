@@ -3,7 +3,7 @@
   <h2>企業登録</h2>
   </div>
   <%= devise_error_messages! %>
-  <%= form_for(resource, as: resource_name, url: admin_registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: admin_registration_path) do |f| %>
 
     <div class="student_profile">
       <%= f.label :メールアドレス, class: "form_label" %>
@@ -24,6 +24,7 @@
       <%= f.submit "登録する", class: "input_btn" %>
     </div>
   <% end %>
+  <p><%= link_to "企業ログインはこちら", new_admin_session_path %></p>
 </div>
 
 

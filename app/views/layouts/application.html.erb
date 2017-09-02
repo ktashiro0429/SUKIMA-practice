@@ -28,7 +28,13 @@
       <% else %>
         <div><%= link_to image_tag('/assets/chat.png'), groups_path %></div>
       <% end %>
-      <div><%= link_to image_tag('/assets/memo.png', style: "color: gray;") %></div>
+      <% if current_user.nil? && current_admin.nil? %>
+        <div><%= link_to image_tag('/assets/memo.png'), new_user_session_path %></div>
+      <% elsif current_user.nil?%>
+        <div><%= link_to image_tag('/assets/memo.png'), new_user_session_path %></div>
+      <% else %>
+        <div><%= link_to image_tag('/assets/memo.png'), new_entry_path %></div>
+      <% end %>
       <% if current_user.nil? && current_admin.nil? %>
         <div><%= link_to image_tag('/assets/logout.png'), new_user_session_path %></div>
       <% elsif current_user.nil?%>
