@@ -9,14 +9,14 @@ class Admin < ActiveRecord::Base
   has_many :groups
 
   #Validation
-  validates :email, presence: true, on: :update
-  validates :name, presence: true, on: :update
-  validates :about, presence: true, on: :update
-  validates :web, presence: true, on: :update
-  validates :address, presence: true, on: :update
-  validates :industry, presence: true, on: :update
-  validates :sns, presence: true, on: :update
-  validates :image, presence: true, on: :update
+  # validates :email, presence: true, on: :update
+  # validates :name, presence: true, on: :update
+  # validates :about, presence: true, on: :update
+  # validates :web, presence: true, on: :update
+  # validates :address, presence: true, on: :update
+  # validates :industry, presence: true, on: :update
+  # validates :sns, presence: true, on: :update
+  # validates :image, presence: true, on: :update
 
 
   mount_uploader :image, ImageUploader

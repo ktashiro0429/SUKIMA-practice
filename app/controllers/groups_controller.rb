@@ -11,7 +11,6 @@ class GroupsController < ApplicationController
   def create
     @a_group = Group.new(group_params)
     @group = Group.where(admin_id: @a_group.admin_id).where(user_id: @a_group.user_id).where(entry_id: @a_group.entry_id).first_or_create
-    binding.pry
     redirect_to group_messages_path(@group)
   end
 

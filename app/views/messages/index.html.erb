@@ -7,7 +7,7 @@
           <!-- 相手 -->
           <p class="chat-talk">
               <span class="talk-icon">
-                <%= image_tag message.user.image, width: "50", height: "50" %>
+                <%= link_to image_tag(message.user.image, width: "50", height: "50"), user_path(message.user) %>
               </span>
               <span class="talk-content"><%= message.message %></span>
           </p>
@@ -15,7 +15,7 @@
           <!-- 自分 -->
           <p class="chat-talk mytalk">
               <span class="talk-icon">
-                <%= image_tag message.admin.image, width: "50", height: "50" %>
+                <%= link_to image_tag(message.admin.image, width: "50", height: "50"), admin_path(message.admin) %>
               </span>
               <span class="talk-content"><%= message.message %></span>
           </p>
@@ -27,7 +27,7 @@
         <% if message.user_id.nil? %><!-- メッセージを左右どちらに表示するかの判定 -->
           <p class="chat-talk">
               <span class="talk-icon">
-                <%= image_tag message.admin.image, width: "50", height: "50" %>
+                <%= link_to image_tag(message.admin.image, width: "50", height: "50"), admin_path(message.admin) %>
               </span>
               <span class="talk-content"><%= message.message %></span>
           </p>
@@ -35,7 +35,7 @@
           <!-- 自分 -->
           <p class="chat-talk mytalk">
               <span class="talk-icon">
-                <%= image_tag message.user.image, width: "50", height: "50" %>
+                <%= link_to image_tag(message.user.image, width: "50", height: "50"), user_path(message.user) %>
               </span>
               <span class="talk-content"><%= message.message %></span>
           </p>
