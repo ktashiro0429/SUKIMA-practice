@@ -19,10 +19,11 @@
             <div class="summary">
               <% if current_user.nil? %>
                 <p id="person"><%= group.user.name %></p>
+               
               <% else %>
                 <p id="person"><%= group.admin.name %></p>
+               　 <p id="title"><%# group.entry.title %></p>
               <% end %>
-                <p id="title"><%= group.entry.title %></p>
               <% if group.messages.last.nil? %>
                 <p id="last_message">[メッセージはありません。]</p>
               <% else %>
