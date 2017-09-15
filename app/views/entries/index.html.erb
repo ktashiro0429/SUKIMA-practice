@@ -74,9 +74,12 @@
         <div class="post_main_text">
           <%= link_to entry.user.name, user_path(entry.user), class: "name" %>
           <h3><%= link_to entry.title, entry_path(entry), class: "entry_title" %></h3>
+          <% if admin_signed_in? %> 
           <div class="post_chat_btn">
-            <p>チャットする<img src="./assets/chat_btn_phone.png" class="post_chat_btn_img"></p>
+            <p><%= link_to image_tag("chat_btn_phone.png"), entry_path(entry), :class=>'post_chat_btn' %></p>
+      <!--class= '-->
           </div>
+          <% end %>
           
         </div>
       </div>
