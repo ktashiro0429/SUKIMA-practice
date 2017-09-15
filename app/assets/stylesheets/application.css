@@ -374,11 +374,10 @@ footer p {
     font-weight: 600;
     color:#064444;
     opacity:0.6;
-  }
   
-  .post_chat_btn img{
-    height: 20px;
-    width:20px;
+  .post_chat_btn_img{
+    height: 25px;
+    width:25px;
     margin-bottom:7px;
     margin-left:5px;
   }
