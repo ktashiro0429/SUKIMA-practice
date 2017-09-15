@@ -8,7 +8,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 #else
   # Choose what kind of storage to use for this uploader:
 #end
-  # storage :fog
+  storage :file
 #process :convert => 'png'
 
  # version :standard do
