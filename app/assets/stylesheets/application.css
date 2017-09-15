@@ -346,7 +346,6 @@ footer p {
     height: 100px;
     width: 25px;
   }
-
   .user_image {
     width: 60px;
     height: 60px;
@@ -354,16 +353,36 @@ footer p {
   }
 
   .post_main_text {
-    margin-top: 22px;
+    margin-top: 15px;
+    text-align: left;
   }
 
   .name {
     font-size: 15px;
+    margin-left: 5%;
+    font-weight:600;
   }
 
   .post_main_text h3 {
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bold;
   }
+
+  .post_chat_btn p{
+    margin-left: 5%;
+    font-size:12px;
+    font-weight: 600;
+    color:#064444;
+    opacity:0.6;
+  }
+  
+  .post_chat_btn img{
+    height: 25px;
+    width:25px;
+    margin-bottom:7px;
+    margin-left:5px;
+  }
+  
 
   .post_main_chat {
     width: 90px;

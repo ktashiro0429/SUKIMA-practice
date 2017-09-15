@@ -13,7 +13,7 @@
 <% end %>
 </div>
 
-<% if admin_signed_in? %>
+<!--<% if admin_signed_in? %>-->
   <%= form_for @group do |f| %>
     <div class="button">
       <%= f.hidden_field :user_id, user_id: @group.id %>
@@ -22,5 +22,5 @@
       <% end %>
     </div>
   <% end %>
-<% end %>
+<!--<% end %>-->
 

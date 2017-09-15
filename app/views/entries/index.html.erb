@@ -72,8 +72,12 @@
           <%= link_to image_tag(entry.user.image), user_path(entry.user) %>
         </div>
         <div class="post_main_text">
+          <%= link_to entry.user.name, user_path(entry.user), class: "name" %>
           <h3><%= link_to entry.title, entry_path(entry), class: "entry_title" %></h3>
-          <%= link_to entry.user.name, user_path(entry.user), class: "name" %><br>
+          <div class="post_chat_btn">
+            <p>チャットする<img src="./assets/chat_btn_phone.png" class="post_chat_btn_img"></p>
+          </div>
+          
         </div>
       </div>
     </div>
