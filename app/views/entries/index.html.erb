@@ -13,6 +13,8 @@
       <a href=""><div class="category_part">医療</div></a>
       <a href=""><div class="category_part">教育</div></a>
       <a href=""><div class="category_part">エンジニア</div></a>
+      <%= form_tag :search_entries, method: :get do %>
+      <p><%= text_field_tag :q, params[:q] %><%= submit_tag "検索" %></p><% end %>
       <a href=""><div class="category_btn"><img src="./assets/cat_search.png"></div></a>
     </div>
   </div>
@@ -35,35 +37,36 @@
 
 
 <!-- スマホバージョン -->
+<% if @entries.present? %>
 <% @entries.each do |entry| %>
   <div class="posts sp">
     <div class="post">
       <div class="post_main">
         <div class="post_cat post_cat_dark">
-          <img src="./assets/cat_01.png">
+          <!--<img src="./assets/cat_01.png">-->
           <!-- 画像が作成されてないので後ほど反映 -->
-<!--           <% if entry.job_category == "営業" %>
-            <img src="./assets/">
+           <% if entry.job_category == "営業" %>
+            <img src="./assets/cat_02.png">
           <% elsif entry.job_category == "事務" %>
-            <img src="./assets/">
+            <img src="./assets/cat_03_officework">
           <% elsif entry.job_category == "企画" %>
-            <img src="./assets/">
+            <img src="./assets/cat_planning">
           <% elsif entry.job_category == "サービス" %>
-            <img src="./assets/">
+            <img src="./assets/cat_service">
           <% elsif entry.job_category == "制作" %>
-            <img src="./assets/">
+            <img src="./assets/cat_production">
           <% elsif entry.job_category == "クリエイティブ" %>
             <img src="./assets/cat_01.png">
-          <% elsif entry.job_category == "専門職" %>
-            <img src="./assets/">
+          <% elsif entry.job_category == "教育" %>
+            <img src="./assets/cat_education.png">
           <% elsif entry.job_category == "ITエンジニア" %>
-            <img src="./assets/">
+            <img src="./assets/cat_engineer">
           <% elsif entry.job_category == "医療" %>
-            <img src="./assets/">
+            <img src="./assets/cat_medical">
           <% else %>
-            <img src="./assets/">
+            <img src="./assets/cat_01.png">
           <% end %>
- -->        </div>
+         </div>
         <div class="user_image">
         <!-- ゆーざーの写真 -->
           <%= link_to image_tag(entry.user.image), user_path(entry.user) %>
@@ -116,6 +119,10 @@
       </div>
     </div>
   </div>
+<% end %>
+
+<% else %>
+<p>会員情報がありません</p>
 <% end %>
 <!-- /追加分 -->
 
