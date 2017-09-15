@@ -13,13 +13,13 @@
   </head>
 
 <body>
-  <div class="header">
+  <% if admin_signed_in? %>
+    <div class="header_admin header" >
+  <% else %>
+    <div class="header_user header" >
+  <% end %>
     <div class="header_menu">
-      <% if admin_signed_in? %>
-        <div><%= link_to image_tag("/assets/home.jpg"), root_path %></div>
-      <% else %>
-        <div><%= link_to image_tag("/assets/home.png"), root_path %></div>
-      <% end %> 
+      <div><%= link_to image_tag("/assets/home.png"), root_path %></div>
       
       <% if current_user.nil? && current_admin.nil? %>
         <div><%= link_to image_tag('/assets/mypage.png'), new_user_session_path %></div>
