@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   #include Cloudinary::CarrierWave
 #else
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  storage :fog
 #end
   # storage :fog
 #process :convert => 'png'
