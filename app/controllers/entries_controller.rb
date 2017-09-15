@@ -55,7 +55,9 @@ class EntriesController < ApplicationController
 
 
   def search
-    @entries = Entry.where(job_category: params[:keyword])
+    @entries = Entry.search(params[:q]).page(params[:page]).per(3)
+    #@entries = @entries.order("created_at DESC")  
+    render "index"
   end
 
   private

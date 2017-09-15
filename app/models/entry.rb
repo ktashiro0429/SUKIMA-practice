@@ -1,4 +1,14 @@
 class Entry < ActiveRecord::Base
+  
+  class << self
+    def search(query)
+      rel = order("created_at DESC")
+      if query.present?
+        rel = rel.where("title LIKE", "%#{query}%", "%#{query}%")
+      end
+      rel
+    end
+  end
 
   has_many :groups
   belongs_to :user
