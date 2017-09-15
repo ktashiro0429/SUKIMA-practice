@@ -71,10 +71,12 @@
         <div class="post_main_text">
           <%= link_to entry.user.name, user_path(entry.user), class: "name" %>
           <h3><%= link_to entry.title, entry_path(entry), class: "entry_title" %></h3>
-          <div class="post_chat_btn">
-            <p>チャットする<img src="./assets/chat_btn_phone.png" class="post_chat_btn_img"></p>
-          </div>
           
+          <% if current_admin.nil != true %>
+            <div class="post_chat_btn">
+              <p><%= link_to "チャットする" image_tag('/assets/chat_btn_phone.png'), groups_path, class="post_chat_btn_img" %></p>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
