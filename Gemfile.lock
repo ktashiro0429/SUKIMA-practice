@@ -399,6 +399,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   fog
+  fog-aws
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.0.beta2)
   kaminari
