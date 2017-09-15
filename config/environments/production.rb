@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'http://sukima-career.herokuapp.com/' }
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -75,15 +75,24 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :user_name => "tatsuya415077@gmail.com",
+    :password => "tatsuya4150",
+    :authentication => :plain,
+    :enable_starttls_auto => true
   
-   config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-      :address        => 'smtp.sendgrid.net',
-      :port           => '587',
-      :authentication => :plain,
-      :user_name      => 'app76421410@heroku.com',
-      :password       => 'tqclydz18009',
-      :domain         => 'heroku.com',
-      :enable_starttls_auto => true
+
+   #config.action_mailer.delivery_method = :smtp
+  #  config.action_mailer.smtp_settings = {
+  ##    :address        => 'smtp.sendgrid.net',
+  #    :port           => '587',
+   #   :authentication => :plain,
+  #    :user_name      => 'app76421410@heroku.com',
+  #    :password       => 'tqclydz18009',
+  ##    :domain         => 'heroku.com',
+  #    :enable_starttls_auto => true
     }
 end
