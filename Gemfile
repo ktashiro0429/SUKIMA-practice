@@ -24,7 +24,8 @@ gem 'carrierwave'
 gem 'mislav-will_paginate'
 gem 'rails-i18n'
 gem 'kaminari'
-
+gem 'fog'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'byebug'
