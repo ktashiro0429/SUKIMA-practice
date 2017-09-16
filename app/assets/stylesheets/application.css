@@ -63,7 +63,7 @@ a:hover {
 }
 
 .header_user {
-  height: 100px;
+  height: 150%;
   width:100%;
   background: url('/assets/header_sp.png');
   background-size: 200%;
