@@ -16,10 +16,10 @@
 
 
 body {
-  margin: 0;
-  padding: 0;
+  /*margin: 0;
+  padding: 0;*/
   text-align: center;
-
+  
 }
 
 h1, h2, h3, h4, h5, h6, ul, li, p {
@@ -54,37 +54,39 @@ a:hover {
 /*header                                   */
 /*-----------------------------------------*/
 .header_admin {
+  height: 100px;
   width:100%;
   background: url('/assets/header_smp.png');
   /*background: url('/assets/header_sp.png') no-repeat top left;*/
-  background-size: cover;
+  background-size: 200%;
   overflow: hidden;
 }
 
 .header_user {
+  height: 100px;
   width:100%;
   background: url('/assets/header_sp.png');
-  background-size: cover;
+  background-size: 200%;
   overflow: hidden;
 }
 
 
 .header_menu {
-  width: 80%;
+  width: 70%;
   display: inline-block;
   float: right;
 }
 
 .header_menu div {
   display: inline-block;
-  float: left;
+  float: right;
   width: 20%;
-  padding-top: 5%;
+  padding-top: 13%;
   /*padding-bottom: 3%;*/
 }
 
 .header_menu img {
-  width: 60%;
+  width: 100%;
 }
 
 
@@ -125,9 +127,16 @@ a:hover {
 /*contents                                 */
 /*-----------------------------------------*/
 .container {
+  height: 100%;
+  min-height: 100%;
   width: 100%;
   overflow: hidden;
   background-color: #D3F2E9;
+}
+
+.bgcolor{
+  height: 400px;
+  backgroud-color: #D3F2E9;
 }
 
 /*main_image-------------------------------*/
@@ -171,7 +180,7 @@ a:hover {
 /*-----------------------------------------*/
 footer {
   width: 100%;
-  height: 50px;
+  height: 40px;
   background-color: #333;
   color: white;
 }
@@ -499,14 +508,14 @@ footer p {
   }
 
   .container {
-    padding-top: 20px;
+    /*padding-top: 20px;*/
   }
 
 /*-----------------------------------------*/
 /*header                                   */
 /*-----------------------------------------*/
   .header {
-    height: 130px;
+    height: 100px;
     background: url('/assets/header_web.png') 0 0 no-repeat;
     /*background: url('/assets/header_pc.png') 0 0 no-repeat;*/
     background-size: cover;
