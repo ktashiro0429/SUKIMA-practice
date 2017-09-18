@@ -49,37 +49,41 @@
            <% if entry.job_category == "営業" %>
             <img src="./assets/cat_02.png">
           <% elsif entry.job_category == "事務" %>
-            <img src="./assets/cat_03_officework">
+            <img src="./assets/cat_03_officework.png">
           <% elsif entry.job_category == "企画" %>
-            <img src="./assets/cat_planning">
+            <img src="./assets/cat_planning".png>
           <% elsif entry.job_category == "サービス" %>
-            <img src="./assets/cat_service">
+            <img src="./assets/cat_service.png">
           <% elsif entry.job_category == "制作" %>
-            <img src="./assets/cat_production">
+            <img src="./assets/cat_production.png">
           <% elsif entry.job_category == "クリエイティブ" %>
             <img src="./assets/cat_01.png">
           <% elsif entry.job_category == "教育" %>
             <img src="./assets/cat_education.png">
           <% elsif entry.job_category == "ITエンジニア" %>
-            <img src="./assets/cat_engineer">
+            <img src="./assets/cat_engineer.png">
           <% elsif entry.job_category == "医療" %>
-            <img src="./assets/cat_medical">
+            <img src="./assets/cat_medical.png">
           <% else %>
             <img src="./assets/cat_01.png">
           <% end %>
          </div>
         <div class="user_image">
         <!-- ゆーざーの写真 -->
+        <% if !entry.user.image.nil? %>
           <%= link_to image_tag(entry.user.image), user_path(entry.user) %>
+        <% else %>　
+          <%= link_to image_tag('brank_icon.jpg'), user_path(entry.user) %>
+        <% end %>
         </div>
         <div class="post_main_text">
           <%= link_to entry.user.name, user_path(entry.user), class: "name" %>
           <h3><%= link_to entry.title, entry_path(entry), class: "entry_title" %></h3>
           <% if admin_signed_in? %> 
-          <div class="post_chat_btn">
+          <!--<div class="post_chat_btn">
             <p><%= link_to image_tag("chat_btn_phone.png"), entry_path(entry), :class=>'post_chat_btn' %></p>
       <!--class= '-->
-          </div>
+          </div>-->
           <% end %>
         </div>
       </div>

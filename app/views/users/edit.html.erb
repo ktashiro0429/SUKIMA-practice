@@ -2,12 +2,13 @@
   <div class="post_head">
     <img class="title" src="/assets/mypage_kotoba.png">
   </div>
+  <div class="student_profile">
   <%= form_for @user do |f| %>
-    <%= f.label :image do %>
-      <%= f.file_field :image, style: "display: none;" %>
-      <img src="/assets/blank_icon.jpg" class="student_upload_image">
-    <% end %>
-
+      <%= f.label :プロフィール画像 %>
+　    <%= f.file_field :image %>
+　    <%= f.hidden_field :image_cache %>
+  </div>
+      
     <div class="student_profile">
       <%= f.label :名前, class: "form_label" %>
       <%= f.text_field :name, class: "normal-input", placeholder: "スキマ 太郎" %>
