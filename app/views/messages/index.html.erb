@@ -1,0 +1,50 @@
+<div class="contents-box">
+  <div id="chat-frame">
+  <!-- ここから相手、自分の区別でそれぞれデータ挿入 -->
+    <% if current_user.nil? %><!-- ログインしてるユーザーがadminの時の判定 -->
+      <% @messages.each do |message| %>
+        <% if message.admin_id.nil? %><!-- メッセージを左右どちらに表示するかの判定 -->
+          <!-- 相手 -->
+          <p class="chat-talk">
+              <span class="talk-icon">
+                <%= link_to image_tag(message.user.image, width: "50", height: "50"), user_path(message.user) %>
+              </span>
+              <span class="talk-content"><%= message.message %></span>
+          </p>
+        <% else %>
+          <!-- 自分 -->
+          <p class="chat-talk mytalk">
+              <span class="talk-icon">
+                <%= link_to image_tag(message.admin.image, width: "50", height: "50"), admin_path(message.admin) %>
+              </span>
+              <span class="talk-content"><%= message.message %></span>
+          </p>
+        <% end %>
+      <% end %>
+    <% else %><!-- ログインしてるユーザーがuserの時の判定 -->
+      <% @messages.each do |message| %>
+        <!-- 相手 -->
+        <% if message.user_id.nil? %><!-- メッセージを左右どちらに表示するかの判定 -->
+          <p class="chat-talk">
+              <span class="talk-icon">
+                <%= link_to image_tag(message.admin.image, width: "50", height: "50"), admin_path(message.admin) %>
+              </span>
+              <span class="talk-content"><%= message.message %></span>
+          </p>
+        <% else %>
+          <!-- 自分 -->
+          <p class="chat-talk mytalk">
+              <span class="talk-icon">
+                <%= link_to image_tag(message.user.image, width: "50", height: "50"), user_path(message.user) %>
+              </span>
+              <span class="talk-content"><%= message.message %></span>
+          </p>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= form_for [@group, @message] do |f| %>
+    <%= f.text_field :message, class: "messe_input" %>
+    <%= button_tag type: "submit", class: "btn btn-success messe_sent" do %>送信<% end %>
+  <% end %>
+</div>

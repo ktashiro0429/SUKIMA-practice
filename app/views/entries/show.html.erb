@@ -1,0 +1,26 @@
+<%= image_tag @entry.user.image, height: "70", width: "70" ,class: "entry_image" %>
+<div class="entry_text">
+  <h4><%= @entry.user.name %></h4>
+  <h3><%= @entry.title %></h3>
+  <div class="student_profile">
+    <div class="triangle"></div>
+    <div class="entry_words"><%= simple_format(@entry.body) %></div>
+  </div>
+<% unless current_user.nil? %>
+  <% if current_user.id == @entry.user_id %>
+    <p><%= link_to "編集", [:edit, @entry] %></p>
+  <% end %>
+<% end %>
+</div>
+
+<!--<% if admin_signed_in? %>-->
+  <%= form_for @group do |f| %>
+    <div class="button">
+      <%= f.hidden_field :user_id, user_id: @group.id %>
+      <%= button_tag type: :submit do %>
+        <%= image_tag "chat_suru.png" %>
+      <% end %>
+    </div>
+  <% end %>
+<!--<% end %>-->
+

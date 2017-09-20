@@ -1,0 +1,8 @@
+<h3>投稿の編集</h3>
+
+<p><%= link_to "投稿の詳細に戻る", @entry %></p>
+
+<%= form_for @entry do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>

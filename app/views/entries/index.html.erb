@@ -1,0 +1,170 @@
+  <div class="category_search sp">
+    <div class="category_btn">
+      <img src="./assets/cat_search_on.png" class="cat_search_on">
+      <img src="./assets/cat_search_off.png" class="cat_search_off hidden">
+    </div>
+
+    <div class="category_content" style="display: none;">
+      <a href=""><div class="category_part">企画</div></a>
+      <a href=""><div class="category_part">制作</div></a>
+      <a href=""><div class="category_part">事務</div></a>
+      <a href=""><div class="category_part">専門職</div></a>
+      <a href=""><div class="category_part">営業</div></a>
+      <a href=""><div class="category_part">医療</div></a>
+      <a href=""><div class="category_part">教育</div></a>
+      <a href=""><div class="category_part">エンジニア</div></a>
+      <%= form_tag :search_entries, method: :get do %>
+      <p><%= text_field_tag :q, params[:q] %><%= submit_tag "検索" %></p><% end %>
+      <a href=""><div class="category_btn"><img src="./assets/cat_search.png"></div></a>
+    </div>
+  </div>
+
+  <div class="category_search_pc pc">
+    <div class="category_tab">職種</div>
+    <div class="category_content_pc">
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="1">営業</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="2">事務</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="3">企画</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="4">サービス</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="5">制作</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="6">クリエイティブ</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="7">専門職</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="8">ITエンジニア</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="9">医療</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="10">教育</label>
+    </div>
+  </div>
+
+
+<!-- スマホバージョン -->
+<div class="bgcolor">
+<% if @entries.present? %>
+<% @entries.each do |entry| %>
+  <div class="posts sp">
+    <div class="post">
+      <div class="post_main">
+        <div class="post_cat post_cat_dark">
+          <!--<img src="./assets/cat_01.png">-->
+          <!-- 画像が作成されてないので後ほど反映 -->
+           <% if entry.job_category == "営業" %>
+            <img src="./assets/cat_02.png">
+          <% elsif entry.job_category == "事務" %>
+            <img src="./assets/cat_03_officework.png">
+          <% elsif entry.job_category == "企画" %>
+            <img src="./assets/cat_planning".png>
+          <% elsif entry.job_category == "サービス" %>
+            <img src="./assets/cat_service.png">
+          <% elsif entry.job_category == "制作" %>
+            <img src="./assets/cat_production.png">
+          <% elsif entry.job_category == "クリエイティブ" %>
+            <img src="./assets/cat_01.png">
+          <% elsif entry.job_category == "教育" %>
+            <img src="./assets/cat_education.png">
+          <% elsif entry.job_category == "ITエンジニア" %>
+            <img src="./assets/cat_engineer.png">
+          <% elsif entry.job_category == "医療" %>
+            <img src="./assets/cat_medical.png">
+          <% else %>
+            <img src="./assets/cat_01.png">
+          <% end %>
+         </div>
+        <div class="user_image">
+        <!-- ゆーざーの写真 -->
+        <% if !entry.user.image.nil? %>
+          <%= link_to image_tag(entry.user.image), user_path(entry.user) %>
+        <% else %>　
+          <%= link_to image_tag('brank_icon.jpg'), user_path(entry.user) %>
+        <% end %>
+        </div>
+        <div class="post_main_text">
+          <%= link_to entry.user.name, user_path(entry.user), class: "name" %>
+          <h3><%= link_to entry.title, entry_path(entry), class: "entry_title" %></h3>
+          <% if admin_signed_in? %> 
+          <!--<div class="post_chat_btn">
+            <p><%= link_to image_tag("chat_btn_phone.png"), entry_path(entry), :class=>'post_chat_btn' %></p>
+      <!--class= '-->
+          </div>-->
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- PCバージョン -->
+  <div class="posts pc">
+    <div class="post">
+      <div class="post_main">
+        <div class="post_cat post_cat_dark">
+          <% if entry.job_category == "クリエイティブ" %>
+            <img src="./assets/cat_creative.jpg">
+          <% elsif entry.job_category == "教育" %>
+            <img src="./assets/education.jpg">
+          <% elsif entry.job_category == "ITエンジニア" %>
+            <img src="./assets/enginieer.jpg">
+          <% elsif entry.job_category == "医療" %>
+            <img src="./assets/medical.jpg">
+          <% elsif entry.job_category == "事務" %>
+            <img src="./assets/officework.jpg">
+          <% elsif entry.job_category == "企画" %>
+            <img src="./assets/planning.jpg">
+          <% elsif entry.job_category == "制作" %>
+            <img src="./assets/production.jpg">
+          <% elsif entry.job_category == "営業" %>
+            <img src="./assets/sales.jpg">
+          <% elsif entry.job_category == "サービス" %>
+            <img src="./assets/service.jpg">
+          <% else %>
+            <img src="./assets/profession.jpg">
+          <% end %>
+        </div>
+        <div class="test_post_main_title">
+          <a href=""><h3><%= entry.title %></h3></a>
+        </div>
+        <div class="user_image">
+          <%= link_to image_tag(entry.user.image), user_path(entry.user) %>
+        </div>
+        <div class="post_main_text">
+          <p class="name"><%= entry.user.name %></p>
+          <img src="./assets/chat_btn_pc.jpg" class="post_main_chat">
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% else %>
+<p>会員情報がありません</p>
+<% end %>
+<!-- /追加分 -->
+
+
+<!-- ページネーション -->
+<%= paginate(@entries) %>
+<!--   <nav>
+    <ul class="pagination pagination-lg">
+      <li><a href="#">&raquo;</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">2</a></li>
+      <li class="active"><a href="#">1</a></li>
+      <li class="disabled"><a href="#">&laquo;</a></li>
+    </ul>
+  </nav>
+ -->
+
+</div>
+
+<script type="text/javascript">
+  $('.category_btn').click(function () {
+    if ($(".cat_search_off").is(":hidden")) {
+      $(".cat_search_on").addClass('hidden');
+      $(".cat_search_off").removeClass('hidden');
+      $(".category_content").slideDown("slow");
+    } else {
+      $(".cat_search_on").removeClass('hidden');
+      $(".cat_search_off").addClass('hidden');
+      $(".category_content").slideUp("slow");
+    }
+  });
+</script>

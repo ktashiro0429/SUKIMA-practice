@@ -1,13 +1,13 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.default_url_options = { host: 'http://ruby-practice-ayasamind.c9users.io', port: 8080 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => 587,
-    :user_name => "ayasamind@gmail.com",
-    :password => "saikurinngu1",
+    :user_name => "tatsuya415077@gmail.com",
+    :password => "tatsuya4150",
     :authentication => :plain,
     :enable_starttls_auto => true
   }

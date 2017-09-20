@@ -1,33 +1,32 @@
-<div class="log_in">
-  <h2>Log in</h2>
-</div>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
-<div class="sign_up_forms">
-  <div class="field">
-    <p class="form"><%= f.label :email %>:<br /></p>
-    <p><%= f.email_field :email, autofocus: true %></p>
+<div class="login_body">
+  <div class="post_head">
+    <h2>ユーザーログイン</h2>
   </div>
-
-  <div class="field">
-    <p class="form"><%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %>:<br /></p>
-    <p><%= f.password_field :password, autocomplete: "off" %></p>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="blank"></div>
+  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="student_profile">
+      <%= f.label :email, "メールアドレス", class: "login_label" %>
+      <%= f.email_field :email, autofocus: true, placeholder: "example@mail.com", class: "sign_form" %>
     </div>
-  <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+    <div class="student_profile">
+      <%= f.label :password, "パスワード", class: "login_label" %>
+      <%= f.password_field :password, class: "sign_form", placeholder: "000000" %>
+    </div>
+
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, "パスワードを記憶する" %>
+      </div>
+    <% end -%>
+
+    <div class="post_in">
+      <%= image_submit_tag("/assets/login_btn.png", width: "50%", height: "10%" ) %>
+    </div>
+  <% end %>
+  <p class="guide_regist_btn"><%= link_to "登録はこちら", new_user_registration_path %></p>
+  <p class="guide_company_btn"><%= link_to "企業ログインはこちら", new_admin_session_path %></p>
 </div>
-<%= render "users/shared/links" %>
+

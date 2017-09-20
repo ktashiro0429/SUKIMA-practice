@@ -25,5 +25,106 @@
     </ul>
   </div>
   
-  <h1>トップページ</h1>
+  <h1><%= @entry.author.name %>さんの投稿</h1>
+<h2><%= @entry.title %></h2>
+
+<% if @entries.present? %>
+    <% if current_user == @entry.author %>
+
+        <p><%= link_to "編集", [:edit, @entry] %></p>
+
+    <% end %>
+
+    <%= simple_format(@entry.body) %>
+<% else %>
+    <p>まだ投稿がありません</p>
+<% end %>
+
+<%= render "footer", entry: @enrty %>
   
+  <div class="posts">
+    <div class="post">
+      <div class="post_image"></div>
+      <div class="user_image"></div>
+      <div class="post_text">
+        <h3>営業がしたい</h3>
+        <p class="name">松口健司</p>
+        <ul>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post_image"></div>
+      <div class="user_image"></div>
+      <div class="post_text">
+        <h3>営業がしたい</h3>
+        <p class="name">松口健司</p>
+        <ul>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post_image"></div>
+      <div class="user_image"></div>
+      <div class="post_text">
+        <h3>営業がしたい</h3>
+        <p class="name">松口健司</p>
+        <ul>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post_image"></div>
+      <div class="user_image"></div>
+      <div class="post_text">
+        <h3>営業がしたい</h3>
+        <p class="name">松口健司</p>
+        <ul>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post_image"></div>
+      <div class="user_image"></div>
+      <div class="post_text">
+        <h3>営業がしたい</h3>
+        <p class="name">松口健司</p>
+        <ul>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post_image"></div>
+      <div class="user_image"></div>
+      <div class="post_text">
+        <h3>営業がしたい</h3>
+        <p class="name">松口健司</p>
+        <ul>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+          <li><a href="">タグ</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>

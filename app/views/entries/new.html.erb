@@ -1,0 +1,24 @@
+<h2 class="post_theme">投稿フォーム</h2>
+<%= form_for @entry do |f| %>
+  <div class="title-block">
+    <div><%= f.label :title, class: "entry_label" %></div>
+    <div><%= f.text_field :title, class: "title_input" %></div>
+  </div>
+  <div class="body-block">
+    <div><%= f.label :body, class: "entry_label" %></div>
+    <div><%= f.text_area :body, class: "body_input", rows: "10" %></div>
+  </div>
+  <%= f.label :職種, class: "entry_label"%>
+  <div class="job_category">
+    <label><%= f.radio_button :job_category, "営業" %><img src="/assets/sales.jpg"></label>
+    <label><%= f.radio_button :job_category, "企画" %><img src="/assets/planning.jpg"></label>
+    <label><%= f.radio_button :job_category, "制作" %><img src="/assets/production.jpg"></label>
+    <label><%= f.radio_button :job_category, "ITエンジニア" %><img src="/assets/enginieer.jpg"></label>
+    <label><%= f.radio_button :job_category, "医療" %><img src="/assets/medical.jpg"></label>
+    <label><%= f.radio_button :job_category, "事務" %><img src="/assets/officework.jpg"></label>
+    <label><%= f.radio_button :job_category, "クリエイティブ" %><img src="/assets/creative.jpg"></label>
+    <label><%= f.radio_button :job_category, "教育" %><img src="/assets/education.jpg"></label>
+    <label><%= f.radio_button :job_category, "サービス" %><img src="/assets/service.jpg"></label>
+  </div>
+  <%= image_submit_tag("/assets/toukou2_off.png")%>
+<% end %>

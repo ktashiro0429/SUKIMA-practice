@@ -1,42 +1,49 @@
-<% provide(:title, @users.name) %>
-<h1>マイページ(<%= @users.name %>)</h1>
+<div class="profile">
+  <div class="post_head">
+    <img class="title" src="/assets/mypage_kotoba.png">
+  </div>
+  <div class="student_image">
+    <%= image_tag @user.image %>
+  </div>
+  <h2><%= @user.name %></h2>
+  <table class="companies">
+    <tr>
+      <th>名前</th>
+      <td><%= @user.name %></td>
+    </tr>
 
-<table class="companies">
-<tr>
-<th>名前</th>
-<td><%= @users.name %></td>
-</tr>
+    <tr>
+      <th>性別</th>
+      <td><%= @user.gender == 0 ? "男" : "女" %></td>
+    </tr>
 
-<tr>
-<th>性別</th>
-<td><%= @users.gender == 0 ? "男" : "女" %></td>
-</tr>
+    <tr>
+      <th>大学</th>
+      <td><%= @user.education %></td>
+    </tr>
 
-<tr>
-<th>自己紹介</th>
-<td><%= @users.introduce %></td>
-</tr>
+    <tr>
+      <th>学部</th>
+      <td><%= @user.atschool %></td>
+    </tr>
 
-<tr>
-<th>学歴</th>
-<td><%= @users.education %></td>
-</tr>
+    <tr>
+      <th>働きたい県</th>
+      <td><%= @user.address %></td>
+    </tr>
 
-<tr>
-<th>住所</th>
-<td><%= @users.address %></td>
-</tr>
+    <tr>
+      <th>自己紹介</th>
+      <td><%= @user.introduce %></td>
+    </tr>
 
-<tr>
-<th>学生時代頑張ったこと</th>
-<td><%= @users.atschool %></td>
-</tr>
+    <tr>
+      <th>スキル</th>
+      <td><%= @user.skills%></td>
+    </tr>
+  </table>
+  <p><%= link_to 'プロフィール変更', edit_user_path %></p>
+  <p><%= link_to '投稿一覧', :entries %></p>
+</div>
 
-<tr>
-<th>スキル</th>
-<td><%= @users.skills%></td>
-</tr>
 
-</table>
-
- <p><%= link_to 'プロフィール変更', edit_admin_registration_path %></p>

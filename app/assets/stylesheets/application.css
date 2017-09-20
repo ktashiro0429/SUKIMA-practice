@@ -1,0 +1,697 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+body {
+  /*margin: 0;
+  padding: 0;*/
+  text-align: center;
+  
+}
+
+h1, h2, h3, h4, h5, h6, ul, li, p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+li {
+  list-style: none;
+  float:right;
+}
+
+a {
+  text-decoration: none;
+  color: #064444;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #064444;
+}
+
+.hidden {
+  display: none;
+}
+
+/*-----------------------------------------*/
+/*header                                   */
+/*-----------------------------------------*/
+.header_admin {
+  height: 150%;
+  width:100%;
+  background: url('/assets/header_smp.png') 0 0 no-repeat;
+  /*background: url('/assets/header_sp.png') no-repeat top left;*/
+  background-size: 200%;
+  overflow: hidden;
+}
+
+.header_user {
+  height: 150%;
+  width:100%;
+  background: url('/assets/header_sp.png') 0 0 no-repeat;
+  background-size: 200%;
+  overflow: hidden;
+}
+
+
+.header_menu {
+  width: 70%;
+  display: inline-block;
+  float: right;
+}
+
+.header_menu div {
+  display: inline-block;
+  float: right;
+  width: 20%;
+  padding-top: 13%;
+  /*padding-bottom: 3%;*/
+}
+
+.header_menu img {
+  width: 100%;
+}
+
+
+
+/*-----------------------------------------*/
+/*contents                                 */
+/*-----------------------------------------*/
+.category_search {
+  padding: 30px 15%;
+  background-color: #D3F2E9;
+}
+
+.category_btn{
+  background-color: #264c73;
+  cursor: pointer;
+}
+
+.category_btn img {
+  height: 30px;
+}
+
+.category_part {
+  height: 50px;
+  width: 100%;
+  background-color: #31659b;
+  margin-bottom: 10px;
+  color: #fff;
+  line-height: 50px;
+}
+
+.category_part:first-child {
+  margin-top: 10px;
+}
+
+
+
+/*-----------------------------------------*/
+/*contents                                 */
+/*-----------------------------------------*/
+.container {
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #D3F2E9;
+}
+
+.bgcolor{
+  height: 400px;
+  backgroud-color: #D3F2E9;
+}
+
+/*main_image-------------------------------*/
+#main_image {
+  background-color: lightgrey;
+  width: 100%;
+  height: 300px;
+}
+
+/*tags-------------------------------------*/
+.tags {
+  width: 80%;
+  margin: 0 10%; /*追加分*/
+  padding: 10px 0;
+  display: inline-block;
+  float: left;
+}
+
+.tags li {
+  height: 35px;
+  line-height: 35px;
+  margin: 5px;
+  padding: 0 10px;
+  background-color: #333;
+  border-radius: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.tags li a {
+  color: white;
+  font-weight: 600;
+}
+
+.tags li:hover {
+  opacity: 0.6;
+}
+
+
+/*-----------------------------------------*/
+/*footer                                   */
+/*-----------------------------------------*/
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  color: white;
+}
+
+footer p {
+  line-height: 50px;
+}
+
+/*追加分*/
+/*-----------------------------------------*/
+/*posts                                    */
+/*-----------------------------------------*/
+.posts {
+  overflow: hidden;
+  width: 80%;
+  margin-left: 10%;
+  display: inline-block;
+  float: left;
+}
+
+.post {
+  overflow: hidden;
+  width: 100%;
+  background-color: white;
+  margin: 28px 0;
+  /*独断と偏見で追加*/
+  border-right: 3px solid #85CBBF;
+  border-bottom: 3px solid #85CBBF;
+  border-radius: 10px;
+  /*ここまで*/
+}
+
+.post_main {
+  overflow: hidden;
+  height: 168px;
+  width: 100%;
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+
+.post_cat {
+  display: inline-block;
+  float: left;
+}
+
+.post_cat img {
+  height: 168px;
+  width: 40px;
+}
+
+.user_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+  /*background-image: url('/assets/member_kenji.jpg');*/
+  background-size: cover;
+  display: inline-block;
+  float: left;
+  margin: 34px 16px;
+}
+
+.user_image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30%;
+}
+
+.post_main_text {
+  overflow: hidden;
+  display: inline-block;
+  float: left;
+  margin-top: 50px;
+  width: 60%;
+}
+
+.name {
+  font-size: 16px;
+  color: #064444;
+  text-align: left;
+  
+}
+
+.post_main_title {
+  font-size: 24px;
+  color: #064444;
+  text-align: left;
+}
+
+.post_main_chat {
+  display: inline-block;
+  float: left;
+  width: 80px;
+}
+/*.pagination .page{
+  border: 1px solid;
+  border-radius: 10%;
+  text-align: center;
+}
+
+.pagination .next{
+  border: 1px solid;
+  border-radius: 10%;
+  text-align: center;
+}
+
+.pagination .last{
+  border: 1px solid;
+  border-radius: 10%;
+}*/
+
+
+
+/*-----------------------------------------*/
+/*show                                     */
+/*-----------------------------------------*/
+.show {
+  width: 80%;
+  padding: 0 10%;
+  overflow: hidden;
+  background-color: azure;
+}
+
+.show_image {
+  height: 300px;
+  width: 100%;
+  background-color: lightgrey;
+}
+
+.show_user {
+  width: 30%;
+  padding: 20px 0;
+  display: inline-block;
+  float: left;
+  background-color: white;
+}
+
+.show_user_image {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+  border-radius: 50px;
+  background-color: black;
+}
+
+.show_user table {
+  margin: 0 auto;
+}
+
+.show_content {
+  width: 65%;
+  margin-left: 5%;
+  padding: 20px 0;
+  display: inline-block;
+  float: left;
+  background-color: white;
+}
+
+.show_tags {
+  width: 100%;
+  overflow: hidden;
+}
+
+.pc {
+  display: none;
+}
+
+
+@media(min-width: 300px) and (max-width: 399px) {
+  .posts {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .post_main {
+    height: 100px;
+  }
+
+  .post_cat img {
+    height: 100px;
+    width: 25px;
+  }
+  .user_image {
+    width: 60px;
+    height: 60px;
+    margin: 20px 5px;
+  }
+
+  .post_main_text {
+    margin-top: 15px;
+    text-align: left;
+  }
+
+  .name {
+    font-size: 15px;
+    margin-left: 5%;
+    font-weight:600;
+  }
+
+  .post_main_text h3 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .post_chat_btn p{
+    margin-left: 5%;
+    font-size:12px;
+    font-weight: 600;
+    color:#064444;
+    opacity:0.6;
+  }  
+  .post_chat_btn_img{
+    height: 25px;
+    width:25px;
+    margin-bottom:7px;
+    margin-left:5px;
+  }
+  
+
+  .post_main_chat {
+    width: 90px;
+  }
+
+  .category_search {
+    padding: 30px 0;
+  }
+
+  .entry_title{
+    margin-left: 5%;
+    font-size: 110%;
+  }
+}
+
+@media(min-width: 400px) and (max-width: 500px) {
+  .category_search {
+    padding: 30px 5%;
+  }
+}
+
+  .post_chat_btn p{
+    margin-left: 5%;
+    font-size:12px;
+    font-weight: 600;
+    color:#064444;
+    opacity:0.6;
+  }  
+  .post_chat_btn_img{
+    height: 15px;
+    width:15px;
+    margin-bottom:7px;
+    margin-left:5px;
+  }
+  
+@media(min-width: 400px) and (max-width: 767px) {
+  .posts {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .post_main {
+    height: 120px;
+  }
+
+  .post_cat img {
+    height: 120px;
+    width: 30px;
+  }
+
+  .user_image {
+    width: 70px;
+    height: 70px;
+    margin: 25px 12px;
+  }
+
+  .post_main_text {
+    margin-top: 32px;
+  }
+
+  .name {
+    font-size: 12px;
+  }
+
+  .post_main_text h3 {
+    font-size: 16px;
+  }
+
+  .post_main_chat {
+    width: 90px;
+  }
+
+  .pc {
+    display: none;
+  }
+}
+
+@media(min-width: 600px) and (max-width: 767px) {
+  .post_main_text {
+    width: 75%;
+  }
+}
+
+
+  .post_chat_btn p{
+    margin-left: 5%;
+    font-size:12px;
+    font-weight: 600;
+    color:#064444;
+    opacity:0.6;
+  }  
+  .post_chat_btn_img{
+    height: 15px;
+    width:15px;
+    margin-bottom:0px;
+    margin-left:0px;
+  }
+  
+
+@media(min-width: 768px) {
+  .sp {
+    display: none;
+  }
+
+  .pc {
+    display: inline-block;
+  }
+
+  .container {
+    /*padding-top: 20px;*/
+  }
+
+/*-----------------------------------------*/
+/*header                                   */
+/*-----------------------------------------*/
+  .header {
+    height: 100px;
+    background: url('/assets/header_web.png') 0 0 no-repeat;
+    /*background: url('/assets/header_pc.png') 0 0 no-repeat;*/
+    background-size: cover;
+  }
+
+  .header_menu {
+    padding-right: 5%;
+  }
+
+  .header_menu div {
+    width: 100px;
+    padding-top: 55px;
+    float: right;
+  }
+
+  .header_menu img {
+    width: 70px;
+  }
+
+
+/*-----------------------------------------*/
+/*post                                     */
+/*-----------------------------------------*/
+.category_search_pc {
+  width: 20%;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+
+.category_tab {
+  width: 25%;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 10%;
+  background-color: #fff;
+  border-radius: 8px 8px 0 0;
+  border-right: 3px solid #85CBBF;
+}
+
+.category_content {
+  overflow: hidden;
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.category_content_pc {
+  overflow: hidden;
+  background-color: #fff;
+  padding: 10px 0;
+  border-radius: 10px;
+  border-right: 3px solid #85CBBF;
+  border-bottom: 3px solid #85CBBF;
+}
+
+.cat_content_part {
+  width: 90%;
+  margin-left: 10%;
+  text-align: left;
+  float: left;
+}
+
+.cat_content_part input[type=checkbox] {
+  margin-right: 5px;
+}
+/*-----------------------------------------*/
+/*post                                     */
+/*-----------------------------------------*/
+  .posts {
+    width: 80%;
+    margin: 0;
+  }
+
+  .post {
+    width: 45%;
+    display: inline-block;
+    float: left;
+    margin: 20px 0 0 4%;
+    /*独断と偏見で追加*/
+    border-right: 3px solid #85CBBF;
+    border-bottom: 3px solid #85CBBF;
+    border-radius: 10px;
+    /*ここまで*/
+  }
+
+  .post_main {
+    height: 350px;
+  }
+
+  .post_cat {
+    width: 100%;
+    height: 45px;
+    display: block;
+  }
+
+  .post_cat img {
+    height: 45px;
+    width: 50%;
+  }
+
+  .post_main_title {
+    text-align: center;
+    height: 110px;
+    margin-top: 45px;
+    width:100%;
+    background: url('./assets/comment.jpg') no-repeat top center;
+    background-size: cover;
+  }
+
+  .test_post_main_title {
+    text-align: center;
+    height: 78px;
+    width: 100%;
+    margin: 45px 0 10px;
+    padding: 20px 0;
+    background-color: #D3F2E9;
+    border-radius: 0 0 40% 40%;
+  }
+
+  .post_main_title h3 {
+    line-height: 95px;
+  }
+
+  .test_post_main_title h3 {
+    font-size: 18px;
+  }
+
+  .user_image {
+    float: none;
+    margin: 0;
+  }
+
+  .post_main_text {
+    float: none;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .post_main_text p {
+    text-align: center;
+  }
+
+  .post_main_chat {
+    float: none;
+    width: 170px;
+  }
+}
+
+@media(min-width: 900px) {
+  .post {
+    width: 30%;
+    margin: 20px 0 0 3%;
+  }
+
+  .post_main {
+    height: 350px;
+  }
+
+  .post_main_title {
+    text-align: center;
+    height: 95px;
+    margin-top: 45px;
+    width:100%;
+    background: url('/assets/comment.jpg') no-repeat top center;
+    background-size: cover;
+  }
+
+  .post_main_title h3 {
+    line-height: 80px;
+  }
+
+  .sp {
+    display: none;
+  }
+
+  .pc {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,39 @@
+<div class="contents-box">
+  <% if @groups.nil? %>
+   <p>チャットグループはまだありません。</p>
+  <% else %>
+    <% if current_user.nil? %>
+      <img src="/assets/chattitle-admin.png" alt="" class="title">
+    <% else %>
+      <img src="/assets/chattitle-user.png" alt="" class="title">
+    <% end %>
+    <div class="groups-box">
+      <% @groups.each do |group| %>
+        <%= link_to group_messages_path(group) do %>
+          <div class="group-box">
+            <% if current_user.nil? %>
+              <%= image_tag group.user.image, class: "icon" %>
+            <% else %>
+              <%= image_tag group.admin.image, class: "icon" %>
+            <% end %>
+            <div class="summary">
+              <% if current_user.nil? %>
+                <p id="person"><%= group.user.name %></p>
+               
+              <% else %>
+                <p id="person"><%= group.admin.name %></p>
+               　 <p id="title"><%# group.entry.title %></p>
+              <% end %>
+              <% if group.messages.last.nil? %>
+                <p id="last_message">[メッセージはありません。]</p>
+              <% else %>
+                <p id="last_message"><%= group.messages.last.message %></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+

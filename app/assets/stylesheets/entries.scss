@@ -1,0 +1,91 @@
+// Place all the styles related to the entries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.entry_edit{
+    margin:auto;
+    text-align:left;
+}
+
+.entry_edit th{
+}
+
+.entry_edit td{
+}
+
+.entry_image{
+  border-radius: 10%;
+  margin: 20px 0 ;
+}
+
+.entry_text {
+  margin-bottom: 20px;
+  line-height: 2em;
+}
+
+.entry_text .entry_words{
+  font-size: 16px;
+  height: 100px;
+  width: 70%;
+  box-shadow: 3px 3px 3px rgba(122,122,122,0.7);
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.entry{
+    margin:auto;
+}
+
+/*-----------------------------------------*/
+/*new.html.erb                             */
+/*-----------------------------------------*/
+
+@media screen and (max-width: 640px) {
+  .post_theme {
+      -webkit-font-smoothing: antialiased;
+      font-family:'Hiragino Kaku Gothic ProN W3', sans-serif;
+      font-size: 30px;
+      color: #58858E;
+      font-weight: bolder;
+      padding-top: 5%;
+  }
+
+  .entry_label {
+    color: #58858E;
+    font-size: 16px;
+    width: 30%;
+  }
+
+  .title-block {
+    margin: 10px 0;
+  }
+
+  .body-block {
+    margin: 10px 0;
+  }
+
+  .title_input {
+    padding: 10px;
+  }
+
+
+  .body_input {
+    padding: 5px;
+  }
+
+  .submit_image {
+    font-size: 16px;
+  }
+
+  .job_category {
+    margin: 10px 0;
+  }
+
+  .job_category label {
+    width: 30%;
+  }
+
+  .job_category label img {
+    width: 100%;
+    height: 20%;
+  }
+}

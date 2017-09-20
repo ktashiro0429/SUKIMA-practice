@@ -1,69 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Sukima career</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>SUKIMA career </title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <!-- Bootstrap -->
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="application.css">
+  </head>
+
 <body>
-
-
-<div class="header">
-  <div class="header_left">
-      <h1 class="logo"><a><%= link_to 'SUKIMA', root_path %></a></h1>
-  </div>
-   
-
-<!--学生ログイン時-->
-    <% if user_signed_in? %>
-  <div class="header_right_guest header_right"> 
-      <ul>
-        <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to 'マイページ', current_user %></a></li>
-        <li><a href="#">チャット</a></li>
-        <li><a href="#">投稿</a></li>
-        <!--<strong>< link_to current_user.username, pages_show_path %></strong>-->
-      </ul>
-  </div>
-<!--企業ログイン時-->
-  <% elsif admin_signed_in? %>
-  <div class="header_right_guest header_right">
-      <ul>
-        <li><%= link_to 'プロフィール変更', edit_admin_registration_path %></li>
-        <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %></li>
-        <li><a><%= link_to 'マイページ', current_admin %></a></li>
-        <li><a href="#">チャット</a></li>
-      </ul>
-  </div>
-<!--<strong>link_to current_admin.username, pages_show_path %></strong>-->
+  <% if admin_signed_in? %>
+    <div class="header_admin header" >
   <% else %>
-  <div class="header_right_guest header_right">
-      <ul>
-        <li><%= link_to '個人会員登録', new_user_registration_path %></li>
-        <li><%= link_to '個人ログイン', new_user_session_path %></li>
-        <li><%= link_to "Facebookログイン", user_facebook_omniauth_authorize_path %></li>
-        <li><%= link_to '法人ログイン', new_admin_session_path %></li>
-        
-      </ul>
-  </div>
+    <div class="header_user header" >
   <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-</div>
+    <div class="header_menu">
+      <%if current_user.nil? && current_admin.nil? %>
+        <div><%= link_to image_tag('/assets/signup.png'), new_user_registration_path %> </div>
+      <% end %>
+       <% if current_user.nil? && current_admin.nil? %>
+        <div><%= link_to image_tag('/assets/login.png'), new_user_session_path %></div>
+      <% elsif current_user.nil?%>
+        <div><%= link_to image_tag('/assets/logout.png'), destroy_admin_session_path, method: :delete %></div>
+      <% else %>
+        <div><%= link_to image_tag('/assets/logout.png'), destroy_user_session_path, method: :delete %></div>
+      <% end %>
+       <% if current_user.nil? && current_admin.nil? %>
+        <!--<div><%= link_to image_tag('/assets/memo.png'), new_user_session_path %></div>-->
+      <% elsif current_user.nil?%>
+        <div><%= link_to image_tag('/assets/memo.png'), new_user_session_path %></div>
+      <% else %>
+        <div><%= link_to image_tag('/assets/memo.png'), new_entry_path %></div>
+      <% end %>
+      <% if current_user.nil? && current_admin.nil? %>
+        <!--<div><%= link_to image_tag('/assets/chat.png'), new_user_session_path %></div>-->
+      <% else %>
+        <div><%= link_to image_tag('/assets/chat.png'), groups_path %></div>
+      <% end %>
+       <% if current_user.nil? && current_admin.nil? %>
+        <!--<div><%= link_to image_tag('/assets/mypage.png'), new_user_session_path %></div>-->
+      <% elsif current_user.nil?%>
+        <div><%= link_to image_tag('/assets/mypage.png'), admin_path(current_admin) %></div>
+      <% else %>
+        <div><%= link_to image_tag('/assets/mypage.png'), user_path(current_user) %></div>
+      <% end %>
+      <% if admin_signed_in? %>
+        <div><%= link_to image_tag("/assets/home.png"), root_path %></div>
+      <% else %>
+        <div><%= link_to image_tag("/assets/home.png"), root_path %></div>
+      <% end %>
+     
+      
+     
+      
+    </div>
+  </div>
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+  <% end %>
 <div class="container">
   <%= yield %>
 </div>
-  
-  </div>
-</div>
-  
-</header>
-
-
-<footer>
-   <p>SUKIMA All right reserved.</p>
-</footer>
+  <footer>
+    <p>Copyright (c) SUKIMA All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
