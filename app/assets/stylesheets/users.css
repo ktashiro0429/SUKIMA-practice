@@ -32,12 +32,15 @@
   width:200px;
   padding-left:10px;
   text-align: right;
+  font-weight:400;
 }
 
 .companies td{
   width : 300px;
   padding-left: 10px;
   text-align: left;
+  font-weight:bold;
+  font-size:16px;
 }
 
 .form{
@@ -543,4 +546,30 @@
     box-shadow:3px 3px 3px rgba(122,122,122,0.7);
   }
 
+}
+
+.mypage_introduce{
+  padding-top:10px;
+  text-align: center;
+  margin-bottom:80px;
+}
+
+.mypage_label {
+    color: #58858E;
+    font-size: 14px;
+}
+
+.introduce_text {
+  margin-left:auto;
+  margin-right:auto;
+  background-color:#fff;
+  height:100px;
+  width:70%;
+}
+
+.mypage_edit_btn img{
+  position: fixed;
+  top: 500px;
+  left: 75%;
+  height:80px;
 }
