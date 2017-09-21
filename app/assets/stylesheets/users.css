@@ -550,13 +550,13 @@
 
 .mypage_introduce{
   padding-top:10px;
-  text-align: center;
   margin-bottom:80px;
 }
 
 .mypage_label {
     color: #58858E;
     font-size: 14px;
+    text-align: center;
 }
 
 .introduce_text {
@@ -565,6 +565,8 @@
   background-color:#fff;
   height:100px;
   width:70%;
+  text-align:left;
+  padding-left:5px;
 }
 
 .mypage_edit_btn img{
@@ -572,4 +574,8 @@
   top: 500px;
   left: 75%;
   height:80px;
+}
+
+.student_profile .radio{
+  width:55.5%;
 }
