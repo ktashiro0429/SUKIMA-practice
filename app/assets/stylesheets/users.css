@@ -577,5 +577,9 @@
 }
 
 .student_profile .radio{
-  width:55.5%;
+  width:50%;
+}
+
+.student_profile input{
+  width:50%;
 }
