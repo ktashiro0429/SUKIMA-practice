@@ -10,15 +10,15 @@
   </div>
   <%= f.label :職種, class: "entry_label"%>
   <div class="job_category">
-    <label><%= f.radio_button :job_category, "営業" %><img src="/assets/sales.jpg"></label>
-    <label><%= f.radio_button :job_category, "企画" %><img src="/assets/planning.jpg"></label>
-    <label><%= f.radio_button :job_category, "制作" %><img src="/assets/production.jpg"></label>
-    <label><%= f.radio_button :job_category, "ITエンジニア" %><img src="/assets/enginieer.jpg"></label>
-    <label><%= f.radio_button :job_category, "医療" %><img src="/assets/medical.jpg"></label>
-    <label><%= f.radio_button :job_category, "事務" %><img src="/assets/officework.jpg"></label>
-    <label><%= f.radio_button :job_category, "クリエイティブ" %><img src="/assets/creative.jpg"></label>
-    <label><%= f.radio_button :job_category, "教育" %><img src="/assets/education.jpg"></label>
-    <label><%= f.radio_button :job_category, "サービス" %><img src="/assets/service.jpg"></label>
+    <label class="job_cat_btn"><%= f.radio_button :job_category, "営業" %><img src="/assets/sales.jpg"></label>
+    <label class="job_cat_btn"><%= f.radio_button :job_category, "企画" %><img src="/assets/planning.jpg"></label>
+    <label class="job_cat_btn"><%= f.radio_button :job_category, "制作" %><img src="/assets/production.jpg"></label>
+    <label class="job_cat_btn"><%= f.radio_button :job_category, "ITエンジニア" %><img src="/assets/enginieer.jpg"></label>
+    <label class="job_cat_btn"><%= f.radio_button :job_category, "医療" %><img src="/assets/medical.jpg"></label>
+    <label class="job_cat_btn"><%= f.radio_button :job_category, "事務" %><img src="/assets/officework.jpg"></label>
+    <label class="job_cat_btn"><%= f.radio_button :job_category, "クリエイティブ" %><img src="/assets/creative.jpg"></label>
+    <label class="job_cat_btn"><%= f.radio_button :job_category, "教育" %><img src="/assets/education.jpg"></label>
+    <label class="job_cat_btn"><%= f.radio_button :job_category, "サービス" %><img src="/assets/service.jpg"></label>
   </div>
-  <%= image_submit_tag("/assets/toukou2_off.png")%>
+  <%= image_submit_tag("/assets/toukou2_off.png", class: 'post_submit_btn')%>
 <% end %>
