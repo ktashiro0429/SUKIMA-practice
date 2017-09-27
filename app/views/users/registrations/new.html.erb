@@ -6,7 +6,6 @@
   <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
     <div class="student_profile">
       <%= f.label :プロフィール画像 %>
-　    <%= image_tag @user.image.thumb.url if @user.image? %>
 　    <%= f.file_field :image %>
 　    <%= f.hidden_field :image_cache %>
       <!--<img src="/assets/blank_icon.jpg" class="student_upload_image">-->
