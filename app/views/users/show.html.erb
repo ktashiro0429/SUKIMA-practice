@@ -9,7 +9,7 @@
   <table class="companies">
     <tr>
       <th>名前</th>
-      <td><%= @user.name %></td>
+        <td><%= @user.name %></td>
     </tr>
 
     <tr>
@@ -31,18 +31,21 @@
       <th>働きたい県</th>
       <td><%= @user.address %></td>
     </tr>
-
-    <tr>
-      <th>自己紹介</th>
-      <td><%= @user.introduce %></td>
-    </tr>
-
+    
     <tr>
       <th>スキル</th>
       <td><%= @user.skills%></td>
     </tr>
-  </table>
-  <p><%= link_to 'プロフィール変更', edit_user_path %></p>
+  </table>    
+  <div class="mypage_introduce">
+    <p class="mypage_label">自己紹介</p>
+    <div class="introduce_text">
+      <%= @user.introduce %>
+    </div>
+  </div>
+
+
+  <%= link_to image_tag("/assets/edit_btn.png"), edit_user_path, class: "mypage_edit_btn" %></p>
   <p><%= link_to '投稿一覧', :entries %></p>
 </div>
 
