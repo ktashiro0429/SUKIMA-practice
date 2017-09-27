@@ -54,25 +54,26 @@ a:hover {
 /*header                                   */
 /*-----------------------------------------*/
 .header_admin {
-  height: 150%;
+  /*height: 150%;*/
   width:100%;
-  background: url('/assets/header_smp.png') 0 0 no-repeat;
-  /*background: url('/assets/header_sp.png') no-repeat top left;*/
-  background-size: 200%;
+  /*background: url('/assets/header_smp.png') 0 0 no-repeat;*/
+  background: url('/assets/header_smp.png') no-repeat top left;
+  background-size: cover;
   overflow: hidden;
 }
 
 .header_user {
-  height: 150%;
+  /*height: 150%;*/
+  max-height: 100px;
   width:100%;
-  background: url('/assets/header_sp.png') 0 0 no-repeat;
-  background-size: 200%;
+  background: url('/assets/header_sp.png') top left no-repeat;
+  background-size: cover;
   overflow: hidden;
 }
 
 
 .header_menu {
-  width: 70%;
+  width: 80%;
   display: inline-block;
   float: right;
 }
@@ -81,12 +82,13 @@ a:hover {
   display: inline-block;
   float: right;
   width: 20%;
-  padding-top: 13%;
+  padding-top: 10%;
   /*padding-bottom: 3%;*/
 }
 
 .header_menu img {
   width: 100%;
+  max-width: 70px;
 }
 
 
@@ -130,12 +132,13 @@ a:hover {
   height: 100%;
   min-height: 100%;
   width: 100%;
+  padding-top: 10px;
   overflow: hidden;
   background-color: #D3F2E9;
 }
 
 .bgcolor{
-  height: 400px;
+  /*height: 400px;*/
   backgroud-color: #D3F2E9;
 }
 
@@ -189,7 +192,6 @@ footer p {
   line-height: 50px;
 }
 
-/*追加分*/
 /*-----------------------------------------*/
 /*posts                                    */
 /*-----------------------------------------*/
@@ -257,6 +259,10 @@ footer p {
   width: 60%;
 }
 
+.post_main_text a img {
+  width: 80%;
+}
+
 .name {
   font-size: 16px;
   color: #064444;
@@ -291,6 +297,17 @@ footer p {
   border: 1px solid;
   border-radius: 10%;
 }*/
+
+.fixed_post {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  width: 70px;
+}
+
+.fixed_post img {
+  width: 100%;
+}
 
 
 
@@ -382,7 +399,7 @@ footer p {
 
   .post_main_text h3 {
     font-size: 20px;
-    font-weight: bold;
+    /*font-weight: bold;*/
   }
 
   .post_chat_btn p{
@@ -409,8 +426,8 @@ footer p {
   }
 
   .entry_title{
-    margin-left: 5%;
-    font-size: 110%;
+    /*margin-left: 5%;*/
+    font-size: 16px;
   }
 }
 
@@ -456,15 +473,16 @@ footer p {
   }
 
   .post_main_text {
-    margin-top: 32px;
+    margin-top: 23px;
   }
 
   .name {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .post_main_text h3 {
-    font-size: 16px;
+    font-size: 18px;
+    /*font-weight: bold;*/
   }
 
   .post_main_chat {
@@ -476,9 +494,22 @@ footer p {
   }
 }
 
+@media(min-width: 500px) and (max-width: 767px) {
+  
+  .header_menu div {
+    padding-top: 30px;
+  }
+  
+}
+
 @media(min-width: 600px) and (max-width: 767px) {
   .post_main_text {
     width: 75%;
+  }
+
+  .post_main_text h3 {
+    font-size: 24px;
+    /*font-weight: bold;*/
   }
 }
 
@@ -508,17 +539,21 @@ footer p {
   }
 
   .container {
-    /*padding-top: 20px;*/
+    padding-top: 20px;
   }
 
 /*-----------------------------------------*/
 /*header                                   */
 /*-----------------------------------------*/
   .header {
-    height: 100px;
-    background: url('/assets/header_web.png') 0 0 no-repeat;
+    height: 130px;
+    background: url('/assets/header_pc.png') 0 0 no-repeat;
     /*background: url('/assets/header_pc.png') 0 0 no-repeat;*/
     background-size: cover;
+  }
+  
+  .header_user {
+    max-height: 130px;
   }
 
   .header_menu {
@@ -578,8 +613,22 @@ footer p {
   float: left;
 }
 
+.cat_content_part:hover {
+  cursor: pointer;
+}
+
+.cat_content_part input + span {
+  opacity: 0.5;
+}
+
+.cat_content_part input:checked + span {
+  color: orange;
+  opacity: 1;
+}
+
 .cat_content_part input[type=checkbox] {
   margin-right: 5px;
+  display: none;
 }
 /*-----------------------------------------*/
 /*post                                     */
@@ -613,7 +662,7 @@ footer p {
 
   .post_cat img {
     height: 45px;
-    width: 50%;
+    width: 100%;
   }
 
   .post_main_title {
@@ -661,6 +710,10 @@ footer p {
   .post_main_chat {
     float: none;
     width: 170px;
+  }
+
+  .fixed_post {
+    width: 80px;
   }
 }
 

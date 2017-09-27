@@ -22,16 +22,16 @@
   <div class="category_search_pc pc">
     <div class="category_tab">職種</div>
     <div class="category_content_pc">
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="1">営業</label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="2">事務</label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="3">企画</label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="4">サービス</label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="5">制作</label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="6">クリエイティブ</label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="7">専門職</label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="8">ITエンジニア</label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="9">医療</label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="10">教育</label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="1"><span>営業</span></label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="2"><span>事務</span></label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="3"><span>企画</span></label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="4"><span>サービス</span></label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="5"><span>制作</span></label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="6"><span>クリエイティブ</span></label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="7"><span>専門職</span></label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="8"><span>ITエンジニア</span></label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="9"><span>医療</span></label>
+      <label class="cat_content_part"><input type="checkbox" name="occupation" value="10"><span>教育</span></label>
     </div>
   </div>
 
@@ -39,8 +39,8 @@
 <!-- スマホバージョン -->
 <div class="bgcolor">
 <% if @entries.present? %>
-<% @entries.each do |entry| %>
-  <div class="posts sp">
+<div class="posts sp">
+  <% @entries.each do |entry| %>
     <div class="post">
       <div class="post_main">
         <div class="post_cat post_cat_dark">
@@ -88,49 +88,51 @@
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
+</div>
 
 <!-- PCバージョン -->
-  <div class="posts pc">
+<div class="posts pc">
+  <% @entries.each do |entry| %>
     <div class="post">
       <div class="post_main">
         <div class="post_cat post_cat_dark">
           <% if entry.job_category == "クリエイティブ" %>
-            <img src="./assets/cat_creative.jpg">
+            <img src="./assets/creative.png">
           <% elsif entry.job_category == "教育" %>
-            <img src="./assets/education.jpg">
+            <img src="./assets/kyouiku.png">
           <% elsif entry.job_category == "ITエンジニア" %>
-            <img src="./assets/enginieer.jpg">
+            <img src="./assets/engineer.png">
           <% elsif entry.job_category == "医療" %>
-            <img src="./assets/medical.jpg">
+            <img src="./assets/iryou.png">
           <% elsif entry.job_category == "事務" %>
-            <img src="./assets/officework.jpg">
+            <img src="./assets/jimu.png">
           <% elsif entry.job_category == "企画" %>
-            <img src="./assets/planning.jpg">
+            <img src="./assets/kikaku.png">
           <% elsif entry.job_category == "制作" %>
-            <img src="./assets/production.jpg">
+            <img src="./assets/seisaku.png">
           <% elsif entry.job_category == "営業" %>
-            <img src="./assets/sales.jpg">
+            <img src="./assets/eigyo.png">
           <% elsif entry.job_category == "サービス" %>
-            <img src="./assets/service.jpg">
+            <img src="./assets/service.png">
           <% else %>
             <img src="./assets/profession.jpg">
           <% end %>
         </div>
         <div class="test_post_main_title">
-          <a href=""><h3><%= entry.title %></h3></a>
+          <h3><%= link_to entry.title, entry_path(entry), class: "entry_title" %></h3>
         </div>
         <div class="user_image">
           <%= link_to image_tag(entry.user.image), user_path(entry.user) %>
         </div>
         <div class="post_main_text">
           <p class="name"><%= entry.user.name %></p>
-          <img src="./assets/chat_btn_pc.jpg" class="post_main_chat">
+          <%= link_to image_tag('chat_suru_pc.png'), groups_path %>
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <% else %>
 <p>会員情報がありません</p>
@@ -152,6 +154,10 @@
     </ul>
   </nav>
  -->
+ 
+ <div class="fixed_post">
+   <%= link_to image_tag('toukou.png'), new_entry_path %>
+ </div>
 
 </div>
 
