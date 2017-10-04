@@ -13,9 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require turbolinks
 //= require_tree .
 
 $(window).on('scroll', function() {
     $('.header').toggleClass('fixed', $(this).scrollTop() > 50);
+});
+
+
+$(function(){
+  var win_h = $(window).height();
+  var html_h = $("html").height();
+  console.log(win_h);
+  console.log(html_h);
+  if (win_h > html_h) {
+    $("footer").addClass("low");
+    $(".container").height(win_h - 180);
+  }
 });

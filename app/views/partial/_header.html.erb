@@ -1,0 +1,49 @@
+<% if admin_signed_in? %>
+  <div class="header_admin header" >
+<% else %>
+  <div class="header_user header" >
+<% end %>
+  <div class="header_menu">
+    <%if current_user.nil? && current_admin.nil? %>
+      <div><%= link_to image_tag('/assets/signup.png'), new_user_registration_path %> </div>
+    <% end %>
+     <% if current_user.nil? && current_admin.nil? %>
+      <div><%= link_to image_tag('/assets/login.png'), new_user_session_path %></div>
+    <% elsif current_user.nil?%>
+      <div><%= link_to image_tag('/assets/logout.png'), destroy_admin_session_path, method: :delete %></div>
+    <% else %>
+      <div><%= link_to image_tag('/assets/logout.png'), destroy_user_session_path, method: :delete %></div>
+    <% end %>
+     <% if current_user.nil? && current_admin.nil? %>
+      <!--<div><%= link_to image_tag('/assets/memo.png'), new_user_session_path %></div>-->
+    <% elsif current_user.nil?%>
+      <div><%= link_to image_tag('/assets/memo.png'), new_user_session_path %></div>
+    <% else %>
+      <div><%= link_to image_tag('/assets/memo.png'), new_entry_path %></div>
+    <% end %>
+    <% if current_user.nil? && current_admin.nil? %>
+      <!--<div><%= link_to image_tag('/assets/chat.png'), new_user_session_path %></div>-->
+    <% else %>
+      <div><%= link_to image_tag('/assets/chat.png'), groups_path %></div>
+    <% end %>
+     <% if current_user.nil? && current_admin.nil? %>
+      <!--<div><%= link_to image_tag('/assets/mypage.png'), new_user_session_path %></div>-->
+    <% elsif current_user.nil?%>
+      <div><%= link_to image_tag('/assets/mypage.png'), admin_path(current_admin) %></div>
+    <% else %>
+      <div><%= link_to image_tag('/assets/mypage.png'), user_path(current_user) %></div>
+    <% end %>
+    <% if admin_signed_in? %>
+      <div><%= link_to image_tag("/assets/home.png"), root_path %></div>
+    <% else %>
+      <div><%= link_to image_tag("/assets/home.png"), root_path %></div>
+    <% end %>
+
+
+
+
+  </div>
+</div>
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>

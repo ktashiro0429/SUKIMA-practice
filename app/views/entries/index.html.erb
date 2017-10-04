@@ -37,7 +37,7 @@
 
 
 <!-- スマホバージョン -->
-<div class="bgcolor">
+<div class="bgcolor post-section">
 <% if @entries.present? %>
 <div class="posts sp">
   <% @entries.each do |entry| %>
@@ -79,7 +79,7 @@
         <div class="post_main_text">
           <%= link_to entry.user.name, user_path(entry.user), class: "name" %>
           <h3><%= link_to entry.title, entry_path(entry), class: "entry_title" %></h3>
-          <% if admin_signed_in? %> 
+          <% if admin_signed_in? %>
           <!--<div class="post_chat_btn">
             <p><%= link_to image_tag("chat_btn_phone.png"), entry_path(entry), :class=>'post_chat_btn' %></p>
       <!--class= '-->
@@ -154,7 +154,7 @@
     </ul>
   </nav>
  -->
- 
+
  <div class="fixed_post">
    <%= link_to image_tag('toukou.png'), new_entry_path %>
  </div>

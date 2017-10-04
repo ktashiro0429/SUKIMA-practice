@@ -8111,7 +8111,7 @@ body {
   /*margin: 0;
   padding: 0;*/
   text-align: center;
-  
+
 }
 
 h1, h2, h3, h4, h5, h6, ul, li, p {
@@ -8353,7 +8353,7 @@ footer p {
   font-size: 16px;
   color: #064444;
   text-align: left;
-  
+
 }
 
 .post_main_title {
@@ -8483,14 +8483,14 @@ footer p {
     font-weight: 600;
     color:#064444;
     opacity:0.6;
-  }  
+  }
   .post_chat_btn_img{
     height: 25px;
     width:25px;
     margin-bottom:7px;
     margin-left:5px;
   }
-  
+
 
   .post_main_chat {
     width: 90px;
@@ -8518,14 +8518,14 @@ footer p {
     font-weight: 600;
     color:#064444;
     opacity:0.6;
-  }  
+  }
   .post_chat_btn_img{
     height: 15px;
     width:15px;
     margin-bottom:7px;
     margin-left:5px;
   }
-  
+
 @media(min-width: 400px) and (max-width: 767px) {
   .posts {
     width: 90%;
@@ -8581,14 +8581,14 @@ footer p {
     font-weight: 600;
     color:#064444;
     opacity:0.6;
-  }  
+  }
   .post_chat_btn_img{
     height: 15px;
     width:15px;
     margin-bottom:0px;
     margin-left:0px;
   }
-  
+
 
 @media(min-width: 768px) {
   .sp {

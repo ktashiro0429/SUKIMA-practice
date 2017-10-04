@@ -124,8 +124,9 @@
   .post_head h2{
     display:inline-block;
     vertical-align: bottom;
-    font-weight: bolder;
+    font-weight: bold;
     color: #58858E;
+
   }
 
 
@@ -187,6 +188,7 @@
     padding-bottom:5px;
     padding-top:40px;
     font-size:25px;
+
   }
 
   textarea::-webkit-input-placeholder {
