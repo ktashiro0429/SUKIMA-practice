@@ -26,6 +26,7 @@ gem 'rails-i18n'
 gem 'kaminari'
 gem 'fog'
 gem 'fog-aws'
+gem 'ransack'
 
 group :development, :test do
   gem 'byebug'

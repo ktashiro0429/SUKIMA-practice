@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :entries, only: [:index]
   end
   resources :entries, only: [:index, :show, :new, :create, :edit] do
-    collection {get "search"}
+    collection {get "job_category_search"}
+    collection {get "all_search"}
   end
 end

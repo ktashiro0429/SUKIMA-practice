@@ -5,16 +5,20 @@
     </div>
 
     <div class="category_content" style="display: none;">
-      <a href=""><div class="category_part">企画</div></a>
-      <a href=""><div class="category_part">制作</div></a>
-      <a href=""><div class="category_part">事務</div></a>
-      <a href=""><div class="category_part">専門職</div></a>
-      <a href=""><div class="category_part">営業</div></a>
-      <a href=""><div class="category_part">医療</div></a>
-      <a href=""><div class="category_part">教育</div></a>
-      <a href=""><div class="category_part">エンジニア</div></a>
-      <%= form_tag :search_entries, method: :get do %>
-      <p><%= text_field_tag :q, params[:q] %><%= submit_tag "検索" %></p><% end %>
+      <%= form_tag('/entries/job_category_search', method: :get) do %>
+        <%= button_tag("企画", class: "category_part", name: "keyword", value: "企画") %>
+        <%= button_tag("制作", class: "category_part", name: "keyword", value: "制作") %>
+        <%= button_tag("事務", class: "category_part", name: "keyword", value: "事務") %>
+        <%= button_tag("専門職", class: "category_part", name: "keyword", value: "専門色") %>
+        <%= button_tag("営業", class: "category_part", name: "keyword", value: "営業") %>
+        <%= button_tag("医療", class: "category_part", name: "keyword", value: "医療") %>
+        <%= button_tag("教育", class: "category_part", name: "keyword", value: "教育") %>
+        <%= button_tag("エンジニア", class: "category_part", name: "keyword", value: "エンジニア") %>
+      <% end %>
+      <%= search_form_for @q, url: all_search_entries_path do |f| %>
+        <p><%= f.search_field :job_category_and_title_and_area_body_cont %>
+           <%= submit_tag "検索" %></p>
+      <% end %>
       <a href=""><div class="category_btn"><img src="./assets/cat_search.png"></div></a>
     </div>
   </div>
@@ -46,7 +50,7 @@
         <div class="post_cat post_cat_dark">
           <!--<img src="./assets/cat_01.png">-->
           <!-- 画像が作成されてないので後ほど反映 -->
-           <% if entry.job_category == "営業" %>
+          <% if entry.job_category == "営業" %>
             <img src="./assets/cat_02.png">
           <% elsif entry.job_category == "事務" %>
             <img src="./assets/cat_03_officework.png">
@@ -72,7 +76,7 @@
         <!-- ゆーざーの写真 -->
         <% if !entry.user.image.nil? %>
           <%= link_to image_tag(entry.user.image), user_path(entry.user) %>
-        <% else %>　
+        <% else %>
           <%= link_to image_tag('brank_icon.jpg'), user_path(entry.user) %>
         <% end %>
         </div>

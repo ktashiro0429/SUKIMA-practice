@@ -54,9 +54,15 @@ class EntriesController < ApplicationController
     end
 
 
-  def search
-    @entries = Entry.search(params[:q]).page(params[:page]).per(3)
-    #@entries = @entries.order("created_at DESC")  
+  def job_category_search
+    @entries = Entry.where('job_category LIKE(?)', "%#{params[:keyword]}%").page(params[:page]).per(3)
+    render "index"
+  end
+
+  def all_search
+    @q = Entry.ransack(params[:q])
+    @entries = @q.result(distinct: true).page(params[:page]).per(3)
+    binding.pry
     render "index"
   end
 
