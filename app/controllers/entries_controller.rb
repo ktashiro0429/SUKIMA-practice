@@ -56,6 +56,7 @@ class EntriesController < ApplicationController
 
   def job_category_search
     @entries = Entry.where('job_category LIKE(?)', "%#{params[:keyword]}%").page(params[:page]).per(3)
+    binding.pry
     render "index"
   end
 

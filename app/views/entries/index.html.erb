@@ -16,7 +16,7 @@
         <%= button_tag("エンジニア", class: "category_part", name: "keyword", value: "エンジニア") %>
       <% end %>
       <%= search_form_for @q, url: all_search_entries_path do |f| %>
-        <p><%= f.search_field :job_category_and_title_and_area_body_cont %>
+        <p><%= f.search_field :job_category_or_title_or_area_or_body_cont %>
            <%= submit_tag "検索" %></p>
       <% end %>
       <a href=""><div class="category_btn"><img src="./assets/cat_search.png"></div></a>
@@ -26,16 +26,16 @@
   <div class="category_search_pc pc">
     <div class="category_tab">職種</div>
     <div class="category_content_pc">
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="1"><span>営業</span></label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="2"><span>事務</span></label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="3"><span>企画</span></label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="4"><span>サービス</span></label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="5"><span>制作</span></label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="6"><span>クリエイティブ</span></label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="7"><span>専門職</span></label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="8"><span>ITエンジニア</span></label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="9"><span>医療</span></label>
-      <label class="cat_content_part"><input type="checkbox" name="occupation" value="10"><span>教育</span></label>
+      <label class="cat_content_part"><%= link_to "営業", job_category_search_entries_path(keyword: "営業") %></label>
+      <label class="cat_content_part"><%= link_to "事務", job_category_search_entries_path(keyword: "事務") %></label>
+      <label class="cat_content_part"><%= link_to "企画", job_category_search_entries_path(keyword: "企画") %></label>
+      <label class="cat_content_part"><%= link_to "サービス", job_category_search_entries_path(keyword: "サービス") %></label>
+      <label class="cat_content_part"><%= link_to "制作", job_category_search_entries_path(keyword: "制作") %></label>
+      <label class="cat_content_part"><%= link_to "クリエイティブ", job_category_search_entries_path(keyword: "クリエイティブ") %></label>
+      <label class="cat_content_part"><%= link_to "専門職", job_category_search_entries_path(keyword: "専門職") %></label>
+      <label class="cat_content_part"><%= link_to "ITエンジニア", job_category_search_entries_path(keyword: "ITエンジニア") %></label>
+      <label class="cat_content_part"><%= link_to "医療", job_category_search_entries_path(keyword: "医療") %></label>
+      <label class="cat_content_part"><%= link_to "教育", job_category_search_entries_path(keyword: "教育") %></label>
     </div>
   </div>
 
