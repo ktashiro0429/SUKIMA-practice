@@ -62,7 +62,6 @@ class EntriesController < ApplicationController
   def all_search
     @q = Entry.ransack(params[:q])
     @entries = @q.result(distinct: true).page(params[:page]).per(3)
-    binding.pry
     render "index"
   end
 
