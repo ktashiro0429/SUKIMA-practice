@@ -23,7 +23,9 @@ test:
 production:
   <<: *default
   ##database: db/production.sqlite3
-  database: postgresql-curved-18917
+  database: sukimatch
+  username: sukima
+  password: kenji627suk1ma
+  host: localhost
   adapter: postgresql
-  encoding: unicode
-  pool: 5
+  encoding: utf8
