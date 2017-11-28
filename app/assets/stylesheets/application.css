@@ -13,13 +13,17 @@
  *= require_tree .
  *= require_self
  */
-
+ 
+html {
+  height: 100%;
+}
 
 body {
   /*margin: 0;
   padding: 0;*/
   text-align: center;
-
+  height: 100%;
+  
 }
 
 h1, h2, h3, h4, h5, h6, ul, li, p {
@@ -129,26 +133,16 @@ a:hover {
 /*contents                                 */
 /*-----------------------------------------*/
 .container {
-  height: 100%;
   min-height: 100%;
   width: 100%;
   padding-top: 10px;
-  text-align: center;
   overflow: hidden;
   background-color: #D3F2E9;
 }
 
-.bgcolor p {
-  font-size: 30px;
-  color: #777;
-  /*position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  width: 500px;
-  height: 500px;*/
+.bgcolor{
+  /*height: 400px;*/
+  backgroud-color: #D3F2E9;
 }
 
 /*main_image-------------------------------*/
@@ -193,14 +187,12 @@ a:hover {
 footer {
   width: 100%;
   height: 50px;
-  line-height: 50px;
-  background: #333;
+  background-color: #333;
   color: white;
 }
 
-footer.low {
-  position: absolute;
-  bottom: 0;
+footer p {
+  line-height: 50px;
 }
 
 /*-----------------------------------------*/
@@ -278,7 +270,7 @@ footer.low {
   font-size: 16px;
   color: #064444;
   text-align: left;
-
+  
 }
 
 .post_main_title {
@@ -292,22 +284,23 @@ footer.low {
   float: left;
   width: 80px;
 }
-/*.pagination .page{
-  border: 1px solid;
-  border-radius: 10%;
-  text-align: center;
-}
 
-.pagination .next{
-  border: 1px solid;
-  border-radius: 10%;
-  text-align: center;
-}
+/*.pagination .page{*/
+/*  border: 1px solid;*/
+/*  border-radius: 10%;*/
+/*  text-align: center;*/
+/*}*/
 
-.pagination .last{
-  border: 1px solid;
-  border-radius: 10%;
-}*/
+/*.pagination .next{*/
+/*  border: 1px solid;*/
+/*  border-radius: 10%;*/
+/*  text-align: center;*/
+/*}*/
+
+/*.pagination .last{*/
+/*  border: 1px solid;*/
+/*  border-radius: 10%;*/
+/*}*/
 
 .fixed_post {
   position: fixed;
@@ -320,7 +313,17 @@ footer.low {
   width: 100%;
 }
 
+.pagination {
+  width: 100%;
+}
 
+.pagination span {
+    padding: 10px;
+    background: #85CBBF;
+    margin: 5px;
+    color: white;
+    border-radius: 10px;
+}
 
 /*-----------------------------------------*/
 /*show                                     */
@@ -376,6 +379,10 @@ footer.low {
   display: none;
 }
 
+.post_in input {
+  max-width: 250px;
+  min-width: 200px;
+}
 
 @media(min-width: 300px) and (max-width: 399px) {
   .posts {
@@ -419,14 +426,14 @@ footer.low {
     font-weight: 600;
     color:#064444;
     opacity:0.6;
-  }
+  }  
   .post_chat_btn_img{
     height: 25px;
     width:25px;
     margin-bottom:7px;
     margin-left:5px;
   }
-
+  
 
   .post_main_chat {
     width: 90px;
@@ -454,14 +461,14 @@ footer.low {
     font-weight: 600;
     color:#064444;
     opacity:0.6;
-  }
+  }  
   .post_chat_btn_img{
     height: 15px;
     width:15px;
     margin-bottom:7px;
     margin-left:5px;
   }
-
+  
 @media(min-width: 400px) and (max-width: 767px) {
   .posts {
     width: 90%;
@@ -506,11 +513,11 @@ footer.low {
 }
 
 @media(min-width: 500px) and (max-width: 767px) {
-
+  
   .header_menu div {
     padding-top: 30px;
   }
-
+  
 }
 
 @media(min-width: 600px) and (max-width: 767px) {
@@ -531,14 +538,14 @@ footer.low {
     font-weight: 600;
     color:#064444;
     opacity:0.6;
-  }
+  }  
   .post_chat_btn_img{
     height: 15px;
     width:15px;
     margin-bottom:0px;
     margin-left:0px;
   }
-
+  
 
 @media(min-width: 768px) {
   .sp {
@@ -550,7 +557,7 @@ footer.low {
   }
 
   .container {
-    padding-top: 10px;
+    padding-top: 20px;
   }
 
 /*-----------------------------------------*/
@@ -562,7 +569,7 @@ footer.low {
     /*background: url('/assets/header_pc.png') 0 0 no-repeat;*/
     background-size: cover;
   }
-
+  
   .header_user {
     max-height: 130px;
   }
@@ -593,16 +600,13 @@ footer.low {
 }
 
 .category_tab {
-  width: 50%;
-  height: 30px;
-  line-height: 30px;
+  width: 25%;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 10%;
   background-color: #fff;
   border-radius: 8px 8px 0 0;
   border-right: 3px solid #85CBBF;
-  font-size: 18px;
-  font-weight: bold;
-  color: #555;
-  background: #f1f1f1;
 }
 
 .category_content {
@@ -616,7 +620,6 @@ footer.low {
   background-color: #fff;
   padding: 10px 0;
   border-radius: 10px;
-  border-top-left-radius: 0px;
   border-right: 3px solid #85CBBF;
   border-bottom: 3px solid #85CBBF;
 }
